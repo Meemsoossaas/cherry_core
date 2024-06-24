@@ -1,6 +1,6 @@
 part of '../cherry_core.dart';
 
-final class GiverSettings extends CherrySettings {
+final class GiverSettings extends CherrySettings<GiverSettingsProperty> {
   static GiverSettings instance = GiverSettings._internal();
 
   GiverSettings._internal();

@@ -1,6 +1,6 @@
 part of '../cherry_core.dart';
 
-final class ChemistrySettings extends CherrySettings {
+final class ChemistrySettings extends CherrySettings<ChemistrySettingsProperty> {
   static ChemistrySettings instance = ChemistrySettings._internal();
 
   ChemistrySettings._internal();
