@@ -7,42 +7,42 @@ final class CherryRoute extends CherryCore {
 
   static const String giverModeRoute = '${initialRoute}giver/';
 
-  static const CherryRoute giverMode = CherryRoute(
+  static CherryRoute giverMode = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
   );
 
-  static const CherryRoute giverSettings = CherryRoute(
+  static CherryRoute giverSettings = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: settingsRoute,
   );
 
-  static const CherryRoute discover = CherryRoute(
+  static CherryRoute discover = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'discover',
   );
 
-  static const CherryRoute preferences = CherryRoute(
+  static CherryRoute preferences = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'preferences',
   );
 
-  static const CherryRoute profile = CherryRoute(
+  static CherryRoute profile = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'profile',
   );
 
-  static const CherryRoute giverInsights = CherryRoute(
+  static CherryRoute giverInsights = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'insights',
   );
 
-  static const CherryRoute pendingRequests = CherryRoute(
+  static CherryRoute pendingRequests = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'pending_requests',
@@ -50,24 +50,24 @@ final class CherryRoute extends CherryCore {
 
   static const String receiverModeRoute = '${initialRoute}receiver/';
 
-  static const CherryRoute receiverMode = CherryRoute(
+  static CherryRoute receiverMode = CherryRoute(
     mode: CherryUserMode.receiver,
     mainRoute: receiverModeRoute,
   );
 
-  static const CherryRoute receiverSettings = CherryRoute(
+  static CherryRoute receiverSettings = CherryRoute(
     mode: CherryUserMode.receiver,
     mainRoute: receiverModeRoute,
     subRoute: settingsRoute,
   );
 
-  static const CherryRoute receivedRequests = CherryRoute(
+  static CherryRoute receivedRequests = CherryRoute(
     mode: CherryUserMode.receiver,
     mainRoute: receiverModeRoute,
     subRoute: 'received_requests',
   );
 
-  static const CherryRoute receiverInsights = CherryRoute(
+  static CherryRoute receiverInsights = CherryRoute(
     mode: CherryUserMode.receiver,
     mainRoute: receiverModeRoute,
     subRoute: 'insights',
@@ -75,53 +75,83 @@ final class CherryRoute extends CherryCore {
 
   static const String chemistryModeRoute = '${initialRoute}chemistry/';
 
-  static const CherryRoute chemistryMode = CherryRoute(
+  static CherryRoute chemistryMode = CherryRoute(
     mode: CherryUserMode.chemistry,
     mainRoute: chemistryModeRoute,
   );
 
-  static const CherryRoute chemistrySettings = CherryRoute(
+  static CherryRoute chemistrySettings = CherryRoute(
     mode: CherryUserMode.chemistry,
     mainRoute: chemistryModeRoute,
     subRoute: settingsRoute,
   );
 
-  static const CherryRoute matches = CherryRoute(
+  static CherryRoute matches = CherryRoute(
     mode: CherryUserMode.chemistry,
     mainRoute: chemistryModeRoute,
     subRoute: 'matches',
   );
 
-  static const CherryRoute chats = CherryRoute(
+  static CherryRoute chats = CherryRoute(
     mode: CherryUserMode.chemistry,
     mainRoute: chemistryModeRoute,
     subRoute: 'chats',
   );
 
-  static const String signUpRoute = '$initialRoute/sign_up';
+  static String signUpRoute = '$initialRoute/sign_up';
 
-  static const CherryRoute signUp = CherryRoute(
+  static CherryRoute signUp = CherryRoute(
     mode: CherryUserMode.signUp,
     mainRoute: signUpRoute,
   );
 
-  static const CherryRoute createAccount = CherryRoute(
+  static CherryRoute createAccount = CherryRoute(
     mode: CherryUserMode.signUp,
     mainRoute: signUpRoute,
     subRoute: 'create_account',
   );
 
-  static const CherryRoute login = CherryRoute(
+  static CherryRoute login = CherryRoute(
     mode: CherryUserMode.signUp,
     mainRoute: signUpRoute,
     subRoute: 'login',
   );
 
+  static Map cherryRouteTree = {
+    initialRoute: {
+      signUpRoute: {
+        createAccount,
+        login,
+      },
+      giverModeRoute: {
+        giverSettings,
+        discover,
+        preferences,
+        profile,
+        giverInsights,
+        pendingRequests,
+      },
+      receiverModeRoute: {
+        receivedRequests,
+        receiverSettings,
+        receivedRequests,
+        receiverInsights,
+      },
+      chemistryModeRoute: {
+        chemistrySettings,
+        matches,
+        chats,
+      },
+    }
+  };
+
   final CherryUserMode mode;
+
   final String mainRoute;
+
   final String? subRoute;
 
-  const CherryRoute({
+  CherryRoute({
     required this.mode,
     required this.mainRoute,
     this.subRoute,
@@ -151,13 +181,14 @@ final class CherryRoute extends CherryCore {
         CherryUserMode.chemistry => 3,
       };
 
-  CherryUserModeSettings? get assignedSettings =>
-      (subRoute == settingsRoute) ? switch (mode) {
-        CherryUserMode.giver => CherryUserModeSettings.giver,
-        CherryUserMode.receiver => CherryUserModeSettings.receiver,
-        CherryUserMode.chemistry => CherryUserModeSettings.chemistry,
-        CherryUserMode.signUp => null,
-      } : null;
+  CherryUserModeSettings? get assignedSettings => (subRoute == settingsRoute)
+      ? switch (mode) {
+          CherryUserMode.giver => CherryUserModeSettings.giver,
+          CherryUserMode.receiver => CherryUserModeSettings.receiver,
+          CherryUserMode.chemistry => CherryUserModeSettings.chemistry,
+          CherryUserMode.signUp => null,
+        }
+      : null;
 
   @override
   List<Object?> get props => [
@@ -165,4 +196,8 @@ final class CherryRoute extends CherryCore {
         mainRoute,
         subRoute,
       ];
+
+  static void extendRouteTree(RouteExtension routeExtension) {
+    throw UnimplementedError();
+  }
 }

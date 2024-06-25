@@ -8,6 +8,7 @@ final class EnumerationParameter<T extends Enum>
     super._list, {
     super.defaultOption,
     this.asIndex = false,
+    required super.onChangedCallback,
   });
 
   @override

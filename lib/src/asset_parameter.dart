@@ -5,6 +5,7 @@ final class AssetParameter<T extends CherryAsset>
   AssetParameter(
     super._list, {
     super.defaultOption,
+    required super.onChangedCallback,
   });
 
   @override

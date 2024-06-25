@@ -1,9 +1,8 @@
 part of '../cherry_core.dart';
 
 final class ChemistrySettingsProperty<T> extends CherrySettingProperty {
-  const ChemistrySettingsProperty();
+  ChemistrySettingsProperty();
 
   @override
   List<Object?> get props => [];
-
 }

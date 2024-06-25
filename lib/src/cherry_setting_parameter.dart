@@ -3,9 +3,11 @@ part of '../cherry_core.dart';
 sealed class CherrySettingParameter<T> extends CherryCore {
   final ParameterList<T> _list;
   final int defaultOption;
+  final OnParameterValueChangedCallback<T> onChangedCallback;
 
   CherrySettingParameter(
     this._list, {
+    required this.onChangedCallback,
     this.defaultOption = 0,
   })  : assert(
           (defaultOption >= 0) && (defaultOption <= _list.length - 1),
@@ -18,13 +20,34 @@ sealed class CherrySettingParameter<T> extends CherryCore {
 
   ParameterType get type;
 
-  ParameterList<T> get list => _list;
+  int get numberOfOptions => _list.length;
 
-  ParameterCore get defaultParameterValue => list[defaultOption];
+  List<int> get validIndices => List<int>.generate(
+        _list.length,
+        (int index) => index,
+        growable: false,
+      );
+
+  int get currentIndex => defaultOption;
+
+  set currentIndex(int newIndex) {
+    if (validIndices.contains(newIndex)) {
+    } else {
+      throw Exception();
+    }
+  }
+
+  ParameterCore<T> get defaultParameterValue => _list[defaultOption];
+
+  ParameterCore<T>? changeOption({required int newIndex}) {
+    currentIndex = newIndex;
+    return validIndices.contains(currentIndex) ? _list[currentIndex] : null;
+  }
 
   @override
   List<Object?> get props => [
         _list,
         defaultOption,
+        onChangedCallback,
       ];
 }

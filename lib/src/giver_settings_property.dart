@@ -1,7 +1,7 @@
 part of '../cherry_core.dart';
 
 final class GiverSettingsProperty<T> extends CherrySettingProperty {
-  const GiverSettingsProperty();
+  GiverSettingsProperty();
 
   @override
   List<Object?> get props => [];
