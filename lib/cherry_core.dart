@@ -70,6 +70,8 @@ part 'src/parameter_type.dart';
 
 part 'src/cherry_core_exception_type.dart';
 
+part 'src/cherry_core_route_type.dart';
+
 /// Exceptions
 
 part 'src/cherry_core_exception.dart';

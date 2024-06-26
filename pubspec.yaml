@@ -9,6 +9,7 @@ environment:
 # Add regular dependencies here.
 dependencies:
   equatable: ^2.0.5
+  hive: ^2.2.3
   logger: ^2.3.0
   uuid: ^4.4.0
   # path: ^1.8.0

@@ -1,10 +1,15 @@
 part of '../cherry_core.dart';
 
 final class CherryCoreWarningException<T> extends CherryCoreException<T> {
-  static CherryCoreExceptionList<CherryCoreWarningException> exceptionStackTrace =
-      List.empty(growable: true);
+  static CherryCoreExceptionList<CherryCoreWarningException>
+      exceptionStackTrace = List.empty(growable: true);
 
-  CherryCoreWarningException(super.message) {
+  CherryCoreWarningException(
+    super.message, {
+    super.loggerBuilder,
+    super.exceptionCallback,
+    required super.instanceType,
+  }) {
     exceptionStackTrace.pushFront(this);
   }
 
@@ -12,13 +17,17 @@ final class CherryCoreWarningException<T> extends CherryCoreException<T> {
   CherryCoreExceptionType get type => CherryCoreExceptionType.warning;
 
   @override
-  CherryCoreWarningException? fetchException([int index = 0]) {
+  Future<CherryCoreWarningException?> fetchException([int index = 0]) async {
     final lastException =
-    exceptionStackTrace.isEmpty ? exceptionStackTrace[index] : null;
+        exceptionStackTrace.isEmpty ? exceptionStackTrace[index] : null;
     if (lastException == this && exceptionCallback == null) {
       return lastException;
     } else if (lastException == this && exceptionCallback != null) {
-      exceptionCallback!(exceptionTrace: exceptionStackTrace);
+      await exceptionCallback!(exceptionStackTrace);
+      CherryCoreException.handleException<CherryCoreWarningException>(
+        exceptionStackTrace,
+        lastException!,
+      );
       return lastException;
     }
     return null;

@@ -5,7 +5,12 @@ final class CherryCoreErrorException<T> extends CherryCoreException<T>
   static CherryCoreExceptionList<CherryCoreErrorException> exceptionStackTrace =
       List.empty(growable: true);
 
-  CherryCoreErrorException(super.message) {
+  CherryCoreErrorException(
+    super.message, {
+    super.loggerBuilder,
+    super.exceptionCallback,
+    required super.instanceType,
+  }) {
     exceptionStackTrace.pushFront(this);
   }
 
@@ -16,13 +21,17 @@ final class CherryCoreErrorException<T> extends CherryCoreException<T>
   StackTrace? get stackTrace => StackTrace.current;
 
   @override
-  CherryCoreErrorException? fetchException([int index = 0]) {
+  Future<CherryCoreErrorException?> fetchException([int index = 0]) async {
     final lastException =
         exceptionStackTrace.isEmpty ? exceptionStackTrace[index] : null;
     if (lastException == this && exceptionCallback == null) {
       return lastException;
     } else if (lastException == this && exceptionCallback != null) {
-      exceptionCallback!(exceptionTrace: exceptionStackTrace);
+      await exceptionCallback!(exceptionStackTrace);
+      CherryCoreException.handleException<CherryCoreErrorException>(
+        exceptionStackTrace,
+        lastException!,
+      );
       return lastException;
     }
     return null;

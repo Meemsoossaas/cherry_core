@@ -15,6 +15,7 @@ enum CherryCoreExceptionType {
   );
 
   final Level comparableLevel;
+
   final int codeLevel;
 
   const CherryCoreExceptionType({
