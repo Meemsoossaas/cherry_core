@@ -1,7 +1,6 @@
 part of 'settings.dart';
 
-final class EnumerationParameter<T extends Enum>
-    extends CherrySettingParameter<T> {
+final class EnumerationParameter extends CherrySettingParameter<Enum> {
   final bool asIndex;
 
   EnumerationParameter(

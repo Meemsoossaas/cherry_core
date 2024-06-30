@@ -1,17 +1,29 @@
 part of 'core.dart';
 
+/// {@template cherry_core_error_exception}
+///
+/// An exception which is for serious error handling
+///
+/// {@endtemplate}
+
 final class CherryCoreErrorException<T> extends CherryCoreException<T>
     implements Error {
-  static CherryCoreExceptionList<CherryCoreErrorException> exceptionStackTrace =
-      List.empty(growable: true);
+  /// {@template cherry_core_error_exception_exception_stack_trace}
+  ///
+  /// The stack trace containing [CherryCoreException] if initialized
+  ///
+  /// {@endtemplate}
+  static final CherryCoreExceptionList<CherryCoreErrorException>
+      _exceptionStackTrace = List.empty(growable: true);
 
+  /// {@macro cherry_core_error_exception}
   CherryCoreErrorException(
     super.message, {
     super.loggerBuilder,
     super.exceptionCallback,
     required super.instanceType,
   }) {
-    exceptionStackTrace.pushFront(this);
+    _exceptionStackTrace.pushFront(this);
   }
 
   @override
@@ -21,19 +33,28 @@ final class CherryCoreErrorException<T> extends CherryCoreException<T>
   StackTrace? get stackTrace => StackTrace.current;
 
   @override
-  Future<CherryCoreErrorException?> fetchException([int index = 0]) async {
+  CherryCoreFetchResult<T> fetchException([int index = 0]) {
     final lastException =
-        exceptionStackTrace.isEmpty ? exceptionStackTrace[index] : null;
+        _exceptionStackTrace.isEmpty ? _exceptionStackTrace[index] : null;
     if (lastException == this && exceptionCallback == null) {
-      return lastException;
-    } else if (lastException == this && exceptionCallback != null) {
-      await exceptionCallback!(exceptionStackTrace);
-      CherryCoreException.handleException<CherryCoreErrorException>(
-        exceptionStackTrace,
-        lastException!,
+      return (
+        exception: lastException,
+        value: null as T,
       );
-      return lastException;
+    } else if (lastException == this && exceptionCallback != null) {
+      final callbackValue = exceptionCallback!(_exceptionStackTrace);
+      CherryCoreException.handleException<CherryCoreErrorException>(
+        trace: _exceptionStackTrace,
+        selectedException: lastException!,
+      );
+      return (
+        exception: lastException,
+        value: callbackValue,
+      );
     }
-    return null;
+    return (
+      exception: null,
+      value: null as T,
+    );
   }
 }

@@ -1,6 +1,6 @@
 part of 'settings.dart';
 
-final class InputParameter<T> extends CherrySettingParameter<T> {
+final class InputParameter extends CherrySettingParameter<String> {
   InputParameter(
     super.list, {
     super.defaultOption,

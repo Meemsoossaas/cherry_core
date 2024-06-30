@@ -38,7 +38,7 @@ part 'cherry_core_exception_type.dart';
 
 // Extensions
 
-part 'list_extensions.dart';
+part 'cherry_core_list_extensions.dart';
 
 // Mixins
 
