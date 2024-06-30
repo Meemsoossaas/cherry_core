@@ -64,23 +64,26 @@
       
 
 <span class="returntype"><a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">handleException</span>&lt;<wbr><span class="type-parameter">T extends CherryCoreException</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="handleException-param-trace"><span class="type-annotation"><a href="../../cherry_core/CherryCoreExceptionList.html">CherryCoreExceptionList</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">trace</span>, </span></li>
-<li><span class="parameter" id="handleException-param-selectedException"><span class="type-annotation">T</span> <span class="parameter-name">selectedException</span></span></li>
+<span class="name ">handleException</span>&lt;<wbr><span class="type-parameter">T extends CherryCoreException</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="handleException-param-trace">{<span>required</span> <span class="type-annotation"><a href="../../cherry_core/CherryCoreExceptionList.html">CherryCoreExceptionList</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">trace</span>, </span></li>
+<li><span class="parameter" id="handleException-param-selectedException"><span>required</span> <span class="type-annotation">T</span> <span class="parameter-name">selectedException</span>}</span></li>
 </ol>)
 
       
 
     </section>
     
+<section class="desc markdown">
+  <p>Handles via <code>T</code> a descendant of this depending on <a href="../../cherry_core/CherryCoreExceptionType.html">CherryCoreExceptionType</a></p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static Future&lt;void&gt; handleException&lt;T extends CherryCoreException&gt;(
-  CherryCoreExceptionList&lt;T&gt; trace,
-  T selectedException,
-) async {
+  <pre class="language-dart"><code class="language-dart">static Future&lt;void&gt; handleException&lt;T extends CherryCoreException&gt;({
+  required CherryCoreExceptionList&lt;T&gt; trace,
+  required T selectedException,
+}) async {
   if ((trace.contains(selectedException)) &amp;&amp;
       (selectedException.loggerBuilder != null)) {
     final Logger logger = selectedException.loggerBuilder!.logger;

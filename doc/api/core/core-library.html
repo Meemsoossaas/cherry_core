@@ -94,7 +94,7 @@
 
 </dt>
 <dd>
-  
+  A class for the framework for initializing <a href="https://pub.dev/documentation/logger/2.3.0/logger/Logger-class.html">Logger</a> and additional capabilities
 </dd>
 
           <dt id="CherryIconAsset">
@@ -141,7 +141,7 @@
 
 </dt>
 <dd>
-  
+  Declares of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a> the different types of exceptions in this API
 </dd>
 
           <dt id="CherryUserMode">
@@ -149,7 +149,7 @@
 
 </dt>
 <dd>
-  
+  The user is in 'Chemistry Mode'
 </dd>
 
       </dl>
@@ -161,14 +161,14 @@
       <h2>Extensions</h2>
 
       <dl>
-          <dt id="ListExtensions">
-  <span class="name "><a href="../cherry_core/ListExtensions.html">ListExtensions</a></span>
+          <dt id="CherryCoreListExtensions">
+  <span class="name "><a href="../cherry_core/CherryCoreListExtensions.html">CherryCoreListExtensions</a></span>
   on <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
   
 
 </dt>
 <dd>
-  
+  Some essential extensions for building the API
 </dd>
 
 
@@ -185,13 +185,13 @@
           
   <dt id="CherryCoreExceptionCallback" class="callable">
     <span class="name"><a href="../cherry_core/CherryCoreExceptionCallback.html">CherryCoreExceptionCallback</a></span>&lt;<wbr><span class="type-parameter">T</span>&gt;<span class="signature">
-      <span class="returntype parameter">= <a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-exceptionTrace"><span class="type-annotation"><a href="../cherry_core/CherryCoreExceptionList.html">CherryCoreExceptionList</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a></span>&gt;</span></span> <span class="parameter-name">exceptionTrace</span></span>)</span></span>
+      <span class="returntype parameter">= T Function<span class="signature">(<span class="parameter" id="param-exceptionTrace"><span class="type-annotation"><a href="../cherry_core/CherryCoreExceptionList.html">CherryCoreExceptionList</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a></span>&gt;</span></span> <span class="parameter-name">exceptionTrace</span></span>)</span></span>
     </span>
     
 
   </dt>
   <dd>
-    
+    The function for fetching an exception where <code>T</code> is being returned as the callback value (This progress could occur asynchronously, too)
     
 
   </dd>
@@ -205,7 +205,23 @@
 
 </dt>
 <dd>
+  Typedefs for the exception handling in this API. In particular for <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a>
+Each descendant of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a> contains a stack trace which acts as a list. This is being used to check that <code>T</code> is an descendant of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a>
   
+
+</dd>
+
+
+          
+  <dt id="CherryCoreFetchResult" class="">
+  <span class="name"><a href="../cherry_core/CherryCoreFetchResult.html">CherryCoreFetchResult</a></span>&lt;<wbr><span class="type-parameter">T</span>&gt;
+    = (<span class="field">{<span class="type-annotation"><a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a>?</span> <span class="field-name">exception</span>, </span><span class="field"><span class="type-annotation">T</span> <span class="field-name">value</span>}</span>)
+  </span>
+  
+
+</dt>
+<dd>
+  The function for fetching an exception where <code>T</code> is being returned as the callback value (This progress could occur asynchronously, too)
   
 
 </dd>
@@ -223,7 +239,7 @@
 
 </dt>
 <dd>
-  
+  An exception which is for serious error handling
 </dd>
 
           <dt id="CherryCoreException">
@@ -231,7 +247,7 @@
 
 </dt>
 <dd>
-  
+  A class which handles and contains the framework of all exceptions in this package
 </dd>
 
           <dt id="CherryCoreHintException">
@@ -239,7 +255,7 @@
 
 </dt>
 <dd>
-  
+  An exception which is for hints especially for debug purposes
 </dd>
 
           <dt id="CherryCoreWarningException">
@@ -247,7 +263,7 @@
 
 </dt>
 <dd>
-  
+  An exception which is for hints especially for debug purposes
 </dd>
 
       </dl>

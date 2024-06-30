@@ -66,6 +66,9 @@
     </div>
 
     
+<section class="desc markdown">
+  <p>Declares of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a> the different types of exceptions in this API</p>
+</section>
 
 
       <section>
@@ -94,10 +97,10 @@
 
     <dl class="constructor-summary-list">
         <dt id="CherryCoreExceptionType" class="callable">
-          <span class="name"><a href="../cherry_core/CherryCoreExceptionType/CherryCoreExceptionType.html">CherryCoreExceptionType</a></span><span class="signature">(<span class="parameter" id="-param-codeLevel">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">codeLevel</span>, </span><span class="parameter" id="-param-comparableLevel"><span>required</span> <span class="type-annotation"><a href="https://pub.dev/documentation/logger/2.3.0/logger/Level.html">Level</a></span> <span class="parameter-name">comparableLevel</span>}</span>)</span>
+          <span class="name"><a href="../cherry_core/CherryCoreExceptionType/CherryCoreExceptionType.html">CherryCoreExceptionType</a></span><span class="signature">(<span class="parameter" id="-param-codeLevel">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">codeLevel</span>, </span><span class="parameter" id="-param-comparableLevel"><span>required</span> <span class="type-annotation"><a href="https://pub.dev/documentation/logger/2.3.0/logger/Level.html">Level</a></span> <span class="parameter-name">comparableLevel</span>, </span><span class="parameter" id="-param-forDebugging"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">forDebugging</span>}</span>)</span>
         </dt>
         <dd>
-          
+          Declares of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a> the different types of exceptions in this API
             <div class="constructor-modifier features">const</div>
         </dd>
     </dl>
@@ -114,11 +117,11 @@
 
 </dt>
 <dd>
-  
+  <p>The exception is a hint (used for debugging)</p>
   
 
     <div>
-      <span class="signature"><code>const CherryCoreExceptionType(codeLevel: 1, comparableLevel: Level.debug)</code></span>
+      <span class="signature"><code>const CherryCoreExceptionType(codeLevel: 1, comparableLevel: Level.debug, forDebugging: true)</code></span>
     </div>
 </dd>
 
@@ -129,11 +132,11 @@
 
 </dt>
 <dd>
-  
+  <p>The exception is a warning (used for light errors)</p>
   
 
     <div>
-      <span class="signature"><code>const CherryCoreExceptionType(codeLevel: 2, comparableLevel: Level.error)</code></span>
+      <span class="signature"><code>const CherryCoreExceptionType(codeLevel: 2, comparableLevel: Level.error, forDebugging: false)</code></span>
     </div>
 </dd>
 
@@ -144,11 +147,11 @@
 
 </dt>
 <dd>
-  
+  <p>The exception is a error (used for serious errors)</p>
   
 
     <div>
-      <span class="signature"><code>const CherryCoreExceptionType(codeLevel: 3, comparableLevel: Level.error)</code></span>
+      <span class="signature"><code>const CherryCoreExceptionType(codeLevel: 3, comparableLevel: Level.error, forDebugging: false)</code></span>
     </div>
 </dd>
 
@@ -168,7 +171,7 @@
 
 </dt>
 <dd>
-  
+  The level of the the exception
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -180,7 +183,19 @@
 
 </dt>
 <dd>
+  The compared level via <a href="https://pub.dev/documentation/logger/2.3.0/logger/Level.html">Level</a> contained in logger (<a href="https://pub.dev/packages/logger">https://pub.dev/packages/logger</a>)
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="forDebugging" class="property">
+  <span class="name"><a href="../cherry_core/CherryCoreExceptionType/forDebugging.html">forDebugging</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>
   
+
+</dt>
+<dd>
+  The purpose of the exception, if it is intended for debugging
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -225,7 +240,7 @@
   </section>
     
   <section
-      class="summary offset-anchor inherited"
+      class="summary offset-anchor"
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
@@ -242,16 +257,16 @@
 
 </dd>
 
-        <dt id="toString" class="callable inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+        <dt id="toString" class="callable">
+  <span class="name"><a href="../cherry_core/CherryCoreExceptionType/toString.html">toString</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
   </span>
   
 
 </dt>
-<dd class="inherited">
+<dd>
   A string representation of this object.
-  <div class="features"><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 

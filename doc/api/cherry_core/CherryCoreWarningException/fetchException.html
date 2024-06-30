@@ -68,7 +68,7 @@
     </ol>
   </div>
 
-<span class="returntype"><a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../cherry_core/CherryCoreWarningException-class.html">CherryCoreWarningException</a>?</span>&gt;</span></span>
+<span class="returntype"><a href="../../cherry_core/CherryCoreFetchResult.html">CherryCoreFetchResult</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
 <span class="name ">fetchException</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="fetchException-param-index">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span> = <span class="default-value">0</span>]</span></li>
 </ol>)
 
@@ -76,26 +76,38 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Tries to fetch via <code>index</code> an <a href="../../cherry_core/CherryCoreException-class.html">CherryCoreException</a> of a stack trace and handles <a href="../../cherry_core/CherryCoreException/exceptionCallback.html">exceptionCallback</a></p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;CherryCoreWarningException?&gt; fetchException([int index = 0]) async {
+CherryCoreFetchResult&lt;T&gt; fetchException([int index = 0]) {
   final lastException =
-      exceptionStackTrace.isEmpty ? exceptionStackTrace[index] : null;
+      _exceptionStackTrace.isEmpty ? _exceptionStackTrace[index] : null;
   if (lastException == this &amp;&amp; exceptionCallback == null) {
-    return lastException;
-  } else if (lastException == this &amp;&amp; exceptionCallback != null) {
-    await exceptionCallback!(exceptionStackTrace);
-    CherryCoreException.handleException&lt;CherryCoreWarningException&gt;(
-      exceptionStackTrace,
-      lastException!,
+    return (
+      exception: lastException,
+      value: null as T,
     );
-    return lastException;
+  } else if (lastException == this &amp;&amp; exceptionCallback != null) {
+    final callbackValue = exceptionCallback!(_exceptionStackTrace);
+    CherryCoreException.handleException&lt;CherryCoreWarningException&gt;(
+      trace: _exceptionStackTrace,
+      selectedException: lastException!,
+    );
+    return (
+      exception: lastException,
+      value: callbackValue,
+    );
   }
-  return null;
+  return (
+    exception: null,
+    value: null as T,
+  );
 }</code></pre>
 </section>
 

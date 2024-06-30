@@ -62,17 +62,20 @@
 
     <section class="multi-line-signature">
         <span class="name ">CherryCoreExceptionCallback</span>&lt;<wbr><span class="type-parameter">T</span>&gt; =
-     <span class="returntype"><a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-exceptionTrace"><span class="type-annotation"><a href="../cherry_core/CherryCoreExceptionList.html">CherryCoreExceptionList</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a></span>&gt;</span></span> <span class="parameter-name">exceptionTrace</span></span>)</span></span>
+     <span class="returntype">T Function<span class="signature">(<span class="parameter" id="param-exceptionTrace"><span class="type-annotation"><a href="../cherry_core/CherryCoreExceptionList.html">CherryCoreExceptionList</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a></span>&gt;</span></span> <span class="parameter-name">exceptionTrace</span></span>)</span></span>
 
     </section>
 
     
+<section class="desc markdown">
+  <p>The function for fetching an exception where <code>T</code> is being returned as the callback value (This progress could occur asynchronously, too)</p>
+</section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef CherryCoreExceptionCallback&lt;T&gt; = Future&lt;T&gt; Function(
-   CherryCoreExceptionList&lt;CherryCoreException&gt; exceptionTrace,
+  <pre class="language-dart"><code class="language-dart">typedef CherryCoreExceptionCallback&lt;T&gt; = T Function(
+  CherryCoreExceptionList&lt;CherryCoreException&gt; exceptionTrace,
 );</code></pre>
 </section>
 

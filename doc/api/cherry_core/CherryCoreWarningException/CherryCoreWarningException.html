@@ -70,6 +70,9 @@
     </section>
 
     
+<section class="desc markdown">
+  <p>An exception which is for hints especially for debug purposes</p>
+</section>
 
 
     
@@ -81,7 +84,7 @@
   super.exceptionCallback,
   required super.instanceType,
 }) {
-  exceptionStackTrace.pushFront(this);
+  _exceptionStackTrace.pushFront(this);
 }</code></pre>
 </section>
 
