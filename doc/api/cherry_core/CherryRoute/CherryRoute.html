@@ -62,10 +62,11 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">CherryRoute</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-mode">{<span>required</span> <span class="type-annotation"><a href="../../cherry_core/CherryUserMode.html">CherryUserMode</a></span> <span class="parameter-name">mode</span>, </span></li>
+      <span class="name ">CherryRoute</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-mode">{<span>required</span> <span class="type-annotation"><a href="../../cherry_core/CherryUserMode.html">CherryUserMode</a>?</span> <span class="parameter-name">mode</span>, </span></li>
 <li><span class="parameter" id="-param-mainRoute"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">mainRoute</span>, </span></li>
 <li><span class="parameter" id="-param-type"><span>required</span> <span class="type-annotation"><a href="../../cherry_core/CherryCoreRouteType.html">CherryCoreRouteType</a></span> <span class="parameter-name">type</span>, </span></li>
-<li><span class="parameter" id="-param-subRoute"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">subRoute</span>}</span></li>
+<li><span class="parameter" id="-param-subRoute"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">subRoute</span>, </span></li>
+<li><span class="parameter" id="-param-extendable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">extendable</span> = <span class="default-value">false</span>}</span></li>
 </ol>)
     </section>
 
@@ -83,6 +84,7 @@
   required this.mainRoute,
   required this.type,
   this.subRoute,
+  this.extendable = false,
 }) : assert(
         (mainRoute == giverModeRoute) ||
             (mainRoute == receiverModeRoute) ||

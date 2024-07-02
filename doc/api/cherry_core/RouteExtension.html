@@ -63,17 +63,33 @@
     <section class="multi-line-signature">
         
   
-<span class="name ">RouteExtension</span> = <a href="https://api.dart.dev/stable/3.4.4/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Set-class.html">Set</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>&gt;</span></span>&gt;</span></span>
+<span class="name ">RouteExtension</span> = <a href="https://api.dart.dev/stable/3.4.4/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Set-class.html">Set</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>&gt;</span></span>&gt;</span></span>
 
 
     </section>
 
     
+<section class="desc markdown">
+  <p>The body, if a route is trying to be extended:</p>
+<pre class="language-dart"><code class="language-dart">void main() {
+  final loverSettings = CherryRoute(
+    mode: null,
+    mainRoute: '${CherryRoute.initialRoute}lover/',
+    subRoute: CherryRoute.settingsRoute,
+    type: CherryCoreRouteType.sub,
+    extendable: false,
+  );
+  final newMainRoute = {'lover/': {loverSettings}};
+  assert(newMainRoute.length == 1);
+  CherryRoute.extendRouteTree(newMainRoute);
+}
+</code></pre>
+</section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef RouteExtension = Map&lt;String, Set&lt;String&gt;&gt;;</code></pre>
+  <pre class="language-dart"><code class="language-dart">typedef RouteExtension = Map&lt;String, Set&lt;CherryRoute&gt;&gt;;</code></pre>
 </section>
 
 

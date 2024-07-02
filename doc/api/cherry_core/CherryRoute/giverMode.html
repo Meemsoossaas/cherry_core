@@ -64,7 +64,7 @@
         
         <a href="../../cherry_core/CherryRoute-class.html">CherryRoute</a>
         <span class="name ">giverMode</span>
-        <div class="features"><span class="feature">getter/setter pair</span></div>
+        <div class="features"><span class="feature">final</span></div>
 
       </section>
       
@@ -75,10 +75,11 @@
       
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static CherryRoute giverMode = CherryRoute(
+  <pre class="language-dart"><code class="language-dart">static final CherryRoute giverMode = CherryRoute(
   mode: CherryUserMode.giver,
   mainRoute: giverModeRoute,
   type: CherryCoreRouteType.main,
+  extendable: true,
 );</code></pre>
 </section>
 

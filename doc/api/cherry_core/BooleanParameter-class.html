@@ -62,6 +62,10 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>A class which represents a settings parameter which contains a <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a> value.
+This means obviously that the values consists of <code>true</code> and <code>false</code> (<code>null</code> not included)</p>
+</section>
 
 
     <section>
@@ -98,7 +102,8 @@
           <span class="name"><a href="../cherry_core/BooleanParameter/BooleanParameter.html">BooleanParameter</a></span><span class="signature">(<span class="parameter" id="-param-_list"><span class="type-annotation"><a href="../cherry_core/ParameterList.html">ParameterList</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>&gt;</span></span> <span class="parameter-name">_list</span>, </span><span class="parameter" id="-param-defaultOption">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">defaultOption</span> = <span class="default-value">0</span>, </span><span class="parameter" id="-param-onChangedCallback"><span>required</span> <span class="type-annotation"><a href="../cherry_core/OnParameterValueChangedCallback.html">OnParameterValueChangedCallback</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>&gt;</span></span> <span class="parameter-name">onChangedCallback</span>}</span>)</span>
         </dt>
         <dd>
-          
+          A class which represents a settings parameter which contains a <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a> value.
+This means obviously that the values consists of <code>true</code> and <code>false</code> (<code>null</code> not included)
         </dd>
     </dl>
   </section>
@@ -115,7 +120,8 @@
 
 </dt>
 <dd class="inherited">
-  
+  Gets the current index
+On initialization, <a href="../cherry_core/CherrySettingParameter/defaultOption.html">defaultOption</a> will be the current index
   <div class="features"><span class="feature">getter/setter pair</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -127,7 +133,8 @@
 
 </dt>
 <dd class="inherited">
-  
+  The index of the default value.
+(During initialization, it will be asserted.)
   <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -139,7 +146,7 @@
 
 </dt>
 <dd class="inherited">
-  
+  The default value in <code>_list</code> of type <code>T</code>
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -175,7 +182,7 @@
 
 </dt>
 <dd class="inherited">
-  
+  The number of options contained in <code>_list</code>
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -187,7 +194,7 @@
 
 </dt>
 <dd class="inherited">
-  
+  The function to be executed if the parameter value has been changed
   <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -237,7 +244,7 @@ this instance's <a href="../cherry_core/CherrySettingParameter/props.html">props
 
 </dt>
 <dd>
-  
+  The type of the parameter
   <div class="features"><span class="feature">no setter</span><span class="feature">override</span></div>
 
 </dd>
@@ -249,7 +256,7 @@ this instance's <a href="../cherry_core/CherrySettingParameter/props.html">props
 
 </dt>
 <dd class="inherited">
-  
+  A list containing all valid indices
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -270,7 +277,7 @@ this instance's <a href="../cherry_core/CherrySettingParameter/props.html">props
 
 </dt>
 <dd class="inherited">
-  
+  Returns the current parameter value in <code>_list</code>
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>

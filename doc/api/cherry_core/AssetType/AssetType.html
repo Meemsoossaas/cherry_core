@@ -61,17 +61,30 @@
 </h1></div>
 
     <section class="multi-line-signature">
-      const
-      <span class="name ">AssetType</span>(<wbr>)
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://pub.dev/documentation/meta/1.15.0/meta/internal-constant.html">internal</a></li>
+    </ol>
+  </div>const
+      <span class="name ">AssetType</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-couldBeUserGenerated">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">couldBeUserGenerated</span>}</span></li>
+</ol>)
     </section>
 
     
+<section class="desc markdown">
+  <p>All needed types of assets for the Cherry application</p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const AssetType();</code></pre>
+  <pre class="language-dart"><code class="language-dart">@internal
+&#47;&#47;&#47; {@macro asset_type}
+const AssetType({
+  required this.couldBeUserGenerated,
+});</code></pre>
 </section>
 
 

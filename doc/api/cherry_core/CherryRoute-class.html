@@ -97,7 +97,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="CherryRoute" class="callable">
-          <span class="name"><a href="../cherry_core/CherryRoute/CherryRoute.html">CherryRoute</a></span><span class="signature">(<span class="parameter" id="-param-mode">{<span>required</span> <span class="type-annotation"><a href="../cherry_core/CherryUserMode.html">CherryUserMode</a></span> <span class="parameter-name">mode</span>, </span><span class="parameter" id="-param-mainRoute"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">mainRoute</span>, </span><span class="parameter" id="-param-type"><span>required</span> <span class="type-annotation"><a href="../cherry_core/CherryCoreRouteType.html">CherryCoreRouteType</a></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-subRoute"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">subRoute</span>}</span>)</span>
+          <span class="name"><a href="../cherry_core/CherryRoute/CherryRoute.html">CherryRoute</a></span><span class="signature">(<span class="parameter" id="-param-mode">{<span>required</span> <span class="type-annotation"><a href="../cherry_core/CherryUserMode.html">CherryUserMode</a>?</span> <span class="parameter-name">mode</span>, </span><span class="parameter" id="-param-mainRoute"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">mainRoute</span>, </span><span class="parameter" id="-param-type"><span>required</span> <span class="type-annotation"><a href="../cherry_core/CherryCoreRouteType.html">CherryCoreRouteType</a></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-subRoute"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">subRoute</span>, </span><span class="parameter" id="-param-extendable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">extendable</span> = <span class="default-value">false</span>}</span>)</span>
         </dt>
         <dd>
           A class which sets all of the predeclared routes of the Cherry application
@@ -119,6 +119,18 @@
 <dd>
   Gets the settings depending on <a href="../cherry_core/CherryUserMode.html">CherryUserMode</a>
   <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="extendable" class="property">
+  <span class="name"><a href="../cherry_core/CherryRoute/extendable.html">extendable</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Finalizes, if this is later on extendable for new sub routes
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -172,7 +184,7 @@
 
         <dt id="mode" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/mode.html">mode</a></span>
-  <span class="signature">&#8594; <a href="../cherry_core/CherryUserMode.html">CherryUserMode</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryUserMode.html">CherryUserMode</a>?</span>
   
 
 </dt>
@@ -330,293 +342,341 @@ this instance's <a href="../cherry_core/CherryRoute/props.html">props</a>.
 
 </dd>
 
+        <dt id="assets" class="property">
+  <span class="name"><a href="../cherry_core/CherryRoute/assets.html">assets</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  
+
+</dt>
+<dd>
+  The official route tree of all predefined assets of the Cherry application
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
         <dt id="chats" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/chats.html">chats</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for all the chats the current user has which other user's in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.chemistry</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="chemistryMode" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/chemistryMode.html">chemistryMode</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route of <a href="../cherry_core/CherryUserMode.html">CherryUserMode.chemistry</a> as <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="chemistryModeRoute" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/chemistryModeRoute.html">chemistryModeRoute</a></span>
-  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
   The main route of <a href="../cherry_core/CherryUserMode.html">CherryUserMode.chemistry</a> as <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="chemistrySettings" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/chemistrySettings.html">chemistrySettings</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the settings in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.chemistry</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="cherryRouteTree" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/cherryRouteTree.html">cherryRouteTree</a></span>
-  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.4.4/dart-core/Map-class.html">Map</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/Map-class.html">Map</a></span>
   
 
 </dt>
 <dd>
   The official route tree of the Cherry application including <a href="../cherry_core/CherryRoute/initialRoute-constant.html">initialRoute</a> and all the routes of <a href="../cherry_core/CherryUserMode.html">CherryUserMode</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="createAccount" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/createAccount.html">createAccount</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for creating a new account in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.signUp</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="discover" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/discover.html">discover</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the discover Page in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.giver</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="giverInsights" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/giverInsights.html">giverInsights</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the insights on the current user's statistical performance on the application in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.giver</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="giverMode" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/giverMode.html">giverMode</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for <a href="../cherry_core/CherryUserMode.html">CherryUserMode.giver</a> as <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="giverModeRoute" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/giverModeRoute.html">giverModeRoute</a></span>
-  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
   The main route of <a href="../cherry_core/CherryUserMode.html">CherryUserMode.giver</a> as <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="giverSettings" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/giverSettings.html">giverSettings</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the Giver Settings in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.giver</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="icons" class="property">
+  <span class="name"><a href="../cherry_core/CherryRoute/icons.html">icons</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  
+
+</dt>
+<dd>
+  The official route tree of all predefined icons of the Cherry application
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="images" class="property">
+  <span class="name"><a href="../cherry_core/CherryRoute/images.html">images</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  
+
+</dt>
+<dd>
+  The official route tree of all predefined images of the Cherry application
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="login" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/login.html">login</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for logging into an existing account in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.signUp</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="mainRoutes" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/mainRoutes.html">mainRoutes</a></span>
-  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>&gt;</span></span>
   
 
 </dt>
 <dd>
   Statically contains all the main routes of the Cherry application
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="matches" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/matches.html">matches</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the settings in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.chemistry</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="pendingRequests" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/pendingRequests.html">pendingRequests</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the pending requests sent by the current user to other user's in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.giver</a>
 Other's have not yet interacted or have ignored the request
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="preferences" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/preferences.html">preferences</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the user preferences (as filters) aimed on other users in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.giver</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="profile" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/profile.html">profile</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the user profile and profile preview of the current user in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.giver</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="receivedRequests" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/receivedRequests.html">receivedRequests</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the received requested from other user's in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.receiver</a>
 The current user can interact or ignore these requests
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="receiverInsights" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/receiverInsights.html">receiverInsights</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the insights on the receiving aspects of the current user's profile in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.receiver</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="receiverMode" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/receiverMode.html">receiverMode</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route of <a href="../cherry_core/CherryUserMode.html">CherryUserMode.receiver</a> as <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="receiverModeRoute" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/receiverModeRoute.html">receiverModeRoute</a></span>
-  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
   The main route of <a href="../cherry_core/CherryUserMode.html">CherryUserMode.receiver</a> as <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="receiverSettings" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/receiverSettings.html">receiverSettings</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for the settings in <a href="../cherry_core/CherryUserMode.html">CherryUserMode.receiver</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="signUp" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/signUp.html">signUp</a></span>
-  <span class="signature">&#8596; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
   
 
 </dt>
 <dd>
   The route for <a href="../cherry_core/CherryUserMode.html">CherryUserMode.signUp</a> as <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="signUpRoute" class="property">
   <span class="name"><a href="../cherry_core/CherryRoute/signUpRoute.html">signUpRoute</a></span>
-  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
   The main route for <a href="../cherry_core/CherryUserMode.html">CherryUserMode.signUp</a> as <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>
-  <div class="features"><span class="feature">getter/setter pair</span></div>
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="videos" class="property">
+  <span class="name"><a href="../cherry_core/CherryRoute/videos.html">videos</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>
+  
+
+</dt>
+<dd>
+  The official route tree of all predefined images of the Cherry application
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -667,6 +727,18 @@ The current user can interact or ignore these requests
 </dt>
 <dd>
   Sets, if <a href="../cherry_core/CherryRoute/extendRouteTree.html">extendRouteTree</a> can mutate the route tree which is <a href="../cherry_core/CherryRoute/cherryRouteTree.html">cherryRouteTree</a>
+  
+
+</dd>
+
+        <dt id="assetsRoute" class="constant">
+    <span class="name "><a href="../cherry_core/CherryRoute/assetsRoute-constant.html">assetsRoute</a></span>
+  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  The unchangeable route of all internal assets
   
 
 </dd>

@@ -78,7 +78,7 @@
 
 </dt>
 <dd>
-  
+  A class which represents a settings parameter which returns an assets
 </dd>
 
           <dt id="BooleanParameter">
@@ -86,7 +86,8 @@
 
 </dt>
 <dd>
-  
+  A class which represents a settings parameter which contains a <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a> value.
+This means obviously that the values consists of <code>true</code> and <code>false</code> (<code>null</code> not included)
 </dd>
 
           <dt id="ChemistrySettings">
@@ -102,7 +103,7 @@
 
 </dt>
 <dd>
-  
+  A class which compliments <a href="../cherry_core/ChemistrySettings-class.html">ChemistrySettings</a> being a parallel sub child for handling properties
 </dd>
 
           <dt id="CherryAsset">
@@ -129,20 +130,12 @@
   
 </dd>
 
-          <dt id="CherryCoreLoggerBuilder">
-  <span class="name "><a href="../cherry_core/CherryCoreLoggerBuilder-class.html">CherryCoreLoggerBuilder</a></span> 
-
-</dt>
-<dd>
-  A class for the framework for initializing <a href="https://pub.dev/documentation/logger/2.3.0/logger/Logger-class.html">Logger</a> and additional capabilities
-</dd>
-
           <dt id="CherryFilter">
   <span class="name "><a href="../cherry_core/CherryFilter-class.html">CherryFilter</a></span> 
 
 </dt>
 <dd>
-  
+  A class for <a href="../cherry_core/UserPreferences-class.html">UserPreferences</a> which basically initializes a filter for the user's preferences for searching for other users
 </dd>
 
           <dt id="CherryIconAsset">
@@ -174,7 +167,7 @@
 
 </dt>
 <dd>
-  
+  A class which declares the parameters basis for all it's descendants
 </dd>
 
           <dt id="CherrySettingProperty">
@@ -285,7 +278,7 @@
 
 </dt>
 <dd>
-  
+  All needed types of assets for the Cherry application
 </dd>
 
           <dt id="CherryCoreExceptionType">
@@ -301,7 +294,7 @@
 
 </dt>
 <dd>
-  
+  The route is custom route which indicates that it does not compliment the structure of the project
 </dd>
 
           <dt id="CherryFilterType">
@@ -309,7 +302,7 @@
 
 </dt>
 <dd>
-  
+  An enumeration for all types of filter for the Cherry application
 </dd>
 
           <dt id="CherryUserMode">
@@ -317,7 +310,7 @@
 
 </dt>
 <dd>
-  The user is in 'Chemistry Mode'
+  Declares all the possible modes the user will interact with (multiple times)
 </dd>
 
           <dt id="CherryUserModeSettings">
@@ -340,6 +333,21 @@
     </section>
 
 
+    <section class="summary offset-anchor" id="extension-types">
+      <h2>Extension Types</h2>
+
+      <dl>
+          <dt id="CherryCoreLoggerBuilder">
+    <span class="name "><a href="../cherry_core/CherryCoreLoggerBuilder-extension-type.html">CherryCoreLoggerBuilder</a></span> 
+
+</dt>
+<dd>
+    An extension type for the framework for initializing <a href="https://pub.dev/documentation/logger/2.3.0/logger/Logger-class.html">Logger</a> and additional capabilities
+</dd>
+
+
+      </dl>
+    </section>
 
     <section class="summary offset-anchor" id="extensions">
       <h2>Extensions</h2>
@@ -458,13 +466,13 @@ Each descendant of <a href="../cherry_core/CherryCoreException-class.html">Cherr
           
   <dt id="RouteExtension" class="">
   <span class="name"><a href="../cherry_core/RouteExtension.html">RouteExtension</a></span>
-    = <a href="https://api.dart.dev/stable/3.4.4/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Set-class.html">Set</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>&gt;</span></span>&gt;</span>
+    = <a href="https://api.dart.dev/stable/3.4.4/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Set-class.html">Set</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../cherry_core/CherryRoute-class.html">CherryRoute</a></span>&gt;</span></span>&gt;</span>
   </span>
   
 
 </dt>
 <dd>
-  
+  The body, if a route is trying to be extended:
   
 
 </dd>

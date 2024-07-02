@@ -64,7 +64,7 @@
         
         <a href="../../cherry_core/CherryRoute-class.html">CherryRoute</a>
         <span class="name ">chats</span>
-        <div class="features"><span class="feature">getter/setter pair</span></div>
+        <div class="features"><span class="feature">final</span></div>
 
       </section>
       
@@ -75,11 +75,12 @@
       
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static CherryRoute chats = CherryRoute(
+  <pre class="language-dart"><code class="language-dart">static final CherryRoute chats = CherryRoute(
   mode: CherryUserMode.chemistry,
   mainRoute: chemistryModeRoute,
   subRoute: &#39;chats&#39;,
   type: CherryCoreRouteType.sub,
+  extendable: true,
 );</code></pre>
 </section>
 
