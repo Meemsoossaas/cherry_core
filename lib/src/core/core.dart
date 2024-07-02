@@ -1,9 +1,12 @@
+/// The fundamental library for all elementary and basic functionalities and accesses for the Cherry application
+
 library core;
 
-/// The fundamental library for all elementary and basic functionalities and accesses for the Cherry application
+import 'dart:io' show Directory, File;
 
 import 'package:equatable/equatable.dart' show Equatable;
 import 'package:logger/logger.dart' show Logger, Level;
+import 'package:meta/meta.dart';
 import 'package:uuid/uuid.dart' show Uuid;
 
 import '../../cherry_core.dart' show CherryRoute;
@@ -42,7 +45,7 @@ part 'cherry_core_exception_type.dart';
 
 part 'cherry_core_list_extensions.dart';
 
-// Mixins
+// Extension Types
 
 part 'cherry_core_logger_builder.dart';
 

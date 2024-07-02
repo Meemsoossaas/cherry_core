@@ -4,7 +4,7 @@ import '../../cherry_core.dart';
 
 // Classes
 
-part 'cherry_routes.dart';
+part 'cherry_route.dart';
 
 // Enumerations
 

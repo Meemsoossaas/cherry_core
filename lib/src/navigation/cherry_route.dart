@@ -9,67 +9,76 @@ part of 'navigation.dart';
 final class CherryRoute extends CherryCore {
   // Static Properties
 
-  /// {@template cherry_route_initialRoute}
+  /// {@template cherry_route_initial_route}
   ///
   /// The (constant) initial route of the Cherry application
   ///
   /// {@endtemplate}
   static const String initialRoute = '/';
 
-  /// {@template cherry_route_ableToChangeInitialRoute}
+  /// {@template cherry_route_able_to_change_initial_route}
   ///
   /// Sets for the operation, if the [initialRoute] can change (e.g. through route extensions)
   ///
   /// {@endtemplate}
   static const bool ableToChangeInitialRoute = false;
 
-  /// {@template cherry_route_ableToChangeRouteTree}
+  /// {@template cherry_route_able_to_change_route_tree}
   ///
   /// Sets, if [extendRouteTree] can mutate the route tree which is [cherryRouteTree]
   ///
   /// {@endtemplate}
   static const bool ableToChangeRouteTree = false;
 
-  /// {@template cherry_route_settingsRoute}
+  /// {@template cherry_route_settings_route}
   ///
   /// The unchangeable route of the route for settings (depending on [CherryUserMode])
   /// The assembly would be as this example shows:
   /// ```dart
   /// CherryUserMode userMode = CherryUserMode.giver;
-  /// final officialSettingsRoute = '${userMode.route}settings';
+  /// final officialSettingsRoute = '${userMode.route}settings/';
   /// ```
   ///
   /// {@endtemplate}
-  static const String settingsRoute = 'settings';
+  static const String settingsRoute = 'settings/';
 
-  /// {@template cherry_route_giverModeRoute}
+  /// {@template cherry_route_assets_route}
+  ///
+  /// The unchangeable route of all internal assets
+  ///
+  /// {@endtemplate}
+  static const String assetsRoute = 'assets/';
+
+  /// {@template cherry_route_giver_mode_route}
   ///
   /// The main route of [CherryUserMode.giver] as [String]
   ///
   /// {@endtemplate}
-  static String giverModeRoute = CherryUserMode.giver.route;
+  static final String giverModeRoute = CherryUserMode.giver.route;
 
-  /// {@template cherry_route_giverMode}
+  /// {@template cherry_route_giver_mode}
   ///
   /// The route for [CherryUserMode.giver] as [CherryRoute]
   ///
   /// {@endtemplate}
-  static CherryRoute giverMode = CherryRoute(
+  static final CherryRoute giverMode = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     type: CherryCoreRouteType.main,
+    extendable: true,
   );
 
-  /// {@template cherry_route_giverSettings}
+  /// {@template cherry_route_giver_settings}
   ///
   /// The route for the Giver Settings in [CherryUserMode.giver]
   ///
   /// {@endtemplate}
-  static CherryRoute giverSettings = CherryRoute(
+  static final CherryRoute giverSettings = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: settingsRoute,
     type: CherryCoreRouteType.sub,
+    extendable: true,
   );
 
   /// {@template cherry_route_discover}
@@ -77,11 +86,12 @@ final class CherryRoute extends CherryCore {
   /// The route for the discover Page in [CherryUserMode.giver]
   ///
   /// {@endtemplate}
-  static CherryRoute discover = CherryRoute(
+  static final CherryRoute discover = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'discover',
     type: CherryCoreRouteType.sub,
+    extendable: false,
   );
 
   /// {@template cherry_route_preferences}
@@ -89,11 +99,12 @@ final class CherryRoute extends CherryCore {
   /// The route for the user preferences (as filters) aimed on other users in [CherryUserMode.giver]
   ///
   /// {@endtemplate}
-  static CherryRoute preferences = CherryRoute(
+  static final CherryRoute preferences = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'preferences',
     type: CherryCoreRouteType.sub,
+    extendable: false,
   );
 
   /// {@template cherry_route_profile}
@@ -101,121 +112,130 @@ final class CherryRoute extends CherryCore {
   /// The route for the user profile and profile preview of the current user in [CherryUserMode.giver]
   ///
   /// {@endtemplate}
-  static CherryRoute profile = CherryRoute(
+  static final CherryRoute profile = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'profile',
     type: CherryCoreRouteType.sub,
+    extendable: false,
   );
 
-  /// {@template cherry_route_giverInsights}
+  /// {@template cherry_route_giver_insights}
   ///
   /// The route for the insights on the current user's statistical performance on the application in [CherryUserMode.giver]
   ///
   /// {@endtemplate}
-  static CherryRoute giverInsights = CherryRoute(
+  static final CherryRoute giverInsights = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'insights',
     type: CherryCoreRouteType.sub,
+    extendable: false,
   );
 
-  /// {@template cherry_route_pendingRequests}
+  /// {@template cherry_route_pending_requests}
   ///
   /// The route for the pending requests sent by the current user to other user's in [CherryUserMode.giver]
   /// Other's have not yet interacted or have ignored the request
   ///
   /// {@endtemplate}
-  static CherryRoute pendingRequests = CherryRoute(
+  static final CherryRoute pendingRequests = CherryRoute(
     mode: CherryUserMode.giver,
     mainRoute: giverModeRoute,
     subRoute: 'pending_requests',
     type: CherryCoreRouteType.sub,
+    extendable: false,
   );
 
-  /// {@template cherry_route_receiverModeRoute}
+  /// {@template cherry_route_receiver_mode_route}
   ///
   /// The main route of [CherryUserMode.receiver] as [String]
   ///
   /// {@endtemplate}
-  static String receiverModeRoute = CherryUserMode.receiver.name;
+  static final String receiverModeRoute = CherryUserMode.receiver.name;
 
-  /// {@template cherry_route_receiverMode}
+  /// {@template cherry_route_receiver_mode}
   ///
   /// The route of [CherryUserMode.receiver] as [CherryRoute]
   ///
   /// {@endtemplate}
-  static CherryRoute receiverMode = CherryRoute(
+  static final CherryRoute receiverMode = CherryRoute(
     mode: CherryUserMode.receiver,
     mainRoute: receiverModeRoute,
     type: CherryCoreRouteType.main,
+    extendable: true,
   );
 
-  /// {@template cherry_route_receiverSettings}
+  /// {@template cherry_route_receiver_settings}
   ///
   /// The route for the settings in [CherryUserMode.receiver]
   ///
   /// {@endtemplate}
-  static CherryRoute receiverSettings = CherryRoute(
+  static final CherryRoute receiverSettings = CherryRoute(
     mode: CherryUserMode.receiver,
     mainRoute: receiverModeRoute,
     subRoute: settingsRoute,
     type: CherryCoreRouteType.sub,
+    extendable: true,
   );
 
-  /// {@template cherry_route_receivedRequests}
+  /// {@template cherry_route_received_requests}
   ///
   /// The route for the received requested from other user's in [CherryUserMode.receiver]
   /// The current user can interact or ignore these requests
   ///
   /// {@endtemplate}
-  static CherryRoute receivedRequests = CherryRoute(
+  static final CherryRoute receivedRequests = CherryRoute(
     mode: CherryUserMode.receiver,
     mainRoute: receiverModeRoute,
     subRoute: 'received_requests',
     type: CherryCoreRouteType.sub,
+    extendable: false,
   );
 
-  /// {@template cherry_route_receiverInsights}
+  /// {@template cherry_route_receiver_insights}
   ///
   /// The route for the insights on the receiving aspects of the current user's profile in [CherryUserMode.receiver]
   ///
   /// {@endtemplate}
-  static CherryRoute receiverInsights = CherryRoute(
+  static final CherryRoute receiverInsights = CherryRoute(
     mode: CherryUserMode.receiver,
     mainRoute: receiverModeRoute,
     subRoute: 'insights',
     type: CherryCoreRouteType.sub,
+    extendable: false,
   );
 
-  /// {@template cherry_route_chemistryModeRoute}
+  /// {@template cherry_route_chemistry_mode_route}
   ///
   /// The main route of [CherryUserMode.chemistry] as [String]
   ///
   /// {@endtemplate}
-  static String chemistryModeRoute = CherryUserMode.chemistry.name;
+  static final String chemistryModeRoute = CherryUserMode.chemistry.name;
 
-  /// {@template cherry_route_chemistryMode}
+  /// {@template cherry_route_chemistry_mode}
   ///
   /// The route of [CherryUserMode.chemistry] as [CherryRoute]
   ///
   /// {@endtemplate}
-  static CherryRoute chemistryMode = CherryRoute(
+  static final CherryRoute chemistryMode = CherryRoute(
     mode: CherryUserMode.chemistry,
     mainRoute: chemistryModeRoute,
     type: CherryCoreRouteType.main,
+    extendable: true,
   );
 
-  /// {@template cherry_route_chemistrySettings}
+  /// {@template cherry_route_chemistry_settings}
   ///
   /// The route for the settings in [CherryUserMode.chemistry]
   ///
   /// {@endtemplate}
-  static CherryRoute chemistrySettings = CherryRoute(
+  static final CherryRoute chemistrySettings = CherryRoute(
     mode: CherryUserMode.chemistry,
     mainRoute: chemistryModeRoute,
     subRoute: settingsRoute,
     type: CherryCoreRouteType.sub,
+    extendable: true,
   );
 
   /// {@template cherry_route_matches}
@@ -223,11 +243,12 @@ final class CherryRoute extends CherryCore {
   /// The route for the settings in [CherryUserMode.chemistry]
   ///
   /// {@endtemplate}
-  static CherryRoute matches = CherryRoute(
+  static final CherryRoute matches = CherryRoute(
     mode: CherryUserMode.chemistry,
     mainRoute: chemistryModeRoute,
     subRoute: 'matches',
     type: CherryCoreRouteType.sub,
+    extendable: false,
   );
 
   /// {@template cherry_route_chats}
@@ -235,37 +256,38 @@ final class CherryRoute extends CherryCore {
   /// The route for all the chats the current user has which other user's in [CherryUserMode.chemistry]
   ///
   /// {@endtemplate}
-  static CherryRoute chats = CherryRoute(
+  static final CherryRoute chats = CherryRoute(
     mode: CherryUserMode.chemistry,
     mainRoute: chemistryModeRoute,
     subRoute: 'chats',
     type: CherryCoreRouteType.sub,
+    extendable: true,
   );
 
-  /// {@template cherry_route_signUpRoute}
+  /// {@template cherry_route_sign_up_route}
   ///
   /// The main route for [CherryUserMode.signUp] as [String]
   ///
   /// {@endtemplate}
-  static String signUpRoute = CherryUserMode.signUp.name;
+  static final String signUpRoute = CherryUserMode.signUp.name;
 
-  /// {@template cherry_route_signUp}
+  /// {@template cherry_route_sign_up}
   ///
   /// The route for [CherryUserMode.signUp] as [CherryRoute]
   ///
   /// {@endtemplate}
-  static CherryRoute signUp = CherryRoute(
+  static final CherryRoute signUp = CherryRoute(
     mode: CherryUserMode.signUp,
     mainRoute: signUpRoute,
     type: CherryCoreRouteType.main,
   );
 
-  /// {@template cherry_route_createAccount}
+  /// {@template cherry_route_create_account}
   ///
   /// The route for creating a new account in [CherryUserMode.signUp]
   ///
   /// {@endtemplate}
-  static CherryRoute createAccount = CherryRoute(
+  static final CherryRoute createAccount = CherryRoute(
     mode: CherryUserMode.signUp,
     mainRoute: signUpRoute,
     subRoute: 'create_account',
@@ -277,19 +299,19 @@ final class CherryRoute extends CherryCore {
   /// The route for logging into an existing account in [CherryUserMode.signUp]
   ///
   /// {@endtemplate}
-  static CherryRoute login = CherryRoute(
+  static final CherryRoute login = CherryRoute(
     mode: CherryUserMode.signUp,
     mainRoute: signUpRoute,
     subRoute: 'login',
     type: CherryCoreRouteType.sub,
   );
 
-  /// {@template cherry_route_cherryRouteTree}
+  /// {@template cherry_route_cherry_route_tree}
   ///
   /// The official route tree of the Cherry application including [initialRoute] and all the routes of [CherryUserMode]
   ///
   /// {@endtemplate}
-  static Map cherryRouteTree = {
+  static final Map cherryRouteTree = {
     initialRoute: {
       signUpRoute: {
         createAccount,
@@ -317,17 +339,68 @@ final class CherryRoute extends CherryCore {
     }
   };
 
-  /// {@template cherry_route_}
+  /// {@template cherry_route_main_routes}
   ///
   /// Statically contains all the main routes of the Cherry application
   ///
   /// {@endtemplate}
-  static List<String> mainRoutes = [
+  static final List<String> mainRoutes = [
     giverModeRoute,
     receiverModeRoute,
     chemistryModeRoute,
     signUpRoute,
   ];
+
+  /// {@template cherry_route_assets}
+  ///
+  /// The official route tree of all predefined assets of the Cherry application
+  ///
+  /// {@endtemplate}
+  static final CherryRoute assets = CherryRoute(
+    mode: null,
+    mainRoute: assetsRoute,
+    type: CherryCoreRouteType.initial,
+    extendable: false,
+  );
+
+  /// {@template cherry_route_icons}
+  ///
+  /// The official route tree of all predefined icons of the Cherry application
+  ///
+  /// {@endtemplate}
+  static final CherryRoute icons = CherryRoute(
+    mode: null,
+    mainRoute: assetsRoute,
+    type: CherryCoreRouteType.main,
+    subRoute: 'icons/',
+    extendable: false,
+  );
+
+  /// {@template cherry_route_images}
+  ///
+  /// The official route tree of all predefined images of the Cherry application
+  ///
+  /// {@endtemplate}
+  static final CherryRoute images = CherryRoute(
+    mode: null,
+    mainRoute: assetsRoute,
+    type: CherryCoreRouteType.main,
+    subRoute: 'images/',
+    extendable: true,
+  );
+
+  /// {@template cherry_route_videos}
+  ///
+  /// The official route tree of all predefined images of the Cherry application
+  ///
+  /// {@endtemplate}
+  static final CherryRoute videos = CherryRoute(
+    mode: null,
+    mainRoute: assetsRoute,
+    type: CherryCoreRouteType.main,
+    subRoute: 'videos/',
+    extendable: true,
+  );
 
   // Properties
 
@@ -336,16 +409,16 @@ final class CherryRoute extends CherryCore {
   /// Finalizes which [CherryUserMode] this contains
   ///
   /// {@endtemplate}
-  final CherryUserMode mode;
+  final CherryUserMode? mode;
 
-  /// {@template cherry_route_mainRoute}
+  /// {@template cherry_route_main_route}
   ///
   /// Finalizes which main route of [CherryUserMode] this contains
   ///
   /// {@endtemplate}
   final String mainRoute;
 
-  /// {@template cherry_route_subRoute}
+  /// {@template cherry_route_sub_route}
   ///
   /// Finalizes which sub route (if not null) this contains
   ///
@@ -359,6 +432,13 @@ final class CherryRoute extends CherryCore {
   /// {@endtemplate}
   final CherryCoreRouteType type;
 
+  /// {@template cherry_route_extendable}
+  ///
+  /// Finalizes, if this is later on extendable for new sub routes
+  ///
+  /// {@endtemplate}
+  final bool extendable;
+
   // Constructors
 
   /// {@macro cherry_route}
@@ -367,6 +447,7 @@ final class CherryRoute extends CherryCore {
     required this.mainRoute,
     required this.type,
     this.subRoute,
+    this.extendable = false,
   }) : assert(
           (mainRoute == giverModeRoute) ||
               (mainRoute == receiverModeRoute) ||
@@ -377,21 +458,21 @@ final class CherryRoute extends CherryCore {
 
   // Getters & Setters
 
-  /// {@template cherry_route_fullRoute}
+  /// {@template cherry_route_full_route}
   ///
   /// Gets the summarized route of the [mainRoute] and [subRoute] (includes the [initialRoute] too)
   ///
   /// {@endtemplate}
   String get fullRoute => '$initialRoute$mainRoute${subRoute ?? ''}';
 
-  /// {@template cherry_route_amountOfMainRoutes}
+  /// {@template cherry_route_amount_of_main_routes}
   ///
   /// Statically gets the number of the main routes of [mainRoutes]
   ///
   /// {@endtemplate}
   static int get amountOfMainRoutes => mainRoutes.length;
 
-  /// {@template cherry_route_routeIndex}
+  /// {@template cherry_route_route_index}
   ///
   /// Gets the index of the main route depending on [CherryUserMode]
   ///
@@ -401,9 +482,10 @@ final class CherryRoute extends CherryCore {
         CherryUserMode.giver => 1,
         CherryUserMode.receiver => 2,
         CherryUserMode.chemistry => 3,
+        null => 4,
       };
 
-  /// {@template cherry_route_assignedSettings}
+  /// {@template cherry_route_assigned_settings}
   ///
   /// Gets the settings depending on [CherryUserMode]
   ///
@@ -414,12 +496,13 @@ final class CherryRoute extends CherryCore {
           CherryUserMode.receiver => CherryUserModeSettings.receiver,
           CherryUserMode.chemistry => CherryUserModeSettings.chemistry,
           CherryUserMode.signUp => null,
+          null => null,
         }
       : null;
 
-  // Static Methods
+  // Methods
 
-  /// {@template cherry_route_extendRouteTree}
+  /// {@template cherry_route_extend_route_tree}
   ///
   /// Allows to extends [cherryRouteTree] (if [ableToChangeRouteTree] is `true`)
   ///

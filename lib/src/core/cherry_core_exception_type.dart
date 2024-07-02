@@ -7,6 +7,8 @@ part of 'core.dart';
 /// {@endtemplate}
 
 enum CherryCoreExceptionType {
+  // Values
+
   /// {@template cherry_core_exception_type_hint}
   ///
   /// The exception is a hint (used for debugging)
@@ -40,6 +42,8 @@ enum CherryCoreExceptionType {
     forDebugging: false,
   );
 
+  // Properties
+
   /// {@template cherry_core_exception_type_comparable_level}
   ///
   /// The compared level via [Level] contained in logger (https://pub.dev/packages/logger)
@@ -61,6 +65,8 @@ enum CherryCoreExceptionType {
   /// {@endtemplate}
   final bool forDebugging;
 
+  // Constructor
+
   /// {@macro cherry_core_exception_type}
   const CherryCoreExceptionType({
     required this.codeLevel,
@@ -68,7 +74,9 @@ enum CherryCoreExceptionType {
     required this.forDebugging,
   });
 
+  // Overrides
+
   @override
   String toString() =>
-      '${comparableLevel.toString()}: Code ${codeLevel * 100}${forDebugging == true ? ' (Debug)' : ''}';
+      '${comparableLevel.toString()}: Code ${codeLevel * 100}${forDebugging == true ? '; (Debug)' : ''}';
 }

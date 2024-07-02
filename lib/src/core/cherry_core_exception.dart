@@ -8,7 +8,9 @@ part of 'core.dart';
 
 abstract base class CherryCoreException<T> extends CherryCore
     implements Exception {
-  /// {@template cherry_core_handleException}
+  // Static Methods
+
+  /// {@template cherry_core_handle_exception}
   ///
   /// Handles via [T] a descendant of this depending on [CherryCoreExceptionType]
   ///
@@ -51,21 +53,23 @@ abstract base class CherryCoreException<T> extends CherryCore
     }
   }
 
-  /// {@template cherry_core_loggerBuilder}
+  // Properties
+
+  /// {@template cherry_core_logger_builder}
   ///
   /// Contains the builder for the [Logger] with extended capabilities
   ///
   /// {@endtemplate}
   final CherryCoreLoggerBuilder? loggerBuilder;
 
-  /// {@template cherry_core_exceptionCallback}
+  /// {@template cherry_core_exception_callback}
   ///
   /// Additional code that will be executed via [fetchException]
   ///
   /// {@endtemplate}
   final CherryCoreExceptionCallback<T>? exceptionCallback;
 
-  /// {@template cherry_core_instanceType}
+  /// {@template cherry_core_instance_type}
   ///
   /// The [Type] of the body where the exception is located
   ///
@@ -79,6 +83,8 @@ abstract base class CherryCoreException<T> extends CherryCore
   /// {@endtemplate}
   final String message;
 
+  // Constructors
+
   /// {@macro cherry_core_exception}
   CherryCoreException(
     this.message, {
@@ -87,6 +93,8 @@ abstract base class CherryCoreException<T> extends CherryCore
     this.exceptionCallback,
   });
 
+  // Getters & Setters
+
   /// {@template cherry_core_type}
   ///
   /// The type of the exception (essential for [Logger])
@@ -94,12 +102,16 @@ abstract base class CherryCoreException<T> extends CherryCore
   /// {@endtemplate}
   CherryCoreExceptionType get type;
 
-  /// {@template cherry_core_fetchException}
+  // Methods
+
+  /// {@template cherry_core_fetch_exception}
   ///
   /// Tries to fetch via [index] an [CherryCoreException] of a stack trace and handles [exceptionCallback]
   ///
   /// {@endtemplate}
   CherryCoreFetchResult<T> fetchException([int index = 0]);
+
+  // Overrides
 
   @override
   List<Object?> get props => [

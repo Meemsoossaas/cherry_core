@@ -7,6 +7,8 @@ part of 'core.dart';
 /// {@endtemplate}
 
 extension CherryCoreListExtensions<T> on List<T> {
+  // Methods
+
   /// {@template cherry_core_list_extensions_push_front}
   ///
   /// Pushes the element in front of the list

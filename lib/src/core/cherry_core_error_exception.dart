@@ -8,6 +8,8 @@ part of 'core.dart';
 
 final class CherryCoreErrorException<T> extends CherryCoreException<T>
     implements Error {
+  // Static Properties
+
   /// {@template cherry_core_error_exception_exception_stack_trace}
   ///
   /// The stack trace containing [CherryCoreException] if initialized
@@ -15,6 +17,8 @@ final class CherryCoreErrorException<T> extends CherryCoreException<T>
   /// {@endtemplate}
   static final CherryCoreExceptionList<CherryCoreErrorException>
       _exceptionStackTrace = List.empty(growable: true);
+
+  // Constructors
 
   /// {@macro cherry_core_error_exception}
   CherryCoreErrorException(
@@ -25,6 +29,8 @@ final class CherryCoreErrorException<T> extends CherryCoreException<T>
   }) {
     _exceptionStackTrace.pushFront(this);
   }
+
+  // Overrides
 
   @override
   CherryCoreExceptionType get type => CherryCoreExceptionType.error;

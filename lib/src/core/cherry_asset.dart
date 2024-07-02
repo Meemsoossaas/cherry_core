@@ -9,21 +9,21 @@ part of 'core.dart';
 abstract base class CherryAsset extends CherryCore {
   // Properties
 
-  /// {@template cherry_asset_}
+  /// {@template cherry_asset_path}
   ///
   /// Finalizes the path of the file location of the asset (e.g. 'assets/images/funny_image.png')
   ///
   /// {@endtemplate}
   final String path;
 
-  /// {@template cherry_asset_}
+  /// {@template cherry_asset_asset_type}
   ///
   /// Finalizes the type of asset for API identification for construction
   ///
   /// {@endtemplate}
   final AssetType assetType;
 
-  /// {@template cherry_asset_}
+  /// {@template cherry_asset_is_hosted}
   ///
   /// Finalizes if the asset is being hosted from an online server under http services
   ///

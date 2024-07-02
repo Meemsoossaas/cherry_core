@@ -1,5 +1,6 @@
 library settings;
 
+import 'package:cherry_core/settings.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../cherry_core.dart';
