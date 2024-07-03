@@ -62,17 +62,26 @@
 
       <section class="multi-line-signature">
         
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://pub.dev/documentation/meta/1.15.0/meta/internal-constant.html">internal</a></li>
+    </ol>
+  </div>
         <a href="../../cherry_core/UserPreferences-class.html">UserPreferences</a>
         <span class="name ">instance</span>
-        <div class="features"><span class="feature">getter/setter pair</span></div>
+        <div class="features"><span class="feature">final</span></div>
 
       </section>
       
+<section class="desc markdown">
+  <p>A singleton which contains all filter parameters which can be changed by the user to his/her liking</p>
+</section>
 
       
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static UserPreferences instance = UserPreferences._internal();</code></pre>
+  <pre class="language-dart"><code class="language-dart">@internal
+static final UserPreferences instance = UserPreferences._internal();</code></pre>
 </section>
 
 

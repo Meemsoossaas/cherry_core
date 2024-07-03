@@ -10,7 +10,7 @@ final class ReceiverSettings extends CherrySettings<ReceiverSettingsProperty> {
   // Static Properties
 
   /// {@macro receiver_settings}
-  static ReceiverSettings instance = ReceiverSettings._internal();
+  static final ReceiverSettings instance = ReceiverSettings._internal();
 
   // Constructors
 

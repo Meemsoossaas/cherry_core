@@ -10,7 +10,7 @@ final class GiverSettings extends CherrySettings<GiverSettingsProperty> {
   // Static Properties
 
   /// {@macro giver_settings}
-  static GiverSettings instance = GiverSettings._internal();
+  static final GiverSettings instance = GiverSettings._internal();
 
   // Constructors
 

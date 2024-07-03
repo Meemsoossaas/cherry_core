@@ -1,17 +1,22 @@
 part of 'settings.dart';
 
-final class EnumerationParameter extends CherrySettingParameter<Enum> {
-  final bool asIndex;
+/// {@template enumeration_parameter}
+///
+/// A settings parameter for handling [Enum] values
+///
+/// {@endtemplate}
 
+final class EnumerationParameter extends CherrySettingParameter<Enum> {
+  // Constructors
+
+  /// {@macro enumeration_parameter}
   EnumerationParameter(
     super._list, {
     super.defaultOption,
-    this.asIndex = false,
     required super.onChangedCallback,
   });
 
-  @override
-  List<Object?> get props => <Object?>[asIndex] + super.props;
+  // Overrides
 
   @override
   ParameterType get type => ParameterType.enumeration;

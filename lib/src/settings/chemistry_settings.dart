@@ -11,7 +11,7 @@ final class ChemistrySettings
   // Static Properties
 
   /// {@macro chemistry_settings}
-  static ChemistrySettings instance = ChemistrySettings._internal();
+  static final ChemistrySettings instance = ChemistrySettings._internal();
 
   // Constructors
 

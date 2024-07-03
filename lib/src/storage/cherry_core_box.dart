@@ -1,38 +1,88 @@
 part of 'storage.dart';
 
+/// {@template cherry_core_box}
+///
+/// A class which acts as an extended wrapper of [Box]
+///
+/// {@endtemplate}
+
 final class CherryCoreBox extends CherryCore with CrudHandler {
+  // Static Properties
+
+  /// {@template cherry_core_box_core_box_name}
+  ///
+  /// The name of the 'primary' box
+  ///
+  /// {@endtemplate}
   static const String coreBoxName = 'cherry_core';
 
-  final Box box;
-
-  final String name;
-
+  /// {@macro cherry_core_box}
   static CherryCoreBox coreBox = CherryCoreBox._internal(
-    box: Hive.box(coreBoxName),
+    Hive.box(coreBoxName),
   );
 
-  CherryCoreBox._internal({
-    required this.box,
+  // Properties
+
+  /// {@template cherry_core_box_box}
+  ///
+  /// The related [Box] to be extended
+  ///
+  /// {@endtemplate}
+  final Box _box;
+
+  /// {@template cherry_core_box_name}
+  ///
+  /// The name then assigned to [box]
+  ///
+  /// {@endtemplate}
+  final String name;
+
+  // Constructors
+
+  CherryCoreBox._internal(
+    this._box, {
     this.name = coreBoxName,
   });
 
-  CherryCoreBox.newBox(this.name) : box = CrudHandler.create(name);
+  /// {@template cherry_core_box_new_box}
+  ///
+  /// Initializes a brand new box
+  ///
+  /// {@endtemplate}
+  CherryCoreBox.newBox(this.name) : _box = CrudHandler.create(name);
 
+  // Factories
+
+  /// {@macro cherry_core_box}
   factory CherryCoreBox() => coreBox;
 
-  int get size => box.length;
+  // Getters & Setters
 
+  /// {@template cherry_core_box_size}
+  ///
+  /// Gets the info how many values [box] contains
+  ///
+  /// {@endtemplate}
+  int get size => _box.length;
+
+  /// {@template cherry_core_box_box_name}
+  ///
+  /// The name of [box] for display purposes
+  ///
+  /// {@endtemplate}
   String get boxName => name.toUpperCase();
 
-  @override
-  List<Object?> get props => [box, name];
+  // Overrides
 
   @override
-  void delete<T>(String key, T value) => box.delete(key);
+  List<Object?> get props => [_box, name];
 
   @override
-  T read<T>(String key) => box.get(key) as T;
+  void delete(String key) => _box.delete(key);
 
   @override
-  void update<T>(String key, T value) => box.put(key, value);
+  T read<T>(String key) => _box.get(key) as T;
+
+  @override
+  void update<T>(String key, T value) => _box.put(key, value);
 }
