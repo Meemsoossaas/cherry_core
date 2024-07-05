@@ -78,5 +78,5 @@ enum CherryCoreExceptionType {
 
   @override
   String toString() =>
-      '${comparableLevel.toString()}: Code ${codeLevel * 100}${forDebugging == true ? '; (Debug)' : ''}';
+      '$comparableLevel: Code ${codeLevel * 100}${forDebugging == true ? '; (Debug)' : ''}';
 }

@@ -6,7 +6,7 @@ part of 'storage.dart';
 ///
 /// {@endtemplate}
 
-final class CherryCoreBox extends CherryCore with CrudHandler {
+final class CherryCoreBox extends CherryCore with CherryCoreCrudHandler {
   // Static Properties
 
   /// {@template cherry_core_box_core_box_name}
@@ -49,7 +49,7 @@ final class CherryCoreBox extends CherryCore with CrudHandler {
   /// Initializes a brand new box
   ///
   /// {@endtemplate}
-  CherryCoreBox.newBox(this.name) : _box = CrudHandler.create(name);
+  CherryCoreBox.newBox(this.name) : _box = Hive.box(name);
 
   // Factories
 
@@ -78,11 +78,11 @@ final class CherryCoreBox extends CherryCore with CrudHandler {
   List<Object?> get props => [_box, name];
 
   @override
-  void delete(String key) => _box.delete(key);
+  Future<void> delete(String key) async => await _box.delete(key);
 
   @override
   T read<T>(String key) => _box.get(key) as T;
 
   @override
-  void update<T>(String key, T value) => _box.put(key, value);
+  Future<void> update<T>(String key, T value) async => await _box.put(key, value);
 }

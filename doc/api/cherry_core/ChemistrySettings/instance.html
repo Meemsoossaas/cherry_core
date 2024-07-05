@@ -75,7 +75,10 @@
       
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static final ChemistrySettings instance = ChemistrySettings._internal();</code></pre>
+  <pre class="language-dart"><code class="language-dart">static final ChemistrySettings instance = ChemistrySettings._internal(
+  boxName: CherryCoreCrudHandler.chemistrySettings,
+  settingsMap: const {},
+);</code></pre>
 </section>
 
 

@@ -6,8 +6,16 @@ part of 'core.dart';
 ///
 /// {@endtemplate}
 
-extension type const CherryCoreLoggerBuilder(Logger logger) implements Logger {
+extension type const CherryCoreLoggerBuilder(Logger _logger) implements Logger {
   // Getters & Setters
+
+  /// {@template cherry_core_logger_builder_logger}
+  ///
+  /// Gets the logger which originated as a parameter
+  ///
+  /// {@endtemplate}
+
+  Logger get logger => _logger;
 
   /// {@template cherry_core_logger_builder_props}
   ///
@@ -16,6 +24,6 @@ extension type const CherryCoreLoggerBuilder(Logger logger) implements Logger {
   /// {@endtemplate}
 
   List<Object?> get props => [
-        logger,
+    _logger,
       ];
 }

@@ -8,6 +8,7 @@ import 'package:equatable/equatable.dart' show Equatable;
 import 'package:logger/logger.dart' show Logger, Level;
 import 'package:meta/meta.dart';
 import 'package:uuid/uuid.dart' show Uuid;
+import 'package:uuid/v1.dart';
 
 import '../../cherry_core.dart' show CherryRoute;
 
@@ -52,3 +53,5 @@ part 'cherry_core_logger_builder.dart';
 // Typedefs
 
 part 'cherry_core_exception_typedefs.dart';
+
+part 'cherry_asset_typedefs.dart';

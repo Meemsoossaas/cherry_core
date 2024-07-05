@@ -7,8 +7,26 @@ part of 'settings.dart';
 /// {@endtemplate}
 
 abstract base class CherryFilter extends CherryCore {
+  // Properties
+
+  /// {@template cherry_filter_filter_name}
+  ///
+  /// The name of the descendant's filter of this
+  ///
+  /// {@endtemplate}
+  final String filterName;
+
   // Constructors
 
   /// {@macro cherry_filter}
-  CherryFilter();
+  CherryFilter({
+    required this.filterName,
+  });
+
+  // Overrides
+
+  @override
+  List<Object?> get props => [
+        filterName,
+      ];
 }

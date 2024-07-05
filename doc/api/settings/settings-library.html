@@ -99,7 +99,7 @@ This means obviously that the values consists of <code>true</code> and <code>fal
 </dd>
 
           <dt id="ChemistrySettingsProperty">
-  <span class="name "><a href="../cherry_core/ChemistrySettingsProperty-class.html">ChemistrySettingsProperty</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+  <span class="name "><a href="../cherry_core/ChemistrySettingsProperty-class.html">ChemistrySettingsProperty</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends dynamic</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -123,7 +123,7 @@ This means obviously that the values consists of <code>true</code> and <code>fal
 </dd>
 
           <dt id="CherrySettingProperty">
-  <span class="name "><a href="../cherry_core/CherrySettingProperty-class.html">CherrySettingProperty</a></span> 
+  <span class="name "><a href="../cherry_core/CherrySettingProperty-class.html">CherrySettingProperty</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends dynamic</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -189,7 +189,7 @@ These values are <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-cla
 </dd>
 
           <dt id="ReceiverSettingsProperty">
-  <span class="name "><a href="../cherry_core/ReceiverSettingsProperty-class.html">ReceiverSettingsProperty</a></span> 
+  <span class="name "><a href="../cherry_core/ReceiverSettingsProperty-class.html">ReceiverSettingsProperty</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -263,6 +263,34 @@ These values are <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-cla
   </dd>
 
           
+  <dt id="OnPropertyChangedCallback" class="callable">
+    <span class="name"><a href="../cherry_core/OnPropertyChangedCallback.html">OnPropertyChangedCallback</a></span>&lt;<wbr><span class="type-parameter">T</span>&gt;<span class="signature">
+      <span class="returntype parameter">= void Function<span class="signature">(<span class="parameter" id="param-newProperty"><span class="type-annotation">T</span> <span class="parameter-name">newProperty</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    A function being utilized if a descendant of <a href="../cherry_core/CherrySettingProperty-class.html">CherrySettingProperty</a>'s property value is being changed
+    
+
+  </dd>
+
+          
+  <dt id="OnPropertyInitializedCallback" class="callable">
+    <span class="name"><a href="../cherry_core/OnPropertyInitializedCallback.html">OnPropertyInitializedCallback</a></span>&lt;<wbr><span class="type-parameter">T</span>&gt;<span class="signature">
+      <span class="returntype parameter">= T Function<span class="signature">()</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    A function being if a descendant of <a href="../cherry_core/CherrySettingProperty-class.html">CherrySettingProperty</a> is being initialized
+    
+
+  </dd>
+
+          
   <dt id="ParameterCore" class="">
   <span class="name"><a href="../cherry_core/ParameterCore.html">ParameterCore</a></span>&lt;<wbr><span class="type-parameter">T</span>&gt;
     = (<span class="field">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="field-name">abbrevation</span>, </span><span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="field-name">name</span>, </span><span class="field"><span class="type-annotation">T</span> <span class="field-name">value</span>}</span>)
@@ -291,6 +319,21 @@ These values are <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-cla
 
 </dd>
 
+
+          
+  <dt id="ParameterListBuilder" class="callable">
+    <span class="name"><a href="../cherry_core/ParameterListBuilder.html">ParameterListBuilder</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="../cherry_core/ParameterCore.html">ParameterCore</a> Function<span class="signature">(<span class="parameter" id="param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    A function being utilized if a descendant of <a href="../cherry_core/CherrySettingParameter/CherrySettingParameter.builder.html">CherrySettingParameter.builder</a> is being initialized.
+It will build a complete <a href="../cherry_core/ParameterList.html">ParameterList</a> where the this will be called to return a value of it (being a <a href="../cherry_core/ParameterCore.html">ParameterCore</a>)
+    
+
+  </dd>
 
       </dl>
     </section>

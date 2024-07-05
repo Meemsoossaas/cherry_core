@@ -6,14 +6,14 @@ part of 'settings.dart';
 ///
 /// {@endtemplate}
 
-final class ChemistrySettingsProperty<T> extends CherrySettingProperty {
+final class ChemistrySettingsProperty<T extends dynamic>
+    extends CherrySettingProperty<T> {
   // Constructors
 
   /// {@macro chemistry_settings_property}
-  ChemistrySettingsProperty();
-
-  // Overrides
-
-  @override
-  List<Object?> get props => [];
+  ChemistrySettingsProperty(
+    super.propertyName,
+    super.onPropertyInitializedCallback, {
+    super.onPropertyChangedCallback,
+  });
 }

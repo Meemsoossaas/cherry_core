@@ -75,7 +75,10 @@
       
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static final GiverSettings instance = GiverSettings._internal();</code></pre>
+  <pre class="language-dart"><code class="language-dart">static final GiverSettings instance = GiverSettings._internal(
+  boxName: CherryCoreCrudHandler.giverSettings,
+  settingsMap: const {},
+);</code></pre>
 </section>
 
 

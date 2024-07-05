@@ -10,11 +10,17 @@ final class ReceiverSettings extends CherrySettings<ReceiverSettingsProperty> {
   // Static Properties
 
   /// {@macro receiver_settings}
-  static final ReceiverSettings instance = ReceiverSettings._internal();
+  static final ReceiverSettings instance = ReceiverSettings._internal(
+    boxName: CherryCoreCrudHandler.receiverSettings,
+    settingsMap: const {},
+  );
 
   // Constructors
 
-  ReceiverSettings._internal();
+  ReceiverSettings._internal({
+    required super.boxName,
+    required super.settingsMap,
+  });
 
   // Factories
 
@@ -25,8 +31,8 @@ final class ReceiverSettings extends CherrySettings<ReceiverSettingsProperty> {
 
   @override
   CherrySettings<ReceiverSettingsProperty> get defaultSettings =>
-      ReceiverSettings._internal();
-
-  @override
-  List<Object?> get props => [];
+      ReceiverSettings._internal(
+        boxName: CherryCoreCrudHandler.defaultReceiverSettings,
+        settingsMap: const {},
+      );
 }

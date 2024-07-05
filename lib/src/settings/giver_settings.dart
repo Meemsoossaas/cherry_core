@@ -10,11 +10,17 @@ final class GiverSettings extends CherrySettings<GiverSettingsProperty> {
   // Static Properties
 
   /// {@macro giver_settings}
-  static final GiverSettings instance = GiverSettings._internal();
+  static final GiverSettings instance = GiverSettings._internal(
+    boxName: CherryCoreCrudHandler.giverSettings,
+    settingsMap: const {},
+  );
 
   // Constructors
 
-  GiverSettings._internal();
+  GiverSettings._internal({
+    required super.boxName,
+    required super.settingsMap,
+  });
 
   // Factories
 
@@ -25,8 +31,8 @@ final class GiverSettings extends CherrySettings<GiverSettingsProperty> {
 
   @override
   CherrySettings<GiverSettingsProperty> get defaultSettings =>
-      GiverSettings._internal();
-
-  @override
-  List<Object?> get props => [];
+      GiverSettings._internal(
+        boxName: CherryCoreCrudHandler.defaultGiverSettings,
+        settingsMap: const {},
+      );
 }

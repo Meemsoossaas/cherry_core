@@ -3,6 +3,7 @@ library settings;
 import 'package:cherry_core/core.dart';
 import 'package:cherry_core/settings.dart';
 import 'package:cherry_core/src/core/core.dart';
+import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 import 'package:uuid/uuid.dart';
 
@@ -61,3 +62,5 @@ part 'parameter_type.dart';
 // Typedefs
 
 part 'parameter_typedefs.dart';
+
+part 'property_typedefs.dart';

@@ -64,7 +64,9 @@
       
       <span class="name ">CherryAsset</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-path">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, </span></li>
 <li><span class="parameter" id="-param-assetType"><span>required</span> <span class="type-annotation"><a href="../../cherry_core/AssetType.html">AssetType</a></span> <span class="parameter-name">assetType</span>, </span></li>
-<li><span class="parameter" id="-param-isHosted"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isHosted</span> = <span class="default-value">false</span>}</span></li>
+<li><span class="parameter" id="-param-isHosted"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isHosted</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="-param-onAssetChangedCallback"><span class="type-annotation"><a href="../../cherry_core/OnAssetChangedCallback.html">OnAssetChangedCallback</a>?</span> <span class="parameter-name">onAssetChangedCallback</span>, </span></li>
+<li><span class="parameter" id="-param-onAssetInitializedCallback"><span class="type-annotation"><a href="../../cherry_core/OnAssetInitializedCallback.html">OnAssetInitializedCallback</a>?</span> <span class="parameter-name">onAssetInitializedCallback</span>}</span></li>
 </ol>)
     </section>
 
@@ -81,11 +83,21 @@
   required this.path,
   required this.assetType,
   this.isHosted = false,
-}) : assert(
+  this.onAssetChangedCallback,
+  this.onAssetInitializedCallback,
+})  : assert(
+        path.isNotEmpty,
+        &#39;path cannot be empty&#39;,
+      ),
+      assert(
         (path.contains(&#39;http&#39;) &amp;&amp; isHosted) ||
             !(path.contains(&#39;http&#39;) &amp;&amp; isHosted),
         &quot;&#39;path&#39; and &#39;isHosted&#39; do not compliment the given parameter configuration&quot;,
-      );</code></pre>
+      ) {
+  if (onAssetInitializedCallback != null) {
+    onAssetInitializedCallback!();
+  }
+}</code></pre>
 </section>
 
 

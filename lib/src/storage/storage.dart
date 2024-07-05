@@ -9,4 +9,6 @@ part 'cherry_core_box.dart';
 
 // Mixins
 
-part 'crud_handler.dart';
+part 'cherry_core_crud_handler.dart';
+
+part 'cherry_core_property_handler.dart';

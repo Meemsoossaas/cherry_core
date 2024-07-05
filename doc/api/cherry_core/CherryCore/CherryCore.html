@@ -67,15 +67,20 @@
 
     
 <section class="desc markdown">
-  <p>Constructor stays non-constant for performance-related reasons
-Sets the heritage base of all Classes of this package</p>
+  <p>Sets the heritage base of all Classes of this package</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">CherryCore();</code></pre>
+  <pre class="language-dart"><code class="language-dart">CherryCore() : uuid = Uuid() {
+  id1 = uuid.v1();
+  id4 = uuid.v4();
+  id6 = uuid.v6();
+  id7 = uuid.v7();
+  id8 = uuid.v8();
+}</code></pre>
 </section>
 
 

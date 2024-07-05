@@ -32,6 +32,15 @@ sealed class CherrySettingParameter<T> extends CherryCore {
   /// {@endtemplate}
   final OnParameterValueChangedCallback<T> onChangedCallback;
 
+  /// {@template cherry_setting_parameter_parameter_list_builder}
+  ///
+  /// The function which will be called when [CherrySettingParameter.builder] is being initialized.
+  /// This will return per iteration a [ParameterCore].
+  /// At the end, [_list] will contain similar values like being initialized normally
+  ///
+  /// {@endtemplate}
+  final ParameterListBuilder? parameterListBuilder;
+
   // Constructors
 
   /// {@macro cherry_setting_parameter}
@@ -39,7 +48,8 @@ sealed class CherrySettingParameter<T> extends CherryCore {
     this._list, {
     required this.onChangedCallback,
     this.defaultOption = 0,
-  })  : assert(
+  })  : parameterListBuilder = null,
+        assert(
           (defaultOption >= 0) && (defaultOption <= _list.length - 1),
           "'defaultOption' must be in relation of the size of the 'options' list",
         ),
@@ -47,6 +57,48 @@ sealed class CherrySettingParameter<T> extends CherryCore {
           _list.isNotEmpty,
           "'list' must have at least one value.",
         );
+
+  /// {@template cherry_setting_parameter_builder}
+  ///
+  /// Builds [_list] from scratch
+  /// [abbrevationList] being the list of abbreviations
+  /// [nameList] being the display names
+  /// [valueList] being the values of [T]
+  /// Make sure these list are correctly indexed to avoid future issues
+  ///
+  /// {@endtemplate}
+  CherrySettingParameter.builder(
+    List<String> abbrevationList,
+    List<String> nameList,
+    List<T> valueList,
+    this.defaultOption,
+    this.onChangedCallback,
+    this.parameterListBuilder,
+  )   : _list = List.empty(growable: true),
+        assert(
+          parameterListBuilder != null,
+          '',
+        ) {
+    assert(
+      (defaultOption >= 0) && (defaultOption <= _list.length - 1),
+      "'defaultOption' must be in relation of the size of the 'options' list",
+    );
+    assert(
+      (abbrevationList.length == nameList.length) ||
+          (abbrevationList.length == valueList.length) ||
+          (nameList.length == valueList.length),
+      '',
+    );
+    for (int i = 0; i < valueList.length; i++) {
+      _list.add(
+        (
+          abbrevation: abbrevationList[i],
+          name: nameList[i],
+          value: valueList[i],
+        ),
+      );
+    }
+  }
 
   // Getters & Setters
 
@@ -62,7 +114,7 @@ sealed class CherrySettingParameter<T> extends CherryCore {
   /// The number of options contained in [_list]
   ///
   /// {@endtemplate}
-  int get numberOfOptions => _list.length;
+  int? get numberOfOptions => _list.length;
 
   /// {@template cherry_setting_parameter_valid_indices}
   ///
@@ -88,7 +140,9 @@ sealed class CherrySettingParameter<T> extends CherryCore {
   /// Checks if the [newIndex] is contained in [validIndices]
   ///
   /// {@endtemplate}
-  set currentIndex(int newIndex) {
+  set currentIndex(int newIndex) => _currentIndex(newIndex);
+
+  void _currentIndex(int newIndex) {
     if (validIndices.contains(newIndex)) {
     } else {
       throw Exception();
@@ -109,7 +163,11 @@ sealed class CherrySettingParameter<T> extends CherryCore {
   /// Returns the current parameter value in [_list]
   ///
   /// {@endtemplate}
-  ParameterCore<T>? changeOption({required int newIndex}) {
+  ParameterCore<T>? changeOption({required int newIndex}) => _changeOption(
+        newIndex: newIndex,
+      );
+
+  ParameterCore<T>? _changeOption({required int newIndex}) {
     currentIndex = newIndex;
     return validIndices.contains(currentIndex) ? _list[currentIndex] : null;
   }
@@ -121,5 +179,7 @@ sealed class CherrySettingParameter<T> extends CherryCore {
         _list,
         defaultOption,
         onChangedCallback,
+        onChangedCallback,
+        parameterListBuilder,
       ];
 }

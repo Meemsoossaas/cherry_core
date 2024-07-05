@@ -11,18 +11,17 @@ final class UserPreferences extends CherryFilter {
 
   /// {@macro user_preferences}
   @internal
-  static final UserPreferences instance = UserPreferences._internal();
+  static final UserPreferences instance = UserPreferences._internal(
+    filterName: 'user_preferences',
+  );
 
   // Constructors
 
-  UserPreferences._internal();
+  UserPreferences._internal({
+    required super.filterName,
+  });
 
   // Factories
 
   factory UserPreferences() => instance;
-
-  // Overrides
-
-  @override
-  List<Object?> get props => [];
 }

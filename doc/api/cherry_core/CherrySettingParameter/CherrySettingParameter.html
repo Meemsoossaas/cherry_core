@@ -81,7 +81,8 @@
   this._list, {
   required this.onChangedCallback,
   this.defaultOption = 0,
-})  : assert(
+})  : parameterListBuilder = null,
+      assert(
         (defaultOption &gt;= 0) &amp;&amp; (defaultOption &lt;= _list.length - 1),
         &quot;&#39;defaultOption&#39; must be in relation of the size of the &#39;options&#39; list&quot;,
       ),

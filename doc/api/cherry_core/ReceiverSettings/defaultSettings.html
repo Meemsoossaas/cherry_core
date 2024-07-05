@@ -87,7 +87,10 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 CherrySettings&lt;ReceiverSettingsProperty&gt; get defaultSettings =&gt;
-    ReceiverSettings._internal();</code></pre>
+    ReceiverSettings._internal(
+      boxName: CherryCoreCrudHandler.defaultReceiverSettings,
+      settingsMap: const {},
+    );</code></pre>
 </section>
 
   </section>

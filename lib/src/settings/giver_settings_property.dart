@@ -10,10 +10,9 @@ final class GiverSettingsProperty<T> extends CherrySettingProperty {
   // Constructors
 
   /// {@macro giver_settings_property}
-  GiverSettingsProperty();
-
-  // Overrides
-
-  @override
-  List<Object?> get props => [];
+  GiverSettingsProperty(
+    super.propertyName,
+    super.onPropertyInitializedCallback, {
+    super.onPropertyChangedCallback,
+  });
 }

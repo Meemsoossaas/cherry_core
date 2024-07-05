@@ -13,13 +13,9 @@ final class CherryImageAsset extends CherryAsset {
   CherryImageAsset({
     required super.path,
     required super.isHosted,
-  }) : super(assetType: AssetType.image);
-
-  // Overrides
-
-  @override
-  List<Object?> get props => [
-        path,
-        isHosted,
-      ];
+    super.onAssetChangedCallback,
+    super.onAssetInitializedCallback,
+  }) : super(
+          assetType: AssetType.image,
+        );
 }

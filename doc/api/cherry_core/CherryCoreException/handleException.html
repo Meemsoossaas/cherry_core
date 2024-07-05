@@ -83,40 +83,11 @@
   <pre class="language-dart"><code class="language-dart">static Future&lt;void&gt; handleException&lt;T extends CherryCoreException&gt;({
   required CherryCoreExceptionList&lt;T&gt; trace,
   required T selectedException,
-}) async {
-  if ((trace.contains(selectedException)) &amp;&amp;
-      (selectedException.loggerBuilder != null)) {
-    final Logger logger = selectedException.loggerBuilder!.logger;
-    switch (selectedException.type) {
-      case CherryCoreExceptionType.hint:
-        logger.d(
-          selectedException.message,
-          time: DateTime.now(),
-          error: selectedException.instanceType,
-        );
-        break;
-      case CherryCoreExceptionType.warning:
-        logger.w(
-          selectedException.message,
-          time: DateTime.now(),
-          error: selectedException.instanceType,
-        );
-        break;
-      case CherryCoreExceptionType.error:
-        logger.e(
-          selectedException.message,
-          time: DateTime.now(),
-          error: selectedException.instanceType,
-        );
-        break;
-    }
-  } else {
-    throw CherryCoreErrorException(
-      &quot;&quot;,
-      instanceType: CherryCoreException,
-    );
-  }
-}</code></pre>
+}) async =&gt;
+    await _handleException&lt;T&gt;(
+      trace: trace,
+      selectedException: selectedException,
+    );</code></pre>
 </section>
 
 

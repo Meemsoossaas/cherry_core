@@ -477,27 +477,31 @@ final class CherryRoute extends CherryCore {
   /// Gets the index of the main route depending on [CherryUserMode]
   ///
   /// {@endtemplate}
-  int get routeIndex => switch (mode) {
-        CherryUserMode.signUp => 0,
-        CherryUserMode.giver => 1,
-        CherryUserMode.receiver => 2,
-        CherryUserMode.chemistry => 3,
-        null => 4,
-      };
+  int get routeIndex => _routeIndex;
+
+  int get _routeIndex => switch (mode) {
+    CherryUserMode.signUp => 0,
+    CherryUserMode.giver => 1,
+    CherryUserMode.receiver => 2,
+    CherryUserMode.chemistry => 3,
+    null => 4,
+  };
 
   /// {@template cherry_route_assigned_settings}
   ///
   /// Gets the settings depending on [CherryUserMode]
   ///
   /// {@endtemplate}
-  CherryUserModeSettings? get assignedSettings => (subRoute == settingsRoute)
+  CherryUserModeSettings? get assignedSettings => _assignedSettings;
+
+  CherryUserModeSettings? get _assignedSettings => (subRoute == settingsRoute)
       ? switch (mode) {
-          CherryUserMode.giver => CherryUserModeSettings.giver,
-          CherryUserMode.receiver => CherryUserModeSettings.receiver,
-          CherryUserMode.chemistry => CherryUserModeSettings.chemistry,
-          CherryUserMode.signUp => null,
-          null => null,
-        }
+    CherryUserMode.giver => CherryUserModeSettings.giver,
+    CherryUserMode.receiver => CherryUserModeSettings.receiver,
+    CherryUserMode.chemistry => CherryUserModeSettings.chemistry,
+    CherryUserMode.signUp => null,
+    null => null,
+  }
       : null;
 
   // Methods

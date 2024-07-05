@@ -35,7 +35,11 @@ final class CherryCoreHintException<T> extends CherryCoreException<T> {
   CherryCoreExceptionType get type => CherryCoreExceptionType.hint;
 
   @override
-  CherryCoreFetchResult<T> fetchException([int index = 0]) {
+  CherryCoreFetchResult<T> fetchException([int index = 0]) => _fetchException(
+        index,
+      );
+
+  CherryCoreFetchResult<T> _fetchException([int index = 0]) {
     final lastException =
         _exceptionStackTrace.isEmpty ? _exceptionStackTrace[index] : null;
     if (lastException == this && exceptionCallback == null) {

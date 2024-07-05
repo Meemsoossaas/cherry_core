@@ -80,15 +80,7 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">CherryUserModeSettings? get assignedSettings =&gt; (subRoute == settingsRoute)
-    ? switch (mode) {
-        CherryUserMode.giver =&gt; CherryUserModeSettings.giver,
-        CherryUserMode.receiver =&gt; CherryUserModeSettings.receiver,
-        CherryUserMode.chemistry =&gt; CherryUserModeSettings.chemistry,
-        CherryUserMode.signUp =&gt; null,
-        null =&gt; null,
-      }
-    : null;</code></pre>
+  <pre class="language-dart"><code class="language-dart">CherryUserModeSettings? get assignedSettings =&gt; _assignedSettings;</code></pre>
 </section>
 
   </section>

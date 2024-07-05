@@ -13,13 +13,9 @@ final class CherryIconAsset extends CherryAsset {
   CherryIconAsset({
     required super.path,
     super.isHosted,
-  }) : super(assetType: AssetType.icon);
-
-  // Overrides
-
-  @override
-  List<Object?> get props => [
-        path,
-        isHosted,
-      ];
+    super.onAssetChangedCallback,
+    super.onAssetInitializedCallback,
+  }) : super(
+          assetType: AssetType.icon,
+        );
 }

@@ -85,30 +85,9 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-CherryCoreFetchResult&lt;T&gt; fetchException([int index = 0]) {
-  final lastException =
-      _exceptionStackTrace.isEmpty ? _exceptionStackTrace[index] : null;
-  if (lastException == this &amp;&amp; exceptionCallback == null) {
-    return (
-      exception: lastException,
-      value: null as T,
-    );
-  } else if (lastException == this &amp;&amp; exceptionCallback != null) {
-    final callbackValue = exceptionCallback!(_exceptionStackTrace);
-    CherryCoreException.handleException&lt;CherryCoreWarningException&gt;(
-      trace: _exceptionStackTrace,
-      selectedException: lastException!,
-    );
-    return (
-      exception: lastException,
-      value: callbackValue,
-    );
-  }
-  return (
-    exception: null,
-    value: null as T,
-  );
-}</code></pre>
+CherryCoreFetchResult&lt;T&gt; fetchException([int index = 0]) =&gt; _fetchException(
+      index,
+    );</code></pre>
 </section>
 
 

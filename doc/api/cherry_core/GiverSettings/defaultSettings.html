@@ -87,7 +87,10 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 CherrySettings&lt;GiverSettingsProperty&gt; get defaultSettings =&gt;
-    GiverSettings._internal();</code></pre>
+    GiverSettings._internal(
+      boxName: CherryCoreCrudHandler.defaultGiverSettings,
+      settingsMap: const {},
+    );</code></pre>
 </section>
 
   </section>

@@ -106,12 +106,7 @@ On initialization, <a href="../../cherry_core/CherrySettingParameter/defaultOpti
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">set currentIndex(int newIndex) {
-  if (validIndices.contains(newIndex)) {
-  } else {
-    throw Exception();
-  }
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">set currentIndex(int newIndex) =&gt; _currentIndex(newIndex);</code></pre>
 </section>
 
   </section>

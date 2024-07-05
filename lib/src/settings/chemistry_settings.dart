@@ -11,11 +11,17 @@ final class ChemistrySettings
   // Static Properties
 
   /// {@macro chemistry_settings}
-  static final ChemistrySettings instance = ChemistrySettings._internal();
+  static final ChemistrySettings instance = ChemistrySettings._internal(
+    boxName: CherryCoreCrudHandler.chemistrySettings,
+    settingsMap: const {},
+  );
 
   // Constructors
 
-  ChemistrySettings._internal();
+  ChemistrySettings._internal({
+    required super.boxName,
+    required super.settingsMap,
+  });
 
   // Factories
 
@@ -26,8 +32,8 @@ final class ChemistrySettings
 
   @override
   CherrySettings<ChemistrySettingsProperty> get defaultSettings =>
-      ChemistrySettings._internal();
-
-  @override
-  List<Object?> get props => [];
+      ChemistrySettings._internal(
+        boxName: CherryCoreCrudHandler.defaultChemistrySettings,
+        settingsMap: const {},
+      );
 }

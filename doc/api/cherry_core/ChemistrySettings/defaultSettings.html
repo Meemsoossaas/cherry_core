@@ -87,7 +87,10 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 CherrySettings&lt;ChemistrySettingsProperty&gt; get defaultSettings =&gt;
-    ChemistrySettings._internal();</code></pre>
+    ChemistrySettings._internal(
+      boxName: CherryCoreCrudHandler.defaultChemistrySettings,
+      settingsMap: const {},
+    );</code></pre>
 </section>
 
   </section>

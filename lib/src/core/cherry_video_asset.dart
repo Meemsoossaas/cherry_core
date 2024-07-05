@@ -13,13 +13,9 @@ final class CherryVideoAsset extends CherryAsset {
   CherryVideoAsset({
     required super.path,
     super.isHosted,
-  }) : super(assetType: AssetType.video);
-
-  // Overrides
-
-  @override
-  List<Object?> get props => [
-        path,
-        isHosted,
-      ];
+    super.onAssetChangedCallback,
+    super.onAssetInitializedCallback,
+  }) : super(
+          assetType: AssetType.video,
+        );
 }

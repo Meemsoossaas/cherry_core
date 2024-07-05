@@ -18,6 +18,15 @@ abstract base class CherryCoreException<T> extends CherryCore
   static Future<void> handleException<T extends CherryCoreException>({
     required CherryCoreExceptionList<T> trace,
     required T selectedException,
+  }) async =>
+      await _handleException<T>(
+        trace: trace,
+        selectedException: selectedException,
+      );
+
+  static Future<void> _handleException<T extends CherryCoreException>({
+    required CherryCoreExceptionList<T> trace,
+    required T selectedException,
   }) async {
     if ((trace.contains(selectedException)) &&
         (selectedException.loggerBuilder != null)) {

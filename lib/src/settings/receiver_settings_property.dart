@@ -6,14 +6,13 @@ part of 'settings.dart';
 ///
 /// {@endtemplate}
 
-final class ReceiverSettingsProperty extends CherrySettingProperty {
+final class ReceiverSettingsProperty<T> extends CherrySettingProperty<T> {
   // Constructors
 
   /// {@macro receiver_settings_property}
-  ReceiverSettingsProperty();
-
-  // Overrides
-
-  @override
-  List<Object?> get props => [];
+  ReceiverSettingsProperty(
+    super.propertyName,
+    super.onPropertyInitializedCallback, {
+    super.onPropertyChangedCallback,
+  });
 }

@@ -19,13 +19,15 @@ final class AssetParameter<T extends CherryAsset>
 
   // Getters & Setters
 
-  /// {@template asset_parameter_assets}
+  /// {@template asset_parameter_previous_assets}
   ///
   /// All assets contained in this which have been added.
   /// Older ones can be accessed if needed.
   ///
   /// {@endtemplate}
-  List<T> get assets => const [];
+  List<T> get previousAssets => List.empty(
+        growable: true,
+      );
 
   // Overrides
 
