@@ -17,6 +17,24 @@ final class InputParameter extends CherrySettingParameter<String> {
     required super.onChangedCallback,
   });
 
+  // Methods
+
+  /// {@template input_parameter_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  InputParameter copyWith({
+    ParameterList<String>? list,
+    int? defaultOption,
+    OnParameterValueChangedCallback<String>? onChangedCallback,
+  }) =>
+      InputParameter(
+        list ?? _list,
+        defaultOption: defaultOption ?? super.defaultOption,
+        onChangedCallback: onChangedCallback ?? super.onChangedCallback,
+      );
+
   // Overrides
 
   @override

@@ -6,7 +6,7 @@ part of 'core.dart';
 ///
 /// {@endtemplate}
 
-enum CherryCoreExceptionType {
+enum CherryCoreExceptionType implements Comparable<CherryCoreExceptionType> {
   // Values
 
   /// {@template cherry_core_exception_type_hint}
@@ -75,6 +75,10 @@ enum CherryCoreExceptionType {
   });
 
   // Overrides
+
+  @override
+  int compareTo(CherryCoreExceptionType other) =>
+      (codeLevel - other.codeLevel) * 100;
 
   @override
   String toString() =>

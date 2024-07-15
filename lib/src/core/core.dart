@@ -8,7 +8,6 @@ import 'package:equatable/equatable.dart' show Equatable;
 import 'package:logger/logger.dart' show Logger, Level;
 import 'package:meta/meta.dart';
 import 'package:uuid/uuid.dart' show Uuid;
-import 'package:uuid/v1.dart';
 
 import '../../cherry_core.dart' show CherryRoute;
 
@@ -23,6 +22,8 @@ part 'cherry_image_asset.dart';
 part 'cherry_icon_asset.dart';
 
 part 'cherry_video_asset.dart';
+
+part 'cherry_data_fetcher.dart';
 
 // Exceptions
 

@@ -29,6 +29,26 @@ final class CherryCoreHintException<T> extends CherryCoreException<T> {
     _exceptionStackTrace.pushFront(this);
   }
 
+  // Methods
+
+  /// {@template cherry_core_hint_exception_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  CherryCoreHintException<T> copyWith({
+    String? message,
+    CherryCoreLoggerBuilder? loggerBuilder,
+    CherryCoreExceptionCallback<T>? exceptionCallback,
+    Type? instanceType,
+  }) =>
+      CherryCoreHintException<T>(
+        message ?? super.message,
+        loggerBuilder: loggerBuilder ?? super.loggerBuilder,
+        exceptionCallback: exceptionCallback ?? super.exceptionCallback,
+        instanceType: instanceType ?? super.instanceType,
+      );
+
   // Overrides
 
   @override

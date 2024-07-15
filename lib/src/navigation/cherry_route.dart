@@ -28,7 +28,7 @@ final class CherryRoute extends CherryCore {
   /// Sets, if [extendRouteTree] can mutate the route tree which is [cherryRouteTree]
   ///
   /// {@endtemplate}
-  static const bool ableToChangeRouteTree = false;
+  static bool ableToChangeRouteTree = false;
 
   /// {@template cherry_route_settings_route}
   ///
@@ -480,12 +480,12 @@ final class CherryRoute extends CherryCore {
   int get routeIndex => _routeIndex;
 
   int get _routeIndex => switch (mode) {
-    CherryUserMode.signUp => 0,
-    CherryUserMode.giver => 1,
-    CherryUserMode.receiver => 2,
-    CherryUserMode.chemistry => 3,
-    null => 4,
-  };
+        CherryUserMode.signUp => 0,
+        CherryUserMode.giver => 1,
+        CherryUserMode.receiver => 2,
+        CherryUserMode.chemistry => 3,
+        null => 4,
+      };
 
   /// {@template cherry_route_assigned_settings}
   ///
@@ -496,15 +496,35 @@ final class CherryRoute extends CherryCore {
 
   CherryUserModeSettings? get _assignedSettings => (subRoute == settingsRoute)
       ? switch (mode) {
-    CherryUserMode.giver => CherryUserModeSettings.giver,
-    CherryUserMode.receiver => CherryUserModeSettings.receiver,
-    CherryUserMode.chemistry => CherryUserModeSettings.chemistry,
-    CherryUserMode.signUp => null,
-    null => null,
-  }
+          CherryUserMode.giver => CherryUserModeSettings.giver,
+          CherryUserMode.receiver => CherryUserModeSettings.receiver,
+          CherryUserMode.chemistry => CherryUserModeSettings.chemistry,
+          CherryUserMode.signUp => null,
+          null => null,
+        }
       : null;
 
   // Methods
+
+  /// {@template cherry_route_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  CherryRoute copyWith({
+    CherryUserMode? mode,
+    String? mainRoute,
+    String? subRoute,
+    CherryCoreRouteType? type,
+    bool? extendable,
+  }) =>
+      CherryRoute(
+        mode: mode ?? this.mode,
+        mainRoute: mainRoute ?? this.mainRoute,
+        subRoute: subRoute ?? this.subRoute,
+        type: type ?? this.type,
+        extendable: extendable ?? this.extendable,
+      );
 
   /// {@template cherry_route_extend_route_tree}
   ///

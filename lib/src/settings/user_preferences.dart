@@ -11,17 +11,29 @@ final class UserPreferences extends CherryFilter {
 
   /// {@macro user_preferences}
   @internal
-  static final UserPreferences instance = UserPreferences._internal(
+  static final UserPreferences instance = UserPreferences._(
     filterName: 'user_preferences',
   );
 
   // Constructors
 
-  UserPreferences._internal({
+  UserPreferences._({
     required super.filterName,
   });
 
   // Factories
 
   factory UserPreferences() => instance;
+
+  /// {@template user_preferences_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  UserPreferences copyWith({
+    String? filterName,
+  }) =>
+      UserPreferences._(
+        filterName: filterName ?? super.filterName,
+      );
 }

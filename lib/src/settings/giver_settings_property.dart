@@ -6,7 +6,8 @@ part of 'settings.dart';
 ///
 /// {@endtemplate}
 
-final class GiverSettingsProperty<T> extends CherrySettingProperty {
+final class GiverSettingsProperty<T extends dynamic>
+    extends CherrySettingProperty<T> {
   // Constructors
 
   /// {@macro giver_settings_property}
@@ -15,4 +16,23 @@ final class GiverSettingsProperty<T> extends CherrySettingProperty {
     super.onPropertyInitializedCallback, {
     super.onPropertyChangedCallback,
   });
+
+  // Methods
+
+  /// {@template giver_settings_property_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  GiverSettingsProperty<T> copyWith({
+    String? propertyName,
+    OnPropertyInitializedCallback<T>? onPropertyInitializedCallback,
+    OnPropertyChangedCallback<T>? onPropertyChangedCallback,
+  }) =>
+      GiverSettingsProperty<T>(
+        propertyName ?? this.propertyName,
+        onPropertyInitializedCallback ?? this.onPropertyInitializedCallback,
+        onPropertyChangedCallback:
+            onPropertyChangedCallback ?? this.onPropertyChangedCallback,
+      );
 }

@@ -16,4 +16,23 @@ final class ChemistrySettingsProperty<T extends dynamic>
     super.onPropertyInitializedCallback, {
     super.onPropertyChangedCallback,
   });
+
+  // Methods
+
+  /// {@template chemistry_settings_property_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  ChemistrySettingsProperty<T> copyWith({
+    String? propertyName,
+    OnPropertyChangedCallback<T>? onPropertyChangedCallback,
+    OnPropertyInitializedCallback<T>? onPropertyInitializedCallback,
+  }) =>
+      ChemistrySettingsProperty<T>(
+        propertyName ?? this.propertyName,
+        onPropertyInitializedCallback ?? this.onPropertyInitializedCallback,
+        onPropertyChangedCallback:
+            onPropertyChangedCallback ?? this.onPropertyChangedCallback,
+      );
 }

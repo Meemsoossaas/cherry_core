@@ -29,6 +29,24 @@ final class AssetParameter<T extends CherryAsset>
         growable: true,
       );
 
+  // Methods
+
+  /// {@template asset_parameter_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  AssetParameter<T> copyWith({
+    ParameterList<T>? list,
+    int? defaultOption,
+    OnParameterValueChangedCallback<T>? onChangedCallback,
+  }) =>
+      AssetParameter<T>(
+        list ?? _list,
+        defaultOption: defaultOption ?? this.defaultOption,
+        onChangedCallback: onChangedCallback ?? this.onChangedCallback,
+      );
+
   // Overrides
 
   @override

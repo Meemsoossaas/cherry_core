@@ -2,7 +2,7 @@ part of 'storage.dart';
 
 /// {@template cherry_core_property_handler}
 ///
-///
+/// A class which handles functionalities on properties based on [CherrySettingProperty]
 ///
 /// {@endtemplate}
 
@@ -16,7 +16,7 @@ abstract base mixin class CherryCorePropertyHandler {
 
   /// {@template cherry_core_property_handler_add_property}
   ///
-  /// Adds a property
+  /// Adds a property.
   /// [propertyKey] being the name of the property
   /// [propertyValue] being the value of the property (which can be/defaults to `null`)
   ///

@@ -6,7 +6,9 @@ part of 'navigation.dart';
 ///
 /// {@endtemplate}
 
-enum CherryCoreRouteType {
+enum CherryCoreRouteType implements Comparable<CherryCoreRouteType> {
+  // Values
+
   /// {@template cherry_core_route_type_initial}
   ///
   /// The route is an initial route of the project
@@ -43,6 +45,8 @@ enum CherryCoreRouteType {
     steps: null,
   );
 
+  // Properties
+
   /// {@template cherry_core_route_type}
   ///
   /// The inner width in terms how much steps it takes to reach `this`
@@ -50,8 +54,16 @@ enum CherryCoreRouteType {
   /// {@endtemplate}
   final int? steps;
 
+  // Constructor
+
   /// {@macro cherry_core_route_type}
   const CherryCoreRouteType({
     required this.steps,
   });
+
+  // Methods
+
+  @override
+  int compareTo(CherryCoreRouteType other) =>
+      steps == null ? 0 : (steps! - other.steps!);
 }

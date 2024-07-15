@@ -1,5 +1,5 @@
 import 'package:cherry_core/cherry_core.dart';
-import 'package:hive/hive.dart';
+import 'package:hive/hive.dart' show Hive, Box;
 import 'package:test/test.dart';
 
 void main() async {
@@ -7,17 +7,19 @@ void main() async {
     initCallback: (String boxName) async => await Hive.openBox(boxName),
   );
   group(
-    'lol',
-    () {
-      test(
-        'PUR',
-        () {
-          equals(
-            init[CherryCoreCrudHandler.giverSettings] ==
-                GiverSettings.instance.box,
-          );
-        },
-      );
-    },
+    'cherry_core_core_tests',
+    () {},
+  );
+  group(
+    'cherry_core_navigation_tests',
+    () {},
+  );
+  group(
+    'cherry_core_settings_tests',
+    () {},
+  );
+  group(
+    'cherry_core_storage_tests',
+    () {},
   );
 }

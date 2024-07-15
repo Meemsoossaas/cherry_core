@@ -75,9 +75,7 @@ abstract base class CherryAsset extends CherryCore {
   /// `previousPaths[0]` being the newest and [path] the oldest one
   ///
   /// {@endtemplate}
-  List<String?> get previousPaths => [
-        path,
-      ];
+  List<String?> get previousPaths => [path];
 
   /// {@template cherry_asset_current_path}
   ///

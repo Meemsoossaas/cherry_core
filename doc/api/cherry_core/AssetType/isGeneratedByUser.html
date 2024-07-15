@@ -81,24 +81,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">static Future&lt;bool&gt; isGeneratedByUser([
   String assetPath = CherryRoute.assetsRoute,
-]) async {
-  final mainDirectory = Directory(assetPath);
-  if (assetPath == CherryRoute.assetsRoute) {
-    return false;
-  }
-  try {
-    await for (final file in mainDirectory.list()) {
-      if (file is File) {
-        if (file.path == assetPath) {
-          return true;
-        }
-      }
-    }
-  } catch (e) {
-    print(e.toString());
-  }
-  return false;
-}</code></pre>
+]) async =&gt;
+    await _isGeneratedByUser(assetPath);</code></pre>
 </section>
 
 

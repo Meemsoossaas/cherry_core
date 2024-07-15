@@ -29,6 +29,21 @@ final class CherryCoreWarningException<T> extends CherryCoreException<T> {
     _exceptionStackTrace.pushFront(this);
   }
 
+  // Methods
+
+  CherryCoreWarningException<T> copyWith({
+    String? message,
+    CherryCoreLoggerBuilder? loggerBuilder,
+    CherryCoreExceptionCallback<T>? exceptionCallback,
+    Type? type,
+  }) =>
+      CherryCoreWarningException<T>(
+        message ?? super.message,
+        loggerBuilder: loggerBuilder ?? super.loggerBuilder,
+        exceptionCallback: exceptionCallback ?? super.exceptionCallback,
+        instanceType: type ?? super.instanceType,
+      );
+
   // Overrides
 
   @override

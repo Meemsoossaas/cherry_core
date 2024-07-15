@@ -18,4 +18,26 @@ final class CherryImageAsset extends CherryAsset {
   }) : super(
           assetType: AssetType.image,
         );
+
+  // Methods
+
+  /// {@template cherry_image_asset_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  CherryImageAsset copyWith({
+    String? path,
+    bool? isHosted,
+    OnAssetChangedCallback? onAssetChangedCallback,
+    OnAssetInitializedCallback? onAssetInitializedCallback,
+  }) =>
+      CherryImageAsset(
+        path: path ?? super.path,
+        isHosted: isHosted ?? super.isHosted,
+        onAssetChangedCallback:
+        onAssetChangedCallback ?? super.onAssetChangedCallback,
+        onAssetInitializedCallback:
+        onAssetInitializedCallback ?? super.onAssetInitializedCallback,
+      );
 }

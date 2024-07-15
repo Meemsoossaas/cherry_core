@@ -14,28 +14,36 @@ enum AssetType {
   /// The asset is a image
   ///
   /// {@endtemplate}
-  image(couldBeUserGenerated: true),
+  image(
+    couldBeUserGenerated: true,
+  ),
 
   /// {@template asset_type_icon}
   ///
   /// The asset is an icon
   ///
   /// {@endtemplate}
-  icon(couldBeUserGenerated: false),
+  icon(
+    couldBeUserGenerated: false,
+  ),
 
   /// {@template asset_type_video}
   ///
   /// The asset is a video
   ///
   /// {@endtemplate}
-  video(couldBeUserGenerated: true),
+  video(
+    couldBeUserGenerated: true,
+  ),
 
   /// {@template asset_type_undefined}
   ///
   /// The asset is undefined
   ///
   /// {@endtemplate}
-  undefined(couldBeUserGenerated: null);
+  undefined(
+    couldBeUserGenerated: null,
+  );
 
   // Static Methods
 
@@ -46,6 +54,11 @@ enum AssetType {
   /// {@endtemplate}
   static Future<bool> isGeneratedByUser([
     String assetPath = CherryRoute.assetsRoute,
+  ]) async =>
+      await _isGeneratedByUser(assetPath);
+
+  static Future<bool> _isGeneratedByUser([
+    String assetPath = CherryRoute.assetsRoute,
   ]) async {
     final mainDirectory = Directory(assetPath);
     if (assetPath == CherryRoute.assetsRoute) {
@@ -53,11 +66,7 @@ enum AssetType {
     }
     try {
       await for (final file in mainDirectory.list()) {
-        if (file is File) {
-          if (file.path == assetPath) {
-            return true;
-          }
-        }
+        if (file is File && file.path == assetPath) return true;
       }
     } catch (e) {
       print(e.toString());
@@ -77,6 +86,7 @@ enum AssetType {
   // Constructor
 
   @internal
+
   /// {@macro asset_type}
   const AssetType({
     required this.couldBeUserGenerated,

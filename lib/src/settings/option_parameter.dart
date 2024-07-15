@@ -17,6 +17,24 @@ final class OptionParameter extends CherrySettingParameter<String> {
     required super.onChangedCallback,
   });
 
+  // Methods
+
+  /// {@template option_parameter_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  OptionParameter copyWith({
+    ParameterList<String>? list,
+    int? defaultOption,
+    OnParameterValueChangedCallback<String>? onChangedCallback,
+  }) =>
+      OptionParameter(
+        list ?? _list,
+        defaultOption: defaultOption ?? super.defaultOption,
+        onChangedCallback: onChangedCallback ?? super.onChangedCallback,
+      );
+
   // Overrides
 
   @override

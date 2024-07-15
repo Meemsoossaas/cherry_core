@@ -20,6 +20,24 @@ final class BooleanParameter extends CherrySettingParameter<bool> {
           "'defaultOption' must represent the integer value of a boolean",
         );
 
+  // Methods
+
+  /// {@template boolean_parameter_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters
+  ///
+  /// {@endtemplate}
+  BooleanParameter copyWith({
+    ParameterList<bool>? list,
+    int? defaultOption,
+    OnParameterValueChangedCallback<bool>? onChangedCallback,
+  }) =>
+      BooleanParameter(
+        list ?? _list,
+        defaultOption: defaultOption ?? super.defaultOption,
+        onChangedCallback: onChangedCallback ?? super.onChangedCallback,
+      );
+
   // Overrides
 
   @override
