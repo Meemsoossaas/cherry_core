@@ -2,9 +2,9 @@ part of 'user.dart';
 
 /// {@template gender}
 ///
-/// An enumeration which takes care of the genders
+/// An enumeration which takes care of the genders.
 /// The user will assign it while creating his/her account.
-/// Not all genders can be listed which is why it is intended to utilize [Gender.other] or [Gender.undefined], if unknown
+/// Not all genders can be listed which is why it is intended to utilize [Gender.other] or [Gender.undefined], if unknown.
 ///
 /// {@endtemplate}
 
@@ -13,7 +13,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_male}
   ///
-  /// The user states that he/she is a male
+  /// The user states that he/she is a male.
   ///
   /// {@endtemplate}
   male(
@@ -23,7 +23,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_female}
   ///
-  /// The user states that he/she is a female
+  /// The user states that he/she is a female.
   ///
   /// {@endtemplate}
   female(
@@ -33,7 +33,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_transgender}
   ///
-  /// The user states that he/she is a transgender
+  /// The user states that he/she is a transgender.
   ///
   /// {@endtemplate}
   transgender(
@@ -43,7 +43,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_gender_neutral}
   ///
-  /// The user states that he/she is a gender-neutral
+  /// The user states that he/she is a gender-neutral.
   ///
   /// {@endtemplate}
   genderNeutral(
@@ -53,7 +53,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_non_binary}
   ///
-  /// The user states that he/she is a non-binary
+  /// The user states that he/she is a non-binary.
   ///
   /// {@endtemplate}
   nonBinary(
@@ -63,7 +63,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_agender}
   ///
-  /// The user states that he/she is a agender
+  /// The user states that he/she is a agender.
   ///
   /// {@endtemplate}
   agender(
@@ -73,7 +73,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_pangender}
   ///
-  /// The user states that he/she is a pangender
+  /// The user states that he/she is a pangender.
   ///
   /// {@endtemplate}
   pangender(
@@ -83,7 +83,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_genderqueer}
   ///
-  /// The user states that he/she is a genderqueer
+  /// The user states that he/she is a genderqueer.
   ///
   /// {@endtemplate}
   genderqueer(
@@ -93,7 +93,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_two_spirit}
   ///
-  /// The user states that he/she is a two-spirit
+  /// The user states that he/she is a two-spirit.
   ///
   /// {@endtemplate}
   twoSpirit(
@@ -103,7 +103,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_other}
   ///
-  /// The user states that his/her gender has not been listed
+  /// The user states that his/her gender has not been listed.
   ///
   /// {@endtemplate}
   other(
@@ -113,7 +113,7 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_undefined}
   ///
-  /// The user is unsure about his/her gender
+  /// The user is unsure about his/her gender.
   ///
   /// {@endtemplate}
   undefined(
@@ -125,14 +125,14 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
 
   /// {@template gender_display_name}
   ///
-  /// The display name of this, when it appears on the UI
+  /// The display name of this, when it appears on the UI.
   ///
   /// {@endtemplate}
   final String displayName;
 
   /// {@template gender_common}
   ///
-  /// States if many people are familiar or identify with that gender
+  /// States if many people are familiar or identify with that gender.
   ///
   /// {@endtemplate}
   final bool? common;

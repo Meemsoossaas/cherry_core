@@ -2,9 +2,9 @@ part of 'user.dart';
 
 /// {@template sexuality}
 ///
-/// An enumeration which handles sexualities
+/// An enumeration which handles sexualities.
 /// The user will assign one of the values, when he/she is creating his/her account.
-/// Not all sexualities can be listed which is why it is intended to utilize [Sexuality.other] or [Sexuality.undefined], if unknown
+/// Not all sexualities can be listed which is why it is intended to utilize [Sexuality.other] or [Sexuality.undefined], if unknown.
 ///
 /// {@endtemplate}
 
@@ -15,7 +15,7 @@ enum Sexuality
 
   /// {@template sexuality_hetero}
   ///
-  /// The user states that he/she is heterosexual
+  /// The user states that he/she is heterosexual.
   ///
   /// {@endtemplate}
   hetero(
@@ -24,7 +24,7 @@ enum Sexuality
 
   /// {@template sexuality_alloromantic}
   ///
-  /// The user states that he/she is alloromantic
+  /// The user states that he/she is alloromantic.
   ///
   /// {@endtemplate}
   alloromantic(
@@ -33,7 +33,7 @@ enum Sexuality
 
   /// {@template sexuality_allo}
   ///
-  /// The user states that he/she is allosexual
+  /// The user states that he/she is allosexual.
   ///
   /// {@endtemplate}
   allo(
@@ -42,7 +42,7 @@ enum Sexuality
 
   /// {@template sexuality_androsexual}
   ///
-  /// The user states that he/she is androsexual
+  /// The user states that he/she is androsexual.
   ///
   /// {@endtemplate}
   andro(
@@ -51,7 +51,7 @@ enum Sexuality
 
   /// {@template sexuality_aromantic}
   ///
-  /// The user states that he/she is aromantic
+  /// The user states that he/she is aromantic.
   ///
   /// {@endtemplate}
   aromantic(
@@ -60,7 +60,7 @@ enum Sexuality
 
   /// {@template sexuality_asexual}
   ///
-  /// The user states that he/she is asexual
+  /// The user states that he/she is asexual.
   ///
   /// {@endtemplate}
   asexual(
@@ -69,7 +69,7 @@ enum Sexuality
 
   /// {@template sexuality_autoromantic}
   ///
-  /// The user states that he/she is autoromantic
+  /// The user states that he/she is autoromantic.
   ///
   /// {@endtemplate}
   autoromantic(
@@ -78,7 +78,7 @@ enum Sexuality
 
   /// {@template sexuality_auto}
   ///
-  /// The user states that he/she is autosexual
+  /// The user states that he/she is autosexual.
   ///
   /// {@endtemplate}
   auto(
@@ -87,7 +87,7 @@ enum Sexuality
 
   /// {@template sexuality_bicurious}
   ///
-  /// The user states that he/she is autosexual
+  /// The user states that he/she is bicurious.
   ///
   /// {@endtemplate}
   bicurious(
@@ -96,7 +96,7 @@ enum Sexuality
 
   /// {@template sexuality_biromantic}
   ///
-  /// The user states that he/she is biromantic
+  /// The user states that he/she is biromantic.
   ///
   /// {@endtemplate}
   biromantic(
@@ -105,7 +105,7 @@ enum Sexuality
 
   /// {@template sexuality_bi}
   ///
-  /// The user states that he/she is bisexual
+  /// The user states that he/she is bisexual.
   ///
   /// {@endtemplate}
   bi(
@@ -114,7 +114,7 @@ enum Sexuality
 
   /// {@template sexuality_demiromantic}
   ///
-  /// The user states that he/she is demiromantic
+  /// The user states that he/she is demiromantic.
   ///
   /// {@endtemplate}
   demiromantic(
@@ -123,7 +123,7 @@ enum Sexuality
 
   /// {@template sexuality_demisexual}
   ///
-  /// The user states that he/she is demisexual
+  /// The user states that he/she is demisexual.
   ///
   /// {@endtemplate}
   demi(
@@ -132,7 +132,7 @@ enum Sexuality
 
   /// {@template sexuality_gay}
   ///
-  /// The user states that he/she is gay
+  /// The user states that he/she is gay.
   ///
   /// {@endtemplate}
   gay(
@@ -141,7 +141,7 @@ enum Sexuality
 
   /// {@template sexuality_gyno}
   ///
-  /// The user states that he/she is gynosexual
+  /// The user states that he/she is gynosexual.
   ///
   /// {@endtemplate}
   gyno(
@@ -150,7 +150,7 @@ enum Sexuality
 
   /// {@template sexuality_heteroromantic}
   ///
-  /// The user states that he/she is heteroromantic
+  /// The user states that he/she is heteroromantic.
   ///
   /// {@endtemplate}
   heteroromantic(
@@ -159,7 +159,7 @@ enum Sexuality
 
   /// {@template sexuality_homoromantic}
   ///
-  /// The user states that he/she is homoromantic
+  /// The user states that he/she is homoromantic.
   ///
   /// {@endtemplate}
   homoromantic(
@@ -168,7 +168,7 @@ enum Sexuality
 
   /// {@template sexuality_homo}
   ///
-  /// The user states that he/she is homosexual
+  /// The user states that he/she is homosexual.
   ///
   /// {@endtemplate}
   homo(
@@ -177,7 +177,7 @@ enum Sexuality
 
   /// {@template sexuality_lesbian}
   ///
-  /// The user states that he/she is lesbian
+  /// The user states that he/she is lesbian.
   ///
   /// {@endtemplate}
   lesbian(
@@ -186,7 +186,7 @@ enum Sexuality
 
   /// {@template sexuality_mono}
   ///
-  /// The user states that he/she is monosexual
+  /// The user states that he/she is monosexual.
   ///
   /// {@endtemplate}
   mono(
@@ -195,7 +195,7 @@ enum Sexuality
 
   /// {@template sexuality_multi}
   ///
-  /// The user states that he/she is multisexual
+  /// The user states that he/she is multisexual.
   ///
   /// {@endtemplate}
   multi(
@@ -204,7 +204,7 @@ enum Sexuality
 
   /// {@template sexuality_pan}
   ///
-  /// The user states that he/she is pansexual
+  /// The user states that he/she is pansexual.
   ///
   /// {@endtemplate}
   pan(
@@ -213,7 +213,7 @@ enum Sexuality
 
   /// {@template sexuality_panromantic}
   ///
-  /// The user states that he/she is panromantic
+  /// The user states that he/she is panromantic.
   ///
   /// {@endtemplate}
   panromantic(
@@ -222,7 +222,7 @@ enum Sexuality
 
   /// {@template sexuality_poly}
   ///
-  /// The user states that he/she is polysexual
+  /// The user states that he/she is polysexual.
   ///
   /// {@endtemplate}
   poly(
@@ -231,7 +231,7 @@ enum Sexuality
 
   /// {@template sexuality_queer}
   ///
-  /// The user states that he/she is queer
+  /// The user states that he/she is queer.
   ///
   /// {@endtemplate}
   queer(
@@ -240,7 +240,7 @@ enum Sexuality
 
   /// {@template sexuality_fluid}
   ///
-  /// The user states that he/she is fluid
+  /// The user states that he/she is fluid.
   ///
   /// {@endtemplate}
   fluid(
@@ -249,7 +249,7 @@ enum Sexuality
 
   /// {@template sexuality_skolio}
   ///
-  /// The user states that he/she is skoliosexual
+  /// The user states that he/she is skoliosexual.
   ///
   /// {@endtemplate}
   skolio(
@@ -258,7 +258,7 @@ enum Sexuality
 
   /// {@template sexuality_spectra}
   ///
-  /// The user states that he/she is spectrasexual
+  /// The user states that he/she is spectrasexual.
   ///
   /// {@endtemplate}
   spectra(
@@ -267,7 +267,7 @@ enum Sexuality
 
   /// {@template sexuality_other}
   ///
-  /// The user's wanted gender is not listed
+  /// The user's wanted gender is not listed.
   ///
   /// {@endtemplate}
   other(
@@ -276,7 +276,7 @@ enum Sexuality
 
   /// {@template sexuality_hetero}
   ///
-  /// The user is unsure about his/her sexuality
+  /// The user is unsure about his/her sexuality.
   ///
   /// {@endtemplate}
   undefined(
@@ -287,7 +287,7 @@ enum Sexuality
 
   /// {@template sexuality_hetero}
   ///
-  /// The display name of this, when it appears on the UI
+  /// The display name of this, when it appears on the UI.
   ///
   /// {@endtemplate}
   final String displayName;
