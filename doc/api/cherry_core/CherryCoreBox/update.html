@@ -78,7 +78,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Updates the value of <code>key</code> from a database with <code>value</code></p>
+  <p>Updates the value of <code>key</code> from a database with <code>value</code>.</p>
 </section>
 
 
@@ -86,7 +86,8 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;void&gt; update&lt;T&gt;(String key, T value) async =&gt; await _box.put(key, value);</code></pre>
+Future&lt;void&gt; update&lt;T&gt;(String key, T value) async =&gt;
+    await _box.put(key, value);</code></pre>
 </section>
 
 

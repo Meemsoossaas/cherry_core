@@ -2,7 +2,7 @@ part of 'core.dart';
 
 /// {@template cherry_video_asset}
 ///
-/// A fitting class for video assets via [AssetType.video]
+/// A fitting class for video assets via [AssetType.video].
 ///
 /// {@endtemplate}
 
@@ -23,7 +23,7 @@ final class CherryVideoAsset extends CherryAsset {
 
   /// {@template cherry_video_asset_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   CherryVideoAsset copyWith({

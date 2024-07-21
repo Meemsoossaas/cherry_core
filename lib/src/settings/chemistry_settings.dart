@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template chemistry_settings}
 ///
-/// A singleton which contains all the settings for [CherryUserMode.chemistry]
+/// A singleton which contains all the settings for [CherryUserMode.chemistry].
 ///
 /// {@endtemplate}
 
@@ -11,14 +11,14 @@ final class ChemistrySettings
   // Static Properties
 
   /// {@macro chemistry_settings}
-  static final ChemistrySettings instance = ChemistrySettings._internal(
+  static final ChemistrySettings instance = ChemistrySettings._(
     boxName: CherryCoreCrudHandler.chemistrySettings,
     settingsMap: const {},
   );
 
   // Constructors
 
-  ChemistrySettings._internal({
+  ChemistrySettings._({
     required super.boxName,
     required super.settingsMap,
   });
@@ -32,7 +32,7 @@ final class ChemistrySettings
 
   @override
   CherrySettings<ChemistrySettingsProperty> get defaultSettings =>
-      ChemistrySettings._internal(
+      ChemistrySettings._(
         boxName: CherryCoreCrudHandler.defaultChemistrySettings,
         settingsMap: const {},
       );

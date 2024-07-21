@@ -14,45 +14,68 @@ enum CherryServiceType {
   /// The descendant of [CherryService] will be utilized for frontend tasks.
   ///
   /// {@endtemplate}
-  frontend(),
+  frontend(
+    description: 'A service for front-end functionalities',
+  ),
 
   /// {@template cherry_service_type_backend}
   ///
   /// The descendant of [CherryService] will be utilized for backend tasks.
   ///
   /// {@endtemplate}
-  backend(),
+  backend(
+    description: 'A service for back-end functionalities',
+  ),
 
   /// {@template cherry_service_type_internal}
   ///
   /// The descendant of [CherryService] will be utilized for tasks related to the Cherry application.
   ///
   /// {@endtemplate}
-  internal(),
+  internal(
+    description: 'A service for internal (Cherry only related) functionalities',
+  ),
 
   /// {@template cherry_service_type_error_handling}
   ///
   /// The descendant of [CherryService] will be utilized for error handling tasks.
   ///
   /// {@endtemplate}
-  errorHandling(),
+  errorHandling(
+    description: 'A service for error handling',
+  ),
 
   /// {@template cherry_service_type_other}
   ///
   /// The descendant of [CherryService] will be utilized for other unlisted tasks.
   ///
   /// {@endtemplate}
-  other(),
+  other(
+    description: 'A service for other functionalities',
+  ),
 
   /// {@template cherry_service_type_undefined}
   ///
   /// The descendant of [CherryService] will be utilized for other tasks which are undefined by the developers.
   ///
   /// {@endtemplate}
-  undefined();
+  undefined(
+    description: 'A service for undefined functionalities',
+  );
+
+  // Properties
+
+  /// {@template cherry_service_type_description}
+  ///
+  /// The description of the service, when displayed.
+  ///
+  /// {@endtemplate}
+  final String description;
 
   // Constructors
 
   /// {@macro cherry_service_type}
-  const CherryServiceType();
+  const CherryServiceType({
+    required this.description,
+  });
 }

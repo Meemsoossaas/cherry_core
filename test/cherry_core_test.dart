@@ -6,6 +6,9 @@ void main() async {
   final init = await CherryCoreCrudHandler.initializeSettings<Box>(
     initCallback: (String boxName) async => await Hive.openBox(boxName),
   );
+  init.forEach(
+    (key, value) => print(value.values.length),
+  );
   group(
     'cherry_core_core_tests',
     () {},
@@ -20,6 +23,10 @@ void main() async {
   );
   group(
     'cherry_core_storage_tests',
+    () {},
+  );
+  group(
+    'cherry_core_extensions',
     () {},
   );
 }

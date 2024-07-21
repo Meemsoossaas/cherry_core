@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template cherry_user_mode_settings}
 ///
-/// Bases on [CherryUserMode], this contains the parallel values for the modes
+/// Bases on [CherryUserMode], this contains the parallel values for the modes.
 ///
 /// {@endtemplate}
 
@@ -11,7 +11,7 @@ enum CherryUserModeSettings {
 
   /// {@template cherry_user_mode_settings_giver}
   ///
-  /// The setting value related to [CherryUserMode.giver]
+  /// The setting value related to [CherryUserMode.giver].
   ///
   /// {@endtemplate}
   giver(
@@ -21,7 +21,7 @@ enum CherryUserModeSettings {
 
   /// {@template cherry_user_mode_settings_receiver}
   ///
-  /// The setting value related to [CherryUserMode.receiver]
+  /// The setting value related to [CherryUserMode.receiver].
   ///
   /// {@endtemplate}
   receiver(
@@ -31,7 +31,7 @@ enum CherryUserModeSettings {
 
   /// {@template cherry_user_mode_settings_chemistry}
   ///
-  /// The setting value related to [CherryUserMode.chemistry]
+  /// The setting value related to [CherryUserMode.chemistry].
   ///
   /// {@endtemplate}
   chemistry(
@@ -43,14 +43,14 @@ enum CherryUserModeSettings {
 
   /// {@template cherry_user_mode_settings_name}
   ///
-  /// The name of the setting's overview
+  /// The name of the setting's overview.
   ///
   /// {@endtemplate}
   final String name;
 
   /// {@template cherry_user_mode_settings_type}
   ///
-  /// The related [Type] to [CherryUserMode]
+  /// The related [Type] to [CherryUserMode].
   ///
   /// {@endtemplate}
   final Type type;

@@ -2,7 +2,7 @@ part of 'core.dart';
 
 /// {@template cherry_image_asset}
 ///
-/// A fitting class for image assets via [AssetType.image]
+/// A fitting class for image assets via [AssetType.image].
 ///
 /// {@endtemplate}
 
@@ -23,7 +23,7 @@ final class CherryImageAsset extends CherryAsset {
 
   /// {@template cherry_image_asset_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   CherryImageAsset copyWith({

@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template cherry_settings}
 ///
-/// A class which sets the universal framework for all settings which will be contained depending on [CherryUserMode]
+/// A class which sets the universal framework for all settings which will be contained depending on [CherryUserMode].
 ///
 /// {@endtemplate}
 
@@ -13,15 +13,15 @@ sealed class CherrySettings<T extends CherrySettingProperty> extends CherryCore
   /// {@template cherry_settings_settings_map}
   ///
   /// The map containing all settings.
-  /// [String] being the name of the property
-  /// `dynamic` being the value of the affiliated property
+  /// [String] being the name of the property.
+  /// `dynamic` being the value of the affiliated property.
   ///
   /// {@endtemplate}
   final Map<String, dynamic> settingsMap;
 
   /// {@template cherry_settings_box}
   ///
-  /// Finalizes the [Box] affiliated to the descendant of this
+  /// Finalizes the [Box] affiliated to the descendant of this.
   ///
   /// {@endtemplate}
   final String boxName;
@@ -38,28 +38,28 @@ sealed class CherrySettings<T extends CherrySettingProperty> extends CherryCore
 
   /// {@template cherry_settings_default_settings}
   ///
-  /// Gets the default settings which sets the reference
+  /// Gets the default settings which sets the reference.
   ///
   /// {@endtemplate}
   CherrySettings<T> get defaultSettings;
 
   /// {@template cherry_settings_settings_id}
   ///
-  /// Gets a parallel id to [id] which is unique to this being a settings framework
+  /// Gets a parallel id to [id] which is unique to this being a settings framework.
   ///
   /// {@endtemplate}
   String get settingsId => uuid.v1();
 
   /// {@template cherry_settings}
   ///
-  /// The official box of this via [Hive]
+  /// The official box of this via [Hive].
   ///
   /// {@endtemplate}
   Box get box => Hive.box(boxName);
 
   /// {@template cherry_settings_initialized}
   ///
-  /// Gets a [bool] to ensure, if the [Box] has been initialized
+  /// Gets a [bool] to ensure, if the [Box] has been initialized.
   ///
   /// {@endtemplate}
   Future<bool> get initialized async => await Hive.boxExists(box.name);
@@ -67,10 +67,12 @@ sealed class CherrySettings<T extends CherrySettingProperty> extends CherryCore
   // Overrides
 
   @override
-  List<Object?> get props => [
+  List<Object?> get props =>
+      <Object?>[
         boxName,
         settingsMap,
-      ];
+      ] +
+      super.props;
 
   @override
   Future<void> delete(String key) async => await _delete(key);

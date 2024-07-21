@@ -3,7 +3,7 @@ part of 'settings.dart';
 /// {@template boolean_parameter}
 ///
 /// A class which represents a settings parameter which contains a [bool] value.
-/// This means obviously that the values consists of `true` and `false` (`null` not included)
+/// This means obviously that the values consists of `true` and `false` (`null` not included).
 ///
 /// {@endtemplate}
 
@@ -24,7 +24,7 @@ final class BooleanParameter extends CherrySettingParameter<bool> {
 
   /// {@template boolean_parameter_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   BooleanParameter copyWith({

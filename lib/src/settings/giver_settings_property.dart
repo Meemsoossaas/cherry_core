@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template giver_settings_property}
 ///
-/// A class which compliments [GiverSettings] being a parallel sub child for handling properties
+/// A class which compliments [GiverSettings] being a parallel sub child for handling properties.
 ///
 /// {@endtemplate}
 
@@ -21,7 +21,7 @@ final class GiverSettingsProperty<T extends dynamic>
 
   /// {@template giver_settings_property_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   GiverSettingsProperty<T> copyWith({

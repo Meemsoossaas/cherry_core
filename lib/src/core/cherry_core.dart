@@ -6,7 +6,7 @@ part of 'core.dart';
 ///
 /// {@endtemplate}
 
-abstract base class CherryCore extends Equatable {
+abstract class CherryCore extends Equatable {
   // Properties
 
   /// {@template cherry_core_uuid}

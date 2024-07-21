@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template enumeration_parameter}
 ///
-/// A settings parameter for handling [Enum] values
+/// A settings parameter for handling [Enum] values.
 ///
 /// {@endtemplate}
 

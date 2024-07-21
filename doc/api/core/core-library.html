@@ -78,7 +78,7 @@
 
 </dt>
 <dd>
-  A class for the framework of data for all assets based on <a href="../cherry_core/AssetType.html">AssetType</a>
+  A class for the framework of data for all assets based on <a href="../cherry_core/AssetType.html">AssetType</a>.
 </dd>
 
           <dt id="CherryCore">
@@ -99,12 +99,21 @@ Therefore, that external data can be converted, compared, extracted etc.
 Then an expected value will be returned.
 </dd>
 
+          <dt id="CherryDateTimeInfoFetcher">
+  <span class="name "><a href="../cherry_core/CherryDateTimeInfoFetcher-class.html">CherryDateTimeInfoFetcher</a></span> 
+
+</dt>
+<dd>
+  A class containing and handling data as needed for <a href="../cherry_core/CherryCoreDateTimeExtensions.html">CherryCoreDateTimeExtensions</a>.
+(This is <code>abstract</code> and <code>final</code> because this is intend to only static values and methods.)
+</dd>
+
           <dt id="CherryIconAsset">
   <span class="name "><a href="../cherry_core/CherryIconAsset-class.html">CherryIconAsset</a></span> 
 
 </dt>
 <dd>
-  The fitting class for icon assets via <a href="../cherry_core/AssetType.html">AssetType.icon</a>
+  The fitting class for icon assets via <a href="../cherry_core/AssetType.html">AssetType.icon</a>.
 </dd>
 
           <dt id="CherryImageAsset">
@@ -112,7 +121,16 @@ Then an expected value will be returned.
 
 </dt>
 <dd>
-  A fitting class for image assets via <a href="../cherry_core/AssetType.html">AssetType.image</a>
+  A fitting class for image assets via <a href="../cherry_core/AssetType.html">AssetType.image</a>.
+</dd>
+
+          <dt id="CherryStringInfoFetcher">
+  <span class="name "><a href="../cherry_core/CherryStringInfoFetcher-class.html">CherryStringInfoFetcher</a></span> 
+
+</dt>
+<dd>
+  A class containing and handling data as needed for <a href="../cherry_core/CherryCoreStringExtensions.html">CherryCoreStringExtensions</a>.
+(This is <code>abstract</code> and <code>final</code> because this is intend to only static values and methods.)
 </dd>
 
           <dt id="CherryVideoAsset">
@@ -120,7 +138,7 @@ Then an expected value will be returned.
 
 </dt>
 <dd>
-  A fitting class for video assets via <a href="../cherry_core/AssetType.html">AssetType.video</a>
+  A fitting class for video assets via <a href="../cherry_core/AssetType.html">AssetType.video</a>.
 </dd>
 
       </dl>
@@ -135,7 +153,7 @@ Then an expected value will be returned.
 
 </dt>
 <dd>
-  All needed types of assets for the Cherry application
+  All needed types of assets for the Cherry application.
 </dd>
 
           <dt id="CherryCoreExceptionType">
@@ -143,7 +161,7 @@ Then an expected value will be returned.
 
 </dt>
 <dd>
-  Declares of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a> the different types of exceptions in this API
+  Declares of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a> the different types of exceptions in this API.
 </dd>
 
           <dt id="CherryUserMode">
@@ -151,7 +169,17 @@ Then an expected value will be returned.
 
 </dt>
 <dd>
-  Declares all the possible modes the user will interact with (multiple times)
+  Declares all the possible modes the user will interact with (multiple times).
+</dd>
+
+          <dt id="DateTimeInfo">
+  <span class="name "><a href="../cherry_core/DateTimeInfo.html">DateTimeInfo</a></span> 
+
+</dt>
+<dd>
+  An enumeration which contains all (optional but crucial) parameters of <a href="https://api.dart.dev/stable/3.4.4/dart-core/DateTime-class.html">DateTime</a>.
+These are contained int the constructor (<code>DateTime()</code>).
+This enumeration is mostly being utilized for indexing because of the exhaustion.
 </dd>
 
       </dl>
@@ -167,7 +195,7 @@ Then an expected value will be returned.
 
 </dt>
 <dd>
-    An extension type for the framework for initializing <a href="https://pub.dev/documentation/logger/2.3.0/logger/Logger-class.html">Logger</a> and additional capabilities
+    An extension type for the framework for initializing <a href="https://pub.dev/documentation/logger/2.3.0/logger/Logger-class.html">Logger</a> and additional capabilities.
 </dd>
 
 
@@ -178,6 +206,17 @@ Then an expected value will be returned.
       <h2>Extensions</h2>
 
       <dl>
+          <dt id="CherryCoreDateTimeExtensions">
+  <span class="name "><a href="../cherry_core/CherryCoreDateTimeExtensions.html">CherryCoreDateTimeExtensions</a></span>
+  on <a href="https://api.dart.dev/stable/3.4.4/dart-core/DateTime-class.html">DateTime</a>
+  
+
+</dt>
+<dd>
+  Some extra functionalities for <a href="https://api.dart.dev/stable/3.4.4/dart-core/DateTime-class.html">DateTime</a> for building this API.
+</dd>
+
+
           <dt id="CherryCoreListExtensions">
   <span class="name "><a href="../cherry_core/CherryCoreListExtensions.html">CherryCoreListExtensions</a></span>
   on <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
@@ -185,7 +224,18 @@ Then an expected value will be returned.
 
 </dt>
 <dd>
-  Some essential extensions for building the API
+  Some essential extensions for building the API.
+</dd>
+
+
+          <dt id="CherryCoreStringExtensions">
+  <span class="name "><a href="../cherry_core/CherryCoreStringExtensions.html">CherryCoreStringExtensions</a></span>
+  on <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>
+  
+
+</dt>
+<dd>
+  Some extra functionalities for <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a> for building this API.
 </dd>
 
 
@@ -208,7 +258,7 @@ Then an expected value will be returned.
 
   </dt>
   <dd>
-    The function for fetching an exception where <code>T</code> is being returned as the callback value (This progress could occur asynchronously, too)
+    The function for fetching an exception where <code>T</code> is being returned as the callback value (This progress could occur asynchronously, too).
     
 
   </dd>
@@ -222,8 +272,8 @@ Then an expected value will be returned.
 
 </dt>
 <dd>
-  Typedefs for the exception handling in this API. In particular for <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a>
-Each descendant of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a> contains a stack trace which acts as a list. This is being used to check that <code>T</code> is an descendant of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a>
+  Typedefs for the exception handling in this API. In particular for <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a>.
+Each descendant of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a> contains a stack trace which acts as a list. This is being used to check that <code>T</code> is an descendant of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a>.
   
 
 </dd>
@@ -238,7 +288,39 @@ Each descendant of <a href="../cherry_core/CherryCoreException-class.html">Cherr
 
 </dt>
 <dd>
-  The function for fetching an exception where <code>T</code> is being returned as the callback value (This progress could occur asynchronously, too)
+  The function for fetching an exception where <code>T</code> is being returned as the callback value (This progress could occur asynchronously, too).
+  
+
+</dd>
+
+
+          
+  <dt id="DateTimeList" class="">
+  <span class="name"><a href="../cherry_core/DateTimeList.html">DateTimeList</a></span>
+    = <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/DateTime-class.html">DateTime</a></span>&gt;</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Represents a <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a> of <a href="https://api.dart.dev/stable/3.4.4/dart-core/DateTime-class.html">DateTime</a>'s.
+  
+
+</dd>
+
+
+          
+  <dt id="NumberList" class="">
+  <span class="name"><a href="../cherry_core/NumberList.html">NumberList</a></span>&lt;<wbr><span class="type-parameter">T extends <a href="https://api.dart.dev/stable/3.4.4/dart-core/num-class.html">num</a></span>&gt;
+    = <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Represents a <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a> of numbers.
+This will check if <code>T</code> is type of <a href="https://api.dart.dev/stable/3.4.4/dart-core/num-class.html">num</a>.
+This indicates that the only valid types are <a href="https://api.dart.dev/stable/3.4.4/dart-core/num-class.html">num</a>, <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a> and <a href="https://api.dart.dev/stable/3.4.4/dart-core/double-class.html">double</a>.
   
 
 </dd>
@@ -254,7 +336,7 @@ Each descendant of <a href="../cherry_core/CherryCoreException-class.html">Cherr
   </dt>
   <dd>
     A function which will be called, if a descendant of <a href="../cherry_core/CherryAsset-class.html">CherryAsset</a>'s path is being changed.
-The property <code>path</code> is being viewed as the 'source' of the assets information
+The property <code>path</code> is being viewed as the 'source' of the assets information.
     
 
   </dd>
@@ -268,10 +350,25 @@ The property <code>path</code> is being viewed as the 'source' of the assets inf
 
   </dt>
   <dd>
-    A function which be called, if a descendant of <a href="../cherry_core/CherryAsset-class.html">CherryAsset</a> is being initialized
+    A function which be called, if a descendant of <a href="../cherry_core/CherryAsset-class.html">CherryAsset</a> is being initialized.
     
 
   </dd>
+
+          
+  <dt id="StringHashMap" class="">
+  <span class="name"><a href="../cherry_core/StringHashMap.html">StringHashMap</a></span>
+    = <a href="https://api.dart.dev/stable/3.4.4/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>&gt;</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Represents a map of 'characters' as <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>'s with the keys being their belonging indices.
+  
+
+</dd>
+
 
       </dl>
     </section>
@@ -285,7 +382,7 @@ The property <code>path</code> is being viewed as the 'source' of the assets inf
 
 </dt>
 <dd>
-  An exception which is for serious error handling
+  An exception which is for serious error handling.
 </dd>
 
           <dt id="CherryCoreException">
@@ -301,7 +398,7 @@ The property <code>path</code> is being viewed as the 'source' of the assets inf
 
 </dt>
 <dd>
-  An exception which is for hints especially for debug purposes
+  An exception which is for hints especially for debug purposes.
 </dd>
 
           <dt id="CherryCoreWarningException">
@@ -309,7 +406,7 @@ The property <code>path</code> is being viewed as the 'source' of the assets inf
 
 </dt>
 <dd>
-  An exception which is for hints especially for debug purposes
+  An exception which is for hints especially for debug purposes.
 </dd>
 
       </dl>

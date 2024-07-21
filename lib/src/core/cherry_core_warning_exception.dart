@@ -2,7 +2,7 @@ part of 'core.dart';
 
 /// {@template cherry_core_warning_exception}
 ///
-/// An exception which is for hints especially for debug purposes
+/// An exception which is for hints especially for debug purposes.
 ///
 /// {@endtemplate}
 
@@ -11,7 +11,7 @@ final class CherryCoreWarningException<T> extends CherryCoreException<T> {
 
   /// {@template cherry_core_warning_exception_exception_stack_trace}
   ///
-  /// The stack trace containing [CherryCoreException] if initialized
+  /// The stack trace containing [CherryCoreException] if initialized.
   ///
   /// {@endtemplate}
   static final CherryCoreExceptionList<CherryCoreWarningException>
@@ -31,6 +31,11 @@ final class CherryCoreWarningException<T> extends CherryCoreException<T> {
 
   // Methods
 
+  /// {@template cherry_core_warning_exception_copy_with}
+  ///
+  /// Copys this with the additional alternate parameters.
+  ///
+  /// {@endtemplate}
   CherryCoreWarningException<T> copyWith({
     String? message,
     CherryCoreLoggerBuilder? loggerBuilder,

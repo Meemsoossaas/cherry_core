@@ -2,8 +2,8 @@ part of 'settings.dart';
 
 /// {@template input_parameter}
 ///
-/// A settings parameter which handles input
-/// Inputs will always be a [String]
+/// A settings parameter which handles input.
+/// Inputs will always be a [String].
 ///
 /// {@endtemplate}
 
@@ -21,7 +21,7 @@ final class InputParameter extends CherrySettingParameter<String> {
 
   /// {@template input_parameter_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   InputParameter copyWith({

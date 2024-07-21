@@ -30,7 +30,7 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">cherry_core</a></li>
     <li><a href="../../services/services-library.html">services.dart</a></li>
-    <li><a href="../../services/CherryService-class.html">CherryService</a></li>
+    <li><a href="../../services/CherryService-class.html">CherryService<span class="signature">&lt;<wbr><span class="type-parameter">T extends Object</span>, <span class="type-parameter">U extends CherryServiceStreamValue&lt;<wbr><span class="type-parameter">T</span>&gt;</span>&gt;</span></a></li>
     <li class="self-crumb">CherryService constructor</li>
   </ol>
   <div class="self-name">CherryService</div>
@@ -57,19 +57,21 @@
       data-above-sidebar="services&#47;CherryService-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-constructor">CherryService</span> constructor 
+<h1><span class="kind-constructor">CherryService&lt;<wbr><span class="type-parameter">T extends Object</span>, <span class="type-parameter">U extends CherryServiceStreamValue&lt;<wbr><span class="type-parameter">T</span>&gt;</span>&gt;</span> constructor 
 </h1></div>
 
     <section class="multi-line-signature">
       
-      <span class="name ">CherryService</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-serviceName">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">serviceName</span>, </span></li>
+      <span class="name ">CherryService&lt;<wbr><span class="type-parameter">T extends Object</span>, <span class="type-parameter">U extends CherryServiceStreamValue&lt;<wbr><span class="type-parameter">T</span>&gt;</span>&gt;</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-serviceName">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">serviceName</span>, </span></li>
+<li><span class="parameter" id="-param-serviceType"><span>required</span> <span class="type-annotation"><a href="../../services/CherryServiceType.html">CherryServiceType</a></span> <span class="parameter-name">serviceType</span>, </span></li>
+<li><span class="parameter" id="-param-replicatable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">replicatable</span> = <span class="default-value">false</span>, </span></li>
 <li><span class="parameter" id="-param-isSingleton"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isSingleton</span> = <span class="default-value">true</span>}</span></li>
 </ol>)
     </section>
 
     
 <section class="desc markdown">
-  <p>A class which handles service capabilities to it's descendants</p>
+  <p>A class which handles service capabilities to it's descendants.</p>
 </section>
 
 
@@ -78,6 +80,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">CherryService({
   required this.serviceName,
+  required this.serviceType,
+  this.replicatable = false,
   this.isSingleton = true,
 });</code></pre>
 </section>
@@ -96,7 +100,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">cherry_core</a></li>
     <li><a href="../../services/services-library.html">services</a></li>
-    <li><a href="../../services/CherryService-class.html">CherryService</a></li>
+    <li><a href="../../services/CherryService-class.html">CherryService<span class="signature">&lt;<wbr><span class="type-parameter">T extends Object</span>, <span class="type-parameter">U extends CherryServiceStreamValue&lt;<wbr><span class="type-parameter">T</span>&gt;</span>&gt;</span></a></li>
     <li class="self-crumb">CherryService constructor</li>
 </ol>
 

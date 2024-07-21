@@ -26,7 +26,6 @@ abstract mixin class CherryDataFetcher<T extends Enum> {
   /// }
   /// ```
   ///
-  ///
   /// {@endtemplate}
   T? fromDisplayName(String displayName) => null;
 }

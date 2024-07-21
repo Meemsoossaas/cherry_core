@@ -21,7 +21,7 @@ final class OptionParameter extends CherrySettingParameter<String> {
 
   /// {@template option_parameter_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   OptionParameter copyWith({

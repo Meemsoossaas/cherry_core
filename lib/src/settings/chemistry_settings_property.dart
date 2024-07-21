@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template chemistry_settings_property}
 ///
-/// A class which compliments [ChemistrySettings] being a parallel sub child for handling properties
+/// A class which compliments [ChemistrySettings] being a parallel sub child for handling properties.
 ///
 /// {@endtemplate}
 
@@ -21,7 +21,7 @@ final class ChemistrySettingsProperty<T extends dynamic>
 
   /// {@template chemistry_settings_property_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   ChemistrySettingsProperty<T> copyWith({

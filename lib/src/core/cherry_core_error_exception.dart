@@ -2,7 +2,7 @@ part of 'core.dart';
 
 /// {@template cherry_core_error_exception}
 ///
-/// An exception which is for serious error handling
+/// An exception which is for serious error handling.
 ///
 /// {@endtemplate}
 
@@ -12,7 +12,7 @@ final class CherryCoreErrorException<T> extends CherryCoreException<T>
 
   /// {@template cherry_core_error_exception_exception_stack_trace}
   ///
-  /// The stack trace containing [CherryCoreException] if initialized
+  /// The stack trace containing [CherryCoreException] if initialized.
   ///
   /// {@endtemplate}
   static final CherryCoreExceptionList<CherryCoreErrorException>
@@ -34,7 +34,7 @@ final class CherryCoreErrorException<T> extends CherryCoreException<T>
 
   /// {@template cherry_core_error_exception_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   CherryCoreErrorException<T> copyWith({
@@ -59,9 +59,8 @@ final class CherryCoreErrorException<T> extends CherryCoreException<T>
   StackTrace? get stackTrace => StackTrace.current;
 
   @override
-  CherryCoreFetchResult<T> fetchException([int index = 0]) => _fetchException(
-        index,
-      );
+  CherryCoreFetchResult<T> fetchException([int index = 0]) =>
+      _fetchException(index);
 
   CherryCoreFetchResult<T> _fetchException([int index = 0]) {
     final lastException =

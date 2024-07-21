@@ -30,7 +30,7 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">cherry_core</a></li>
     <li><a href="../services/services-library.html">services.dart</a></li>
-    <li class="self-crumb">CherryService class</li>
+    <li class="self-crumb">CherryService<span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="https://api.dart.dev/stable/3.4.4/dart-core/Object-class.html">Object</a></span>, <span class="type-parameter">U extends <a href="../services/CherryServiceStreamValue-class.html">CherryServiceStreamValue</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span> class</li>
   </ol>
   <div class="self-name">CherryService</div>
   <form class="search navbar-right" role="search">
@@ -56,7 +56,7 @@
     data-above-sidebar="services&#47;services-library-sidebar.html"
     data-below-sidebar="services&#47;CherryService-class-sidebar.html">
     <div>
-<h1><span class="kind-class">CherryService</span> class 
+<h1><span class="kind-class">CherryService&lt;<wbr><span class="type-parameter">T extends Object</span>, <span class="type-parameter">U extends CherryServiceStreamValue&lt;<wbr><span class="type-parameter">T</span>&gt;</span>&gt;</span> class 
     <a href="https://dart.dev/language/class-modifiers#abstract" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
     <a href="https://dart.dev/language/class-modifiers#base" class="feature feature-base" title="This class or mixin can only be extended (not implemented or mixed in).">base</a>
  
@@ -64,7 +64,7 @@
 
     
 <section class="desc markdown">
-  <p>A class which handles service capabilities to it's descendants</p>
+  <p>A class which handles service capabilities to it's descendants.</p>
 </section>
 
 
@@ -82,8 +82,23 @@
   </dd>
 
         
+  <dt>Implemented types</dt>
+  <dd>
+    <ul class="comma-separated clazz-relationships">
+        <li><a href="../services/CherryServiceBuilder-class.html">CherryServiceBuilder</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">U</span>&gt;</span></li>
+    </ul>
+  </dd>
         
 
+          <dt>Implementers</dt>
+          <dd><ul class="comma-separated clazz-relationships">
+              <li><a href="../services/CherryBackendService-class.html">CherryBackendService</a></li>
+              <li><a href="../services/CherryErrorHandlingService-class.html">CherryErrorHandlingService</a></li>
+              <li><a href="../services/CherryFrontendService-class.html">CherryFrontendService</a></li>
+              <li><a href="../services/CherryInternalService-class.html">CherryInternalService</a></li>
+              <li><a href="../services/CherryMiscellaneousService-class.html">CherryMiscellaneousService</a></li>
+              <li><a href="../services/CherryUndefinedService-class.html">CherryUndefinedService</a></li>
+          </ul></dd>
 
 
         
@@ -98,10 +113,10 @@
 
     <dl class="constructor-summary-list">
         <dt id="CherryService" class="callable">
-          <span class="name"><a href="../services/CherryService/CherryService.html">CherryService</a></span><span class="signature">(<span class="parameter" id="-param-serviceName">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">serviceName</span>, </span><span class="parameter" id="-param-isSingleton"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isSingleton</span> = <span class="default-value">true</span>}</span>)</span>
+          <span class="name"><a href="../services/CherryService/CherryService.html">CherryService</a></span><span class="signature">(<span class="parameter" id="-param-serviceName">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">serviceName</span>, </span><span class="parameter" id="-param-serviceType"><span>required</span> <span class="type-annotation"><a href="../services/CherryServiceType.html">CherryServiceType</a></span> <span class="parameter-name">serviceType</span>, </span><span class="parameter" id="-param-replicatable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">replicatable</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-isSingleton"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isSingleton</span> = <span class="default-value">true</span>}</span>)</span>
         </dt>
         <dd>
-          A class which handles service capabilities to it's descendants
+          A class which handles service capabilities to it's descendants.
         </dd>
     </dl>
   </section>
@@ -111,6 +126,18 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="displayText" class="property">
+  <span class="name"><a href="../services/CherryService/displayText.html">displayText</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  Gets the text for display (for logging).
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.5/equatable/Equatable/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
@@ -183,6 +210,22 @@
 
 </dd>
 
+        <dt id="isActivated" class="property inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/isActivated.html">isActivated</a></span>
+  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  Gets a <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a> if this is activated.
+On default, it gets <code>true</code>.
+If it gets <code>true</code> then this is fully functional.
+If it gets <code>false</code> then this is fully disabled.
+To change this, just set it to the opposite <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a> value.
+  <div class="features"><span class="feature">getter/setter pair</span><span class="feature">inherited</span></div>
+
+</dd>
+
         <dt id="isSingleton" class="property">
   <span class="name"><a href="../services/CherryService/isSingleton.html">isSingleton</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>
@@ -190,8 +233,32 @@
 
 </dt>
 <dd>
-  Finalizes, if the respected class will be treated as a singleton
+  Finalizes, if the respected class will be treated as a singleton.
   <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="onError" class="property inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/onError.html">onError</a></span>
+  <span class="signature">&#8594; <a href="../services/OnErrorCherryServiceSubscriptionListen.html">OnErrorCherryServiceSubscriptionListen</a>?</span>
+  
+
+</dt>
+<dd class="inherited">
+  The function which will be invoked if <a href="../services/CherryServiceBuilder/onListen.html">onListen</a> catches an <a href="https://api.dart.dev/stable/3.4.4/dart-core/Exception-class.html">Exception</a> (most of the time a descendant of <a href="../cherry_core/CherryCoreException-class.html">CherryCoreException</a>).
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="onListen" class="property inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/onListen.html">onListen</a></span>
+  <span class="signature">&#8594; <a href="../services/OnCherryServiceSubscriptionListen.html">OnCherryServiceSubscriptionListen</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  The listener function for <a href="../services/CherryServiceBuilder/serviceSubscription.html">serviceSubscription</a> of this.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -205,6 +272,18 @@
   The list of properties that will be used to determine whether
 two instances are equal.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="replicatable" class="property">
+  <span class="name"><a href="../services/CherryService/replicatable.html">replicatable</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Finalizes, if the respected class can be replicated via <a href="../services/CherryService/copyWith.html">copyWith</a>.
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -227,8 +306,44 @@ two instances are equal.
 
 </dt>
 <dd>
-  Finalizes the name of the service (which is also its display name)
+  Finalizes the name of the service (which is also its display name).
   <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="serviceSubscription" class="property inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/serviceSubscription.html">serviceSubscription</a></span>
+  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.4.4/dart-async/StreamSubscription-class.html">StreamSubscription</a><span class="signature">&lt;<wbr><span class="type-parameter">U</span>&gt;</span>?</span>
+  
+
+</dt>
+<dd class="inherited">
+  The unique <a href="https://api.dart.dev/stable/3.4.4/dart-async/StreamSubscription-class.html">StreamSubscription</a> of this.
+  <div class="features"><span class="feature">getter/setter pair</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="serviceType" class="property">
+  <span class="name"><a href="../services/CherryService/serviceType.html">serviceType</a></span>
+  <span class="signature">&#8594; <a href="../services/CherryServiceType.html">CherryServiceType</a></span>
+  
+
+</dt>
+<dd>
+  Finalizes the type of the service.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="stream" class="property inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/stream.html">stream</a></span>
+  <span class="signature">&#8594; <a href="../services/CreateCherryServiceStream.html">CreateCherryServiceStream</a><span class="signature">&lt;<wbr><span class="type-parameter">U</span>&gt;</span></span>
+  
+
+</dt>
+<dd class="inherited">
+  The <a href="https://api.dart.dev/stable/3.4.4/dart-async/Stream-class.html">Stream</a> of this which will yield <code>U</code>.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -261,10 +376,49 @@ this instance's <a href="../cherry_core/CherryCore/props.html">props</a>.
   </section>
     
   <section
-      class="summary offset-anchor inherited"
+      class="summary offset-anchor"
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
+        <dt id="activate" class="callable inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/activate.html">activate</a></span><span class="signature">(<wbr><span class="parameter" id="activate-param-isActivated">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isActivated</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Activates this depending on <code>isActivated</code> or on <a href="../services/CherryServiceBuilder/isActivated.html">this.isActivated</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="copyWith" class="callable">
+  <span class="name"><a href="../services/CherryService/copyWith.html">copyWith</a></span><span class="signature">(<wbr><span class="parameter" id="copyWith-param-serviceName">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">serviceName</span>, </span><span class="parameter" id="copyWith-param-serviceType"><span class="type-annotation"><a href="../services/CherryServiceType.html">CherryServiceType</a>?</span> <span class="parameter-name">serviceType</span>, </span><span class="parameter" id="copyWith-param-isSingleton"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isSingleton</span>, </span><span class="parameter" id="copyWith-param-replicatable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">replicatable</span>}</span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Copys this with the additional alternate parameters.
+  
+
+</dd>
+
+        <dt id="deactivate" class="callable inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/deactivate.html">deactivate</a></span><span class="signature">(<wbr><span class="parameter" id="deactivate-param-isActivated">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isActivated</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Deactivates this depending on <code>isActivated</code> or on <a href="../services/CherryServiceBuilder/isActivated.html">this.isActivated</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -274,6 +428,32 @@ this instance's <a href="../cherry_core/CherryCore/props.html">props</a>.
 </dt>
 <dd class="inherited">
   Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="pause" class="callable inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/pause.html">pause</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Pauses this.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="resume" class="callable inherited">
+  <span class="name"><a href="../services/CherryServiceBuilder/resume.html">resume</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Resumes this.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
@@ -332,7 +512,7 @@ this instance's <a href="../cherry_core/CherryCore/props.html">props</a>.
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">cherry_core</a></li>
     <li><a href="../services/services-library.html">services</a></li>
-    <li class="self-crumb">CherryService class</li>
+    <li class="self-crumb">CherryService<span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="https://api.dart.dev/stable/3.4.4/dart-core/Object-class.html">Object</a></span>, <span class="type-parameter">U extends <a href="../services/CherryServiceStreamValue-class.html">CherryServiceStreamValue</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span> class</li>
 </ol>
 
 

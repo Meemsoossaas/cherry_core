@@ -64,9 +64,7 @@
       
 
 <span class="returntype"><a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>, <span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span>
-<span class="name ">initializeSettings</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="initializeSettings-param-initCallback">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">initCallback</span>(<ol class="parameter-list"><li><span class="parameter" id="param-boxName"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">boxName</span></span></li>
-</ol>
-)}</span></li>
+<span class="name ">initializeSettings</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="initializeSettings-param-initCallback">{<span>required</span> <span class="type-annotation"><a href="../../cherry_core/OnCherryBoxInitializedCallback.html">OnCherryBoxInitializedCallback</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">initCallback</span>}</span></li>
 </ol>)
 
       
@@ -74,7 +72,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Returns a <code>Map</code> of boxes (Mostly it will be <a href="https://pub.dev/documentation/hive/2.2.3/hive/Box-class.html">Box</a> and <a href="../../cherry_core/CherryCoreBox-class.html">CherryCoreBox</a>)</p>
+  <p>Returns a <code>Map</code> of boxes (Mostly it will be <a href="https://pub.dev/documentation/hive/2.2.3/hive/Box-class.html">Box</a> and <a href="../../cherry_core/CherryCoreBox-class.html">CherryCoreBox</a>).</p>
 </section>
 
 
@@ -82,8 +80,9 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">static Future&lt;Map&lt;String, T&gt;&gt; initializeSettings&lt;T&gt;({
-  required Future&lt;T&gt; Function(String boxName) initCallback,
-}) async =&gt; await _initializeSettings(initCallback: initCallback);</code></pre>
+  required OnCherryBoxInitializedCallback&lt;T&gt; initCallback,
+}) async =&gt;
+    await _initializeSettings(initCallback: initCallback);</code></pre>
 </section>
 
 

@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template asset_parameter}
 ///
-/// A class which represents a settings parameter which returns an assets
+/// A class which represents a settings parameter which returns an assets.
 ///
 /// {@endtemplate}
 
@@ -33,7 +33,7 @@ final class AssetParameter<T extends CherryAsset>
 
   /// {@template asset_parameter_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   AssetParameter<T> copyWith({

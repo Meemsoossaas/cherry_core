@@ -2,7 +2,7 @@ part of 'core.dart';
 
 /// {@template cherry_icon_asset}
 ///
-/// The fitting class for icon assets via [AssetType.icon]
+/// The fitting class for icon assets via [AssetType.icon].
 ///
 /// {@endtemplate}
 
@@ -23,7 +23,7 @@ final class CherryIconAsset extends CherryAsset {
 
   /// {@template cherry_icon_asset_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   CherryIconAsset copyWith({

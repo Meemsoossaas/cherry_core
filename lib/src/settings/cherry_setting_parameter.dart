@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template cherry_setting_parameter}
 ///
-/// A class which declares the parameters basis for all it's descendants
+/// A class which declares the parameters basis for all it's descendants.
 ///
 /// {@endtemplate}
 
@@ -11,7 +11,7 @@ sealed class CherrySettingParameter<T> extends CherryCore {
 
   /// {@template cherry_setting_parameter_list}
   ///
-  /// The starting list of values (Type: [T])
+  /// The starting list of values (Type: [T]).
   /// (During initialization, it will be asserted.)
   ///
   /// {@endtemplate}
@@ -27,7 +27,7 @@ sealed class CherrySettingParameter<T> extends CherryCore {
 
   /// {@template cherry_setting_parameter_on_changed_callback}
   ///
-  /// The function to be executed if the parameter value has been changed
+  /// The function to be executed if the parameter value has been changed.
   ///
   /// {@endtemplate}
   final OnParameterValueChangedCallback<T> onChangedCallback;
@@ -36,7 +36,7 @@ sealed class CherrySettingParameter<T> extends CherryCore {
   ///
   /// The function which will be called when [CherrySettingParameter.builder] is being initialized.
   /// This will return per iteration a [ParameterCore].
-  /// At the end, [_list] will contain similar values like being initialized normally
+  /// At the end, [_list] will contain similar values like being initialized normally.
   ///
   /// {@endtemplate}
   final ParameterListBuilder? parameterListBuilder;
@@ -61,10 +61,10 @@ sealed class CherrySettingParameter<T> extends CherryCore {
   /// {@template cherry_setting_parameter_builder}
   ///
   /// Builds [_list] from scratch
-  /// [abbrevationList] being the list of abbreviations
-  /// [nameList] being the display names
-  /// [valueList] being the values of [T]
-  /// Make sure these list are correctly indexed to avoid future issues
+  /// [abbrevationList] being the list of abbreviations.
+  /// [nameList] being the display names.
+  /// [valueList] being the values of [T].
+  /// Make sure these list are correctly indexed to avoid future issues.
   ///
   /// {@endtemplate}
   CherrySettingParameter.builder(
@@ -104,21 +104,21 @@ sealed class CherrySettingParameter<T> extends CherryCore {
 
   /// {@template cherry_setting_parameter_type}
   ///
-  /// The type of the parameter
+  /// The type of the parameter.
   ///
   /// {@endtemplate}
   ParameterType get type;
 
   /// {@template cherry_setting_parameter_number_of_options}
   ///
-  /// The number of options contained in [_list]
+  /// The number of options contained in [_list].
   ///
   /// {@endtemplate}
   int? get numberOfOptions => _list.length;
 
   /// {@template cherry_setting_parameter_valid_indices}
   ///
-  /// A list containing all valid indices
+  /// A list containing all valid indices.
   ///
   /// {@endtemplate}
   List<int> get validIndices => List<int>.generate(
@@ -130,14 +130,14 @@ sealed class CherrySettingParameter<T> extends CherryCore {
   /// {@template cherry_setting_parameter_get_current_index}
   ///
   /// Gets the current index
-  /// On initialization, [defaultOption] will be the current index
+  /// On initialization, [defaultOption] will be the current index.
   ///
   /// {@endtemplate}
   int get currentIndex => defaultOption;
 
   /// {@template cherry_setting_parameter_set_current_index}
   ///
-  /// Checks if the [newIndex] is contained in [validIndices]
+  /// Checks if the [newIndex] is contained in [validIndices].
   ///
   /// {@endtemplate}
   set currentIndex(int newIndex) => _currentIndex(newIndex);
@@ -151,7 +151,7 @@ sealed class CherrySettingParameter<T> extends CherryCore {
 
   /// {@template cherry_setting_parameter_default_parameter_value}
   ///
-  /// The default value in [_list] of type [T]
+  /// The default value in [_list] of type [T].
   ///
   /// {@endtemplate}
   ParameterCore<T> get defaultParameterValue => _list[defaultOption];
@@ -160,7 +160,7 @@ sealed class CherrySettingParameter<T> extends CherryCore {
 
   /// {@template cherry_setting_parameter_change_option}
   ///
-  /// Returns the current parameter value in [_list]
+  /// Returns the current parameter value in [_list].
   ///
   /// {@endtemplate}
   ParameterCore<T>? changeOption({required int newIndex}) => _changeOption(
@@ -175,11 +175,13 @@ sealed class CherrySettingParameter<T> extends CherryCore {
   // Overrides
 
   @override
-  List<Object?> get props => [
+  List<Object?> get props =>
+      <Object?>[
         _list,
         defaultOption,
         onChangedCallback,
         onChangedCallback,
         parameterListBuilder,
-      ];
+      ] +
+      super.props;
 }

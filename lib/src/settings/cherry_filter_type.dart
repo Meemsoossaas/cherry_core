@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template cherry_filter_type}
 ///
-/// An enumeration for all types of filter for the Cherry application
+/// An enumeration for all types of filter for the Cherry application.
 ///
 /// {@endtemplate}
 
@@ -11,7 +11,7 @@ enum CherryFilterType {
 
   /// {@template cherry_filter_type_user_preferences}
   ///
-  /// A value which states [UserPreferences] being the class containing all the filter parameters which are set by the user
+  /// A value which states [UserPreferences] being the class containing all the filter parameters which are set by the user.
   ///
   /// {@endtemplate}
   userPreferences();

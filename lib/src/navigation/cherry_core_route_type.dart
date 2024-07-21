@@ -2,7 +2,7 @@ part of 'navigation.dart';
 
 /// {@template cherry_core_route_type}
 ///
-/// An enumeration containing all types of routes
+/// An enumeration containing all types of routes.
 ///
 /// {@endtemplate}
 
@@ -11,7 +11,7 @@ enum CherryCoreRouteType implements Comparable<CherryCoreRouteType> {
 
   /// {@template cherry_core_route_type_initial}
   ///
-  /// The route is an initial route of the project
+  /// The route is an initial route of the project.
   ///
   /// {@endtemplate}
   initial(
@@ -20,7 +20,7 @@ enum CherryCoreRouteType implements Comparable<CherryCoreRouteType> {
 
   /// {@template cherry_core_route_type}
   ///
-  /// The route is a primary route
+  /// The route is a primary route.
   ///
   /// {@endtemplate}
   main(
@@ -29,7 +29,7 @@ enum CherryCoreRouteType implements Comparable<CherryCoreRouteType> {
 
   /// {@template cherry_core_route_type}
   ///
-  /// The route is a sub route of [main]
+  /// The route is a sub route of [main].
   ///
   /// {@endtemplate}
   sub(
@@ -38,7 +38,7 @@ enum CherryCoreRouteType implements Comparable<CherryCoreRouteType> {
 
   /// {@template cherry_core_route_type}
   ///
-  /// The route is custom route which indicates that it does not compliment the structure of the project
+  /// The route is custom route which indicates that it does not compliment the structure of the project.
   ///
   /// {@endtemplate}
   custom(
@@ -49,7 +49,7 @@ enum CherryCoreRouteType implements Comparable<CherryCoreRouteType> {
 
   /// {@template cherry_core_route_type}
   ///
-  /// The inner width in terms how much steps it takes to reach `this`
+  /// The inner width in terms how much steps it takes to reach `this`.
   ///
   /// {@endtemplate}
   final int? steps;

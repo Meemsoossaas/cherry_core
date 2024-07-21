@@ -12,7 +12,7 @@ abstract base class CherryCoreException<T> extends CherryCore
 
   /// {@template cherry_core_handle_exception}
   ///
-  /// Handles via [T] a descendant of this depending on [CherryCoreExceptionType]
+  /// Handles via [T] a descendant of this depending on [CherryCoreExceptionType].
   ///
   /// {@endtemplate}
   static Future<void> handleException<T extends CherryCoreException>({
@@ -66,21 +66,21 @@ abstract base class CherryCoreException<T> extends CherryCore
 
   /// {@template cherry_core_logger_builder}
   ///
-  /// Contains the builder for the [Logger] with extended capabilities
+  /// Contains the builder for the [Logger] with extended capabilities.
   ///
   /// {@endtemplate}
   final CherryCoreLoggerBuilder? loggerBuilder;
 
   /// {@template cherry_core_exception_callback}
   ///
-  /// Additional code that will be executed via [fetchException]
+  /// Additional code that will be executed via [fetchException].
   ///
   /// {@endtemplate}
   final CherryCoreExceptionCallback<T>? exceptionCallback;
 
   /// {@template cherry_core_instance_type}
   ///
-  /// The [Type] of the body where the exception is located
+  /// The [Type] of the body where the exception is located.
   ///
   /// {@endtemplate}
   final Type instanceType;
@@ -106,7 +106,7 @@ abstract base class CherryCoreException<T> extends CherryCore
 
   /// {@template cherry_core_type}
   ///
-  /// The type of the exception (essential for [Logger])
+  /// The type of the exception (essential for [Logger]).
   ///
   /// {@endtemplate}
   CherryCoreExceptionType get type;
@@ -115,7 +115,7 @@ abstract base class CherryCoreException<T> extends CherryCore
 
   /// {@template cherry_core_fetch_exception}
   ///
-  /// Tries to fetch via [index] an [CherryCoreException] of a stack trace and handles [exceptionCallback]
+  /// Tries to fetch via [index] an [CherryCoreException] of a stack trace and handles [exceptionCallback].
   ///
   /// {@endtemplate}
   CherryCoreFetchResult<T> fetchException([int index = 0]);
@@ -123,10 +123,12 @@ abstract base class CherryCoreException<T> extends CherryCore
   // Overrides
 
   @override
-  List<Object?> get props => [
+  List<Object?> get props =>
+      <Object?>[
         message,
         loggerBuilder,
         exceptionCallback,
         instanceType,
-      ];
+      ] +
+      super.props;
 }

@@ -72,7 +72,7 @@
 
     
 <section class="desc markdown">
-  <p>A class for the framework of data for all assets based on <a href="../../cherry_core/AssetType.html">AssetType</a></p>
+  <p>A class for the framework of data for all assets based on <a href="../../cherry_core/AssetType.html">AssetType</a>.</p>
 </section>
 
 
@@ -93,10 +93,10 @@
         (path.contains(&#39;http&#39;) &amp;&amp; isHosted) ||
             !(path.contains(&#39;http&#39;) &amp;&amp; isHosted),
         &quot;&#39;path&#39; and &#39;isHosted&#39; do not compliment the given parameter configuration&quot;,
-      ) {
-  if (onAssetInitializedCallback != null) {
-    onAssetInitializedCallback!();
-  }
+      ),
+      previousPaths = &lt;String?&gt;[] {
+  previousPaths.pushFront(path);
+  if (onAssetInitializedCallback != null) onAssetInitializedCallback!();
 }</code></pre>
 </section>
 

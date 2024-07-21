@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template user_preferences}
 ///
-/// A singleton which contains all filter parameters which can be changed by the user to his/her liking
+/// A singleton which contains all filter parameters which can be changed by the user to his/her liking.
 ///
 /// {@endtemplate}
 
@@ -27,7 +27,7 @@ final class UserPreferences extends CherryFilter {
 
   /// {@template user_preferences_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   UserPreferences copyWith({

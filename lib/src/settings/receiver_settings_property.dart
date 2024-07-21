@@ -2,7 +2,7 @@ part of 'settings.dart';
 
 /// {@template receiver_settings_property}
 ///
-/// A class which compliments [ReceiverSettings] being a parallel sub child for handling properties
+/// A class which compliments [ReceiverSettings] being a parallel sub child for handling properties.
 ///
 /// {@endtemplate}
 
@@ -21,7 +21,7 @@ final class ReceiverSettingsProperty<T extends dynamic>
 
   /// {@template receiver_settings_property_copy_with}
   ///
-  /// Copys this with the additional alternate parameters
+  /// Copys this with the additional alternate parameters.
   ///
   /// {@endtemplate}
   ReceiverSettingsProperty<T> copyWith({
