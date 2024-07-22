@@ -51,34 +51,63 @@
   <div id="dartdoc-main-content" class="main-content">
       
 <section class="desc markdown">
-  <!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-<p>TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.</p>
+  <p>The core API for the Cherry application.
+It contains all core functionalities to build the basis for the application.</p>
 <h2 id="features">Features</h2>
-<p>TODO: List what your package can do. Maybe include images, gifs, or videos.</p>
+<p>This core package for the Cherry application contains multiple featured to build the core framework.</p>
+<p>These are as follows:</p>
+<ul>
+<li>Essential extensions and extension types for objects of 'dart:core' (
+e.g. <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>, <a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>, <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a>
+etc.)</li>
+<li>Implementation for the main settings (Giver Settings, Receiver Settings, Chemistry Settings) + for
+their respected properties and parameters</li>
+<li>Containment of all necessary information for creating profiles</li>
+<li>Containment of basic map-like storage frameworks via <a href="https://pub.dev/packages/hive">Hive</a></li>
+<li>Frontend functionalities like navigation and asset management</li>
+<li>Building services (as singletons)</li>
+<li>Management for error handling and logging</li>
+</ul>
 <h2 id="getting-started">Getting started</h2>
-<p>TODO: List prerequisites and provide or point to information on how to
-start using the package.</p>
-<h2 id="usage">Usage</h2>
-<p>TODO: Include short and useful examples for package users. Add longer examples
-to <code>/example</code> folder.</p>
-<pre class="language-dart"><code class="language-dart">const like = 'sample';
+<p>Step 1: Add this to your dependencies:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  cherry_core: ^latest-version
 </code></pre>
+<p>Step 2: Import this to the respected Dart file</p>
+<pre class="language-dart"><code class="language-dart">// Import the whole package
+import 'package:cherry_core/cherry_core.dart';
+
+// Import a sub library of the package
+
+// Import the 'core' library
+import 'package:cherry_core/core.dart';
+
+// Import the 'navigation' library
+import 'package:cherry_core/navigation.dart';
+
+// Import the 'services' library
+import 'package:cherry_core/services.dart';
+
+// Import the 'settings' library
+import 'package:cherry_core/settings.dart';
+
+// Import the 'storage' library
+import 'package:cherry_core/storage.dart';
+
+// Import the 'user' library
+import 'package:cherry_core/user.dart';
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>There are many use cases depending on the sub library.</p>
+<h3 id="coredart">core.dart</h3>
+<h3 id="navigationdart">navigation.dart</h3>
+<h3 id="servicesdart">services.dart</h3>
+<h3 id="settingsdart">settings.dart</h3>
+<h3 id="storagedart">storage.dart</h3>
+<h3 id="userdart">user.dart</h3>
 <h2 id="additional-information">Additional information</h2>
-<p>TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.</p>
+<p>NOTICE: This package is only usable, if it being utilized by official authorized developers, testers or
+other related individuals.</p>
 </section>
 
 

@@ -151,7 +151,9 @@ enum Gender with CherryDataFetcher<Gender> implements Comparable<Gender> {
   int compareTo(Gender other) => index - other.index;
 
   @override
-  Gender? fromDisplayName(String displayName) {
+  Gender? fromDisplayName(String displayName) => _fromDisplayName(displayName);
+
+  Gender? _fromDisplayName(String displayName) {
     for (final gender in Gender.values) {
       if (gender.displayName == displayName) return gender;
     }
