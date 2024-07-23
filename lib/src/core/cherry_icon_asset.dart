@@ -11,13 +11,12 @@ final class CherryIconAsset extends CherryAsset {
 
   /// {@macro cherry_icon_asset}
   CherryIconAsset({
-    required super.path,
+    required super.initialPath,
     super.isHosted,
     super.onAssetChangedCallback,
+    super.onAssetResetCallback,
     super.onAssetInitializedCallback,
-  }) : super(
-          assetType: AssetType.icon,
-        );
+  }) : super(assetType: AssetType.icon);
 
   // Methods
 
@@ -27,17 +26,20 @@ final class CherryIconAsset extends CherryAsset {
   ///
   /// {@endtemplate}
   CherryIconAsset copyWith({
-    String? path,
+    String? initialPath,
     bool? isHosted,
+    OnAssetResetCallback? onAssetResetCallback,
     OnAssetChangedCallback? onAssetChangedCallback,
     OnAssetInitializedCallback? onAssetInitializedCallback,
   }) =>
       CherryIconAsset(
-        path: path ?? super.path,
-        isHosted: isHosted ?? super.isHosted,
+        initialPath: initialPath ?? this.initialPath,
+        isHosted: isHosted ?? this.isHosted,
         onAssetChangedCallback:
-            onAssetChangedCallback ?? super.onAssetChangedCallback,
+            onAssetChangedCallback ?? this.onAssetChangedCallback,
+        onAssetResetCallback:
+            onAssetResetCallback ?? this.onAssetResetCallback,
         onAssetInitializedCallback:
-            onAssetInitializedCallback ?? super.onAssetInitializedCallback,
+            onAssetInitializedCallback ?? this.onAssetInitializedCallback,
       );
 }

@@ -67,7 +67,7 @@ abstract class CherryCore extends Equatable {
   // Overrides
 
   @override
-  List<Object?> get props => [
+  List<Object?> get props => <Object?>[
         uuid,
         id1,
         id4,

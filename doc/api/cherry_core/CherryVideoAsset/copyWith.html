@@ -64,9 +64,10 @@
       
 
 <span class="returntype"><a href="../../cherry_core/CherryVideoAsset-class.html">CherryVideoAsset</a></span>
-<span class="name ">copyWith</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="copyWith-param-path">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">path</span>, </span></li>
+<span class="name ">copyWith</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="copyWith-param-initialPath">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">initialPath</span>, </span></li>
 <li><span class="parameter" id="copyWith-param-isHosted"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isHosted</span>, </span></li>
 <li><span class="parameter" id="copyWith-param-onAssetChangedCallback"><span class="type-annotation"><a href="../../cherry_core/OnAssetChangedCallback.html">OnAssetChangedCallback</a>?</span> <span class="parameter-name">onAssetChangedCallback</span>, </span></li>
+<li><span class="parameter" id="copyWith-param-onAssetResetCallback"><span class="type-annotation"><a href="../../cherry_core/OnAssetResetCallback.html">OnAssetResetCallback</a>?</span> <span class="parameter-name">onAssetResetCallback</span>, </span></li>
 <li><span class="parameter" id="copyWith-param-onAssetInitializedCallback"><span class="type-annotation"><a href="../../cherry_core/OnAssetInitializedCallback.html">OnAssetInitializedCallback</a>?</span> <span class="parameter-name">onAssetInitializedCallback</span>}</span></li>
 </ol>)
 
@@ -83,18 +84,20 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">CherryVideoAsset copyWith({
-  String? path,
+  String? initialPath,
   bool? isHosted,
   OnAssetChangedCallback? onAssetChangedCallback,
+  OnAssetResetCallback? onAssetResetCallback,
   OnAssetInitializedCallback? onAssetInitializedCallback,
 }) =&gt;
     CherryVideoAsset(
-      path: path ?? super.path,
-      isHosted: isHosted ?? super.isHosted,
+      initialPath: initialPath ?? this.initialPath,
+      isHosted: isHosted ?? this.isHosted,
       onAssetChangedCallback:
-      onAssetChangedCallback ?? super.onAssetChangedCallback,
+          onAssetChangedCallback ?? this.onAssetChangedCallback,
+      onAssetResetCallback: onAssetResetCallback ?? this.onAssetResetCallback,
       onAssetInitializedCallback:
-      onAssetInitializedCallback ?? super.onAssetInitializedCallback,
+          onAssetInitializedCallback ?? this.onAssetInitializedCallback,
     );</code></pre>
 </section>
 

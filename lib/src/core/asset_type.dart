@@ -36,6 +36,15 @@ enum AssetType {
     couldBeUserGenerated: true,
   ),
 
+  /// {@template asset_type_custom}
+  ///
+  /// The asset is of a custom type.
+  ///
+  /// {@endtemplate}
+  custom(
+    couldBeUserGenerated: null,
+  ),
+
   /// {@template asset_type_undefined}
   ///
   /// The asset is undefined.

@@ -74,13 +74,14 @@
 
     
 <section class="desc markdown">
-  <p>Gets the first index of <a href="../../cherry_core/CherryAsset/previousPaths.html">previousPaths</a> being the newest path.</p>
+  <p>Gets the first index of <code>previousPaths</code> being the newest path.</p>
 </section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">String get currentPath =&gt; previousPaths[0] ?? path;</code></pre>
+  <pre class="language-dart"><code class="language-dart">String get currentPath =&gt;
+    _previousPaths[_previousPaths.length - 1] ?? initialPath;</code></pre>
 </section>
 
   </section>

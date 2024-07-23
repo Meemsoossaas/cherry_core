@@ -16,14 +16,14 @@ abstract base class CherryAsset extends CherryCore {
   /// [pushFront] (from [CherryCoreListExtensions]) will be called when a new path is being added to this.
   ///
   /// {@endtemplate}
-  final List<String?> previousPaths;
+  final List<String?> _previousPaths;
 
   /// {@template cherry_asset_path}
   ///
   /// Finalizes the default path of the file location of the asset (e.g. 'assets/images/funny_image.png').
   ///
   /// {@endtemplate}
-  final String path;
+  final String initialPath;
 
   /// {@template cherry_asset_asset_type}
   ///
@@ -34,17 +34,24 @@ abstract base class CherryAsset extends CherryCore {
 
   /// {@template cherry_asset_is_hosted}
   ///
-  /// Finalizes if the asset is being hosted from an online server under http services.
+  /// Finalizes, if the asset is being hosted from an online server under http services.
   ///
   /// {@endtemplate}
   final bool isHosted;
 
   /// {@template cherry_asset_on_asset_changed_callback}
   ///
-  /// A function which will be called when [path] changes.
+  /// A function which will be called when [path] changes (via [changePath]).
   ///
   /// {@endtemplate}
   final OnAssetChangedCallback? onAssetChangedCallback;
+
+  /// {@template cherry_asset_on_asset_reset_callback}
+  ///
+  /// A function which will be called if [resetPath] is being invoked.
+  ///
+  /// {@endtemplate}
+  final OnAssetResetCallback? onAssetResetCallback;
 
   /// {@template cherry_asset_on_asset_initialized_callback}
   ///
@@ -57,22 +64,23 @@ abstract base class CherryAsset extends CherryCore {
 
   /// {@macro cherry_asset}
   CherryAsset({
-    required this.path,
+    required this.initialPath,
     required this.assetType,
     this.isHosted = false,
     this.onAssetChangedCallback,
+    this.onAssetResetCallback,
     this.onAssetInitializedCallback,
   })  : assert(
-          path.isNotEmpty,
+          initialPath.isNotEmpty,
           'path cannot be empty',
         ),
         assert(
-          (path.contains('http') && isHosted) ||
-              !(path.contains('http') && isHosted),
+          (initialPath.contains('http') && isHosted) ||
+              !(initialPath.contains('http') && isHosted),
           "'path' and 'isHosted' do not compliment the given parameter configuration",
         ),
-        previousPaths = <String?>[] {
-    previousPaths.pushFront(path);
+        _previousPaths = <String?>[] {
+    _previousPaths.add(initialPath);
     if (onAssetInitializedCallback != null) onAssetInitializedCallback!();
   }
 
@@ -83,7 +91,8 @@ abstract base class CherryAsset extends CherryCore {
   /// Gets the first index of [previousPaths] being the newest path.
   ///
   /// {@endtemplate}
-  String get currentPath => previousPaths[0] ?? path;
+  String get currentPath =>
+      _previousPaths[_previousPaths.length - 1] ?? initialPath;
 
   // Methods
 
@@ -95,8 +104,21 @@ abstract base class CherryAsset extends CherryCore {
   void changePath(String newPath) => _changePath(newPath);
 
   void _changePath(String newPath) {
-    previousPaths.pushFront(newPath);
+    _previousPaths.add(newPath);
     if (onAssetChangedCallback != null) onAssetChangedCallback!(newPath);
+  }
+
+  /// {@template cherry_asset_reset_path}
+  ///
+  /// Clears [previousPaths] and sets the current path to [initialPath].
+  ///
+  /// {@endtemplate}
+  void resetPath() => _resetPath();
+
+  void _resetPath() {
+    _previousPaths.clear();
+    _previousPaths.add(initialPath);
+    if (onAssetResetCallback != null) onAssetResetCallback!(_previousPaths);
   }
 
   // Overrides
@@ -104,7 +126,7 @@ abstract base class CherryAsset extends CherryCore {
   @override
   List<Object?> get props =>
       <Object?>[
-        path,
+        initialPath,
         assetType,
         isHosted,
         onAssetChangedCallback,

@@ -1,7 +1,5 @@
 library storage;
 
-import 'dart:js_interop';
-
 import 'package:cherry_core/cherry_core.dart';
 import 'package:hive/hive.dart';
 

@@ -33,9 +33,17 @@ extension CherryCoreStringExtensions on String {
     final firstValue = this[0];
     return split(
           CherryStringInfoFetcher.empty,
-        ).where((value) => value == firstValue).length ==
+        ).where((value) => value == firstValue).toList().length ==
         length;
   }
+
+  /// {@template cherry_core_string_extensions_is_not_monotone}
+  ///
+  /// Gets a [bool] which represents the opposite of [isMonotone].
+  /// This indicates that `this` contains more than one unique characters.
+  ///
+  /// {@endtemplate}
+  bool get isNotMonotone => !isMonotone;
 
   /// {@template cherry_core_string_extensions_parseable_as_num}
   ///
@@ -88,14 +96,6 @@ extension CherryCoreStringExtensions on String {
     }
   }
 
-  /// {@template cherry_core_string_extensions_is_not_monotone}
-  ///
-  /// Gets a [bool] which represents the opposite of [isMonotone].
-  /// This indicates that `this` contains more than one unique characters.
-  ///
-  /// {@endtemplate}
-  bool get isNotMonotone => !isMonotone;
-
   /// {@template cherry_core_string_extensions_as_map}
   ///
   /// Gets a [StringHashMap] from `this`.
@@ -103,5 +103,5 @@ extension CherryCoreStringExtensions on String {
   /// {@endtemplate}
   StringHashMap get asMap => split(
         CherryStringInfoFetcher.empty,
-      ).toList().asMap();
+      ).asMap();
 }

@@ -577,6 +577,7 @@ final class CherryRoute extends CherryCore {
         mainRoute,
         subRoute,
         type,
+        extendable,
       ] +
       super.props;
 }

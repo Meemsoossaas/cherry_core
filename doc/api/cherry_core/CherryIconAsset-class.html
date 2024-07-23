@@ -98,7 +98,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="CherryIconAsset" class="callable">
-          <span class="name"><a href="../cherry_core/CherryIconAsset/CherryIconAsset.html">CherryIconAsset</a></span><span class="signature">(<span class="parameter" id="-param-path">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="-param-isHosted"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isHosted</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-onAssetChangedCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetChangedCallback.html">OnAssetChangedCallback</a>?</span> <span class="parameter-name">onAssetChangedCallback</span>, </span><span class="parameter" id="-param-onAssetInitializedCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetInitializedCallback.html">OnAssetInitializedCallback</a>?</span> <span class="parameter-name">onAssetInitializedCallback</span>}</span>)</span>
+          <span class="name"><a href="../cherry_core/CherryIconAsset/CherryIconAsset.html">CherryIconAsset</a></span><span class="signature">(<span class="parameter" id="-param-initialPath">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">initialPath</span>, </span><span class="parameter" id="-param-isHosted"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isHosted</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-onAssetChangedCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetChangedCallback.html">OnAssetChangedCallback</a>?</span> <span class="parameter-name">onAssetChangedCallback</span>, </span><span class="parameter" id="-param-onAssetResetCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetResetCallback.html">OnAssetResetCallback</a>?</span> <span class="parameter-name">onAssetResetCallback</span>, </span><span class="parameter" id="-param-onAssetInitializedCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetInitializedCallback.html">OnAssetInitializedCallback</a>?</span> <span class="parameter-name">onAssetInitializedCallback</span>}</span>)</span>
         </dt>
         <dd>
           The fitting class for icon assets via <a href="../cherry_core/AssetType.html">AssetType.icon</a>.
@@ -130,7 +130,7 @@
 
 </dt>
 <dd class="inherited">
-  Gets the first index of <a href="../cherry_core/CherryAsset/previousPaths.html">previousPaths</a> being the newest path.
+  Gets the first index of <code>previousPaths</code> being the newest path.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -207,6 +207,18 @@
 
 </dd>
 
+        <dt id="initialPath" class="property inherited">
+  <span class="name"><a href="../cherry_core/CherryAsset/initialPath.html">initialPath</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  Finalizes the default path of the file location of the asset (e.g. 'assets/images/funny_image.png').
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
+
+</dd>
+
         <dt id="isHosted" class="property inherited">
   <span class="name"><a href="../cherry_core/CherryAsset/isHosted.html">isHosted</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>
@@ -214,7 +226,7 @@
 
 </dt>
 <dd class="inherited">
-  Finalizes if the asset is being hosted from an online server under http services.
+  Finalizes, if the asset is being hosted from an online server under http services.
   <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -226,7 +238,7 @@
 
 </dt>
 <dd class="inherited">
-  A function which will be called when <a href="../cherry_core/CherryAsset/path.html">path</a> changes.
+  A function which will be called when <code>path</code> changes (via <a href="../cherry_core/CherryAsset/changePath.html">changePath</a>).
   <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -243,28 +255,14 @@
 
 </dd>
 
-        <dt id="path" class="property inherited">
-  <span class="name"><a href="../cherry_core/CherryAsset/path.html">path</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+        <dt id="onAssetResetCallback" class="property inherited">
+  <span class="name"><a href="../cherry_core/CherryAsset/onAssetResetCallback.html">onAssetResetCallback</a></span>
+  <span class="signature">&#8594; <a href="../cherry_core/OnAssetResetCallback.html">OnAssetResetCallback</a>?</span>
   
 
 </dt>
 <dd class="inherited">
-  Finalizes the default path of the file location of the asset (e.g. 'assets/images/funny_image.png').
-  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="previousPaths" class="property inherited">
-  <span class="name"><a href="../cherry_core/CherryAsset/previousPaths.html">previousPaths</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span>&gt;</span></span>
-  
-
-</dt>
-<dd class="inherited">
-  Gets all previous paths.
-<code>previousPaths[0]</code> being the newest and <a href="../cherry_core/CherryAsset/path.html">path</a> the oldest one
-<code>pushFront</code> (from <a href="../cherry_core/CherryCoreListExtensions.html">CherryCoreListExtensions</a>) will be called when a new path is being added to this.
+  A function which will be called if <a href="../cherry_core/CherryAsset/resetPath.html">resetPath</a> is being invoked.
   <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
@@ -341,7 +339,7 @@ this instance's <a href="../cherry_core/CherryAsset/props.html">props</a>.
 </dd>
 
         <dt id="copyWith" class="callable">
-  <span class="name"><a href="../cherry_core/CherryIconAsset/copyWith.html">copyWith</a></span><span class="signature">(<wbr><span class="parameter" id="copyWith-param-path">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">path</span>, </span><span class="parameter" id="copyWith-param-isHosted"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isHosted</span>, </span><span class="parameter" id="copyWith-param-onAssetChangedCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetChangedCallback.html">OnAssetChangedCallback</a>?</span> <span class="parameter-name">onAssetChangedCallback</span>, </span><span class="parameter" id="copyWith-param-onAssetInitializedCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetInitializedCallback.html">OnAssetInitializedCallback</a>?</span> <span class="parameter-name">onAssetInitializedCallback</span>}</span>)
+  <span class="name"><a href="../cherry_core/CherryIconAsset/copyWith.html">copyWith</a></span><span class="signature">(<wbr><span class="parameter" id="copyWith-param-initialPath">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">initialPath</span>, </span><span class="parameter" id="copyWith-param-isHosted"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isHosted</span>, </span><span class="parameter" id="copyWith-param-onAssetResetCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetResetCallback.html">OnAssetResetCallback</a>?</span> <span class="parameter-name">onAssetResetCallback</span>, </span><span class="parameter" id="copyWith-param-onAssetChangedCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetChangedCallback.html">OnAssetChangedCallback</a>?</span> <span class="parameter-name">onAssetChangedCallback</span>, </span><span class="parameter" id="copyWith-param-onAssetInitializedCallback"><span class="type-annotation"><a href="../cherry_core/OnAssetInitializedCallback.html">OnAssetInitializedCallback</a>?</span> <span class="parameter-name">onAssetInitializedCallback</span>}</span>)
     <span class="returntype parameter">&#8594; <a href="../cherry_core/CherryIconAsset-class.html">CherryIconAsset</a></span>
   </span>
   
@@ -362,6 +360,19 @@ this instance's <a href="../cherry_core/CherryAsset/props.html">props</a>.
 </dt>
 <dd class="inherited">
   Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="resetPath" class="callable inherited">
+  <span class="name"><a href="../cherry_core/CherryAsset/resetPath.html">resetPath</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Clears <code>previousPaths</code> and sets the current path to <a href="../cherry_core/CherryAsset/initialPath.html">initialPath</a>.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>

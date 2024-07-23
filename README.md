@@ -1,7 +1,7 @@
 The core API for the Cherry application.
 It contains all core functionalities to build the basis for the application.
 
-## Features
+## **Features**
 
 This core package for the Cherry application contains multiple featured to build the core framework.
 
@@ -18,7 +18,7 @@ These are as follows:
 - Building services (as singletons)
 - Management for error handling and logging
 
-## Getting started
+## **Getting started**
 
 Step 1: Add this to your dependencies:
 
@@ -54,23 +54,124 @@ import 'package:cherry_core/storage.dart';
 import 'package:cherry_core/user.dart';
 ```
 
-## Usage
+## **Usage**
 
 There are many use cases depending on the sub library.
 
-### core.dart
+### **core.dart**
 
-### navigation.dart
+#### Create asset classes
 
-### services.dart
+##### Step 1: Set paths
 
-### settings.dart
+```yaml
+flutter:
+  assets:
+    - icons/
+    - images/
+    - videos/
+```
 
-### storage.dart
+##### Step 2: Create `CherryAsset`'s
 
-### user.dart
+```dart
+// Create a image asset
+final CherryImageAsset image = CherryImageAsset(initialPath: 'assets/images/image.png');
 
-## Additional information
+// Create a icon asset
+final CherryIconAsset icon = CherryIconAsset(initialPath: 'assets/icons/icon.png');
+
+// Create a video asset
+final CherryVideoAsset video = CherryVideoAsset(initialPath: 'assets/videos/video.png');
+```
+##### (Or create own classes of `CherryAsset`'s)
+
+```dart
+final class CherryCustomAsset extends CherryAsset {
+  // Constructor(s)
+
+  CherryCustomAsset({
+    required super.initialPath,
+    super.isHosted,
+    super.onAssetChangedCallback,
+    super.onAssetInitializedCallback,
+  }) : super(assetType: AssetType.undefined,
+    /* Make sure to set 'assetType' to 'AssetType.undefined'  */
+  );
+
+  // Method(s)
+  CherryCustomAsset copyWith({
+    String? initialPath,
+    bool? isHosted,
+    OnAssetChangedCallback? onAssetChangedCallback,
+    OnAssetResetCallback? onAssetResetCallback,
+    OnAssetInitializedCallback? onAssetInitializedCallback,
+  }) =>
+      CherryCustomAsset(
+        initialPath: initialPath ?? this.initialPath,
+        isHosted: isHosted ?? this.isHosted,
+        onAssetChangedCallback: onAssetChangedCallback ?? this.onAssetChangedCallback,
+        onAssetResetCallback: onAssetResetCallback ?? this.onAssetResetCallback,
+        onAssetInitializedCallback: onAssetInitializedCallback ?? this.onAssetInitializedCallback,
+      );
+}
+```
+
+##### Step 3: Manage paths
+
+```dart
+
+final CherryImageAsset asset = CherryImageAsset(
+  /* Set the first and initial path of the asset */
+  initialPath: 'assets/images/image1.png',
+
+  /* Set, if the asset is being hosted on the internet or on a server */
+  isHosted: false,
+
+  /* A function if the current path is being changed */
+  onAssetChangedCallback: (String newPath) {
+    if (newPath.contains('image1.png')) {
+      print(1);
+    } else if (newPath.contains('image2.png')) {
+      print(2);
+    } else if (newPath.contains('image3.png')) {
+      print(3);
+    }
+  },
+
+  /* A function when this is being reset */
+  onAssetResetCallback: (List<String?> paths) {
+    print('RESET!');
+  },
+
+  /* A function when this is being initialized */
+  onAssetInitializedCallback: () {
+    print('Initialized on ${DateTime.now()}');
+  },
+);
+```
+
+```dart
+/* Prints -> Initialized on 2024-07-23 15:52:10.052431 */
+
+asset.changePath('assets/images/image2.png'); // Prints 2
+
+asset.changePath('assets/images/image3.png'); // Prints 3
+
+asset.resetPath(); // Prints RESET!
+```
+
+### **navigation.dart**
+
+### **services.dart**
+
+### **settings.dart**
+
+### **storage.dart**
+
+### **user.dart**
+
+## **Additional information**
 
 NOTICE: This package is only usable, if it being utilized by official authorized developers, testers or
 other related individuals.

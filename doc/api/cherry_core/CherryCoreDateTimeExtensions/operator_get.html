@@ -131,7 +131,7 @@ print(now[DateTimeInfo.year]); // SUCCESS
 
 print(now[8]); // ERROR -&gt; "index: '8' out of range"
 print(now['nanosecond']); // ERROR -&gt; "index: 'nanosecond' out of range"
-print(now[null]); // ERROR -&gt; "index is not type of 'int', 'String' or 'DateTimeInfo'"
+print(now[3.5]); // ERROR -&gt; "index is not type of 'int', 'String' or 'DateTimeInfo'"
 
 print(now[now.microsecond]); // SUCCESS (NO ERROR) -&gt; DateTimeInfo is an enum and is therefore exhaustive
 </code></pre>

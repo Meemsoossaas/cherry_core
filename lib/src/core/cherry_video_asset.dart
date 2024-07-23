@@ -11,13 +11,12 @@ final class CherryVideoAsset extends CherryAsset {
 
   /// {@macro cherry_video_asset}
   CherryVideoAsset({
-    required super.path,
+    required super.initialPath,
     super.isHosted,
     super.onAssetChangedCallback,
+    super.onAssetResetCallback,
     super.onAssetInitializedCallback,
-  }) : super(
-          assetType: AssetType.video,
-        );
+  }) : super(assetType: AssetType.video);
 
   // Methods
 
@@ -27,17 +26,19 @@ final class CherryVideoAsset extends CherryAsset {
   ///
   /// {@endtemplate}
   CherryVideoAsset copyWith({
-    String? path,
+    String? initialPath,
     bool? isHosted,
     OnAssetChangedCallback? onAssetChangedCallback,
+    OnAssetResetCallback? onAssetResetCallback,
     OnAssetInitializedCallback? onAssetInitializedCallback,
   }) =>
       CherryVideoAsset(
-        path: path ?? super.path,
-        isHosted: isHosted ?? super.isHosted,
+        initialPath: initialPath ?? this.initialPath,
+        isHosted: isHosted ?? this.isHosted,
         onAssetChangedCallback:
-        onAssetChangedCallback ?? super.onAssetChangedCallback,
+            onAssetChangedCallback ?? this.onAssetChangedCallback,
+        onAssetResetCallback: onAssetResetCallback ?? this.onAssetResetCallback,
         onAssetInitializedCallback:
-        onAssetInitializedCallback ?? super.onAssetInitializedCallback,
+            onAssetInitializedCallback ?? this.onAssetInitializedCallback,
       );
 }

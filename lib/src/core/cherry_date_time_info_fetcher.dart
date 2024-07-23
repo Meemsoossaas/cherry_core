@@ -107,6 +107,7 @@ abstract final class CherryDateTimeInfoFetcher extends CherryCore {
       list.add(currentYear);
       currentYear -= leapYearDifference;
     }
+    list.add(yearZero);
     return list;
   }
 
@@ -152,7 +153,7 @@ abstract final class CherryDateTimeInfoFetcher extends CherryCore {
     int currentYear = lastLeapYear;
     final NumberList<int> list = [];
     final int yearDifference =
-        ((lastLeapYear - yearZero) / ~leapYearDifference) as int;
+        (lastLeapYear - yearZero) ~/ leapYearDifference;
     for (int i = 0; i < yearDifference; i++) {
       list.add(currentYear);
       currentYear -= leapYearDifference;
@@ -229,4 +230,29 @@ abstract final class CherryDateTimeInfoFetcher extends CherryCore {
           instanceType: CherryDateTimeInfoFetcher,
         )
       : leapYearsSinceYearZero.where((value) => value == year).length == 1;
+
+  // Static Methods
+
+  /// {@template cherry_date_time_info_fetcher_adult_date_time}
+  ///
+  /// Returns a [DateTime] which represents the latest date where an individual has turned to an adult.
+  /// The default value of [minimumAge] is `18`.
+  /// Affects will only occur to [year], [month] and [day] because these fields are the most important ones.
+  ///
+  /// {@endtemplate}
+  static DateTime adultDateTime({
+    int minimumAge = 18,
+  }) =>
+      _adultDateTime(minimumAge: minimumAge);
+
+  static DateTime _adultDateTime({
+    int minimumAge = 18,
+  }) {
+    final now = DateTime.now();
+    return DateTime(
+      now.year - minimumAge,
+      now.month,
+      now.day,
+    );
+  }
 }

@@ -53,7 +53,7 @@
 <section class="desc markdown">
   <p>The core API for the Cherry application.
 It contains all core functionalities to build the basis for the application.</p>
-<h2 id="features">Features</h2>
+<h2 id="features"><strong>Features</strong></h2>
 <p>This core package for the Cherry application contains multiple featured to build the core framework.</p>
 <p>These are as follows:</p>
 <ul>
@@ -68,7 +68,7 @@ their respected properties and parameters</li>
 <li>Building services (as singletons)</li>
 <li>Management for error handling and logging</li>
 </ul>
-<h2 id="getting-started">Getting started</h2>
+<h2 id="getting-started"><strong>Getting started</strong></h2>
 <p>Step 1: Add this to your dependencies:</p>
 <pre class="language-yaml"><code class="language-yaml">dependencies:
   cherry_core: ^latest-version
@@ -97,15 +97,102 @@ import 'package:cherry_core/storage.dart';
 // Import the 'user' library
 import 'package:cherry_core/user.dart';
 </code></pre>
-<h2 id="usage">Usage</h2>
+<h2 id="usage"><strong>Usage</strong></h2>
 <p>There are many use cases depending on the sub library.</p>
-<h3 id="coredart">core.dart</h3>
-<h3 id="navigationdart">navigation.dart</h3>
-<h3 id="servicesdart">services.dart</h3>
-<h3 id="settingsdart">settings.dart</h3>
-<h3 id="storagedart">storage.dart</h3>
-<h3 id="userdart">user.dart</h3>
-<h2 id="additional-information">Additional information</h2>
+<h3 id="coredart"><strong>core.dart</strong></h3>
+<h4 id="create-asset-classes">Create asset classes</h4>
+<h5 id="step-1-set-paths">Step 1: Set paths</h5>
+<pre class="language-yaml"><code class="language-yaml">flutter:
+  assets:
+    - icons/
+    - images/
+    - videos/
+</code></pre>
+<h5 id="step-2-create-cherryassets">Step 2: Create <code>CherryAsset</code>'s</h5>
+<pre class="language-dart"><code class="language-dart">// Create a image asset
+final CherryImageAsset image = CherryImageAsset(initialPath: 'assets/images/image.png');
+
+// Create a icon asset
+final CherryIconAsset icon = CherryIconAsset(initialPath: 'assets/icons/icon.png');
+
+// Create a video asset
+final CherryVideoAsset video = CherryVideoAsset(initialPath: 'assets/videos/video.png');
+</code></pre>
+<h5 id="or-create-own-classes-of-cherryassets">(Or create own classes of <code>CherryAsset</code>'s)</h5>
+<pre class="language-dart"><code class="language-dart">final class CherryCustomAsset extends CherryAsset {
+  // Constructor(s)
+
+  CherryCustomAsset({
+    required super.initialPath,
+    super.isHosted,
+    super.onAssetChangedCallback,
+    super.onAssetInitializedCallback,
+  }) : super(assetType: AssetType.undefined,
+    /* Make sure to set 'assetType' to 'AssetType.undefined'  */
+  );
+
+  // Method(s)
+  CherryCustomAsset copyWith({
+    String? initialPath,
+    bool? isHosted,
+    OnAssetChangedCallback? onAssetChangedCallback,
+    OnAssetResetCallback? onAssetResetCallback,
+    OnAssetInitializedCallback? onAssetInitializedCallback,
+  }) =&gt;
+      CherryCustomAsset(
+        initialPath: initialPath ?? this.initialPath,
+        isHosted: isHosted ?? this.isHosted,
+        onAssetChangedCallback: onAssetChangedCallback ?? this.onAssetChangedCallback,
+        onAssetResetCallback: onAssetResetCallback ?? this.onAssetResetCallback,
+        onAssetInitializedCallback: onAssetInitializedCallback ?? this.onAssetInitializedCallback,
+      );
+}
+</code></pre>
+<h5 id="step-3-manage-paths">Step 3: Manage paths</h5>
+<pre class="language-dart"><code class="language-dart">
+final CherryImageAsset asset = CherryImageAsset(
+  /* Set the first and initial path of the asset */
+  initialPath: 'assets/images/image1.png',
+
+  /* Set, if the asset is being hosted on the internet or on a server */
+  isHosted: false,
+
+  /* A function if the current path is being changed */
+  onAssetChangedCallback: (String newPath) {
+    if (newPath.contains('image1.png')) {
+      print(1);
+    } else if (newPath.contains('image2.png')) {
+      print(2);
+    } else if (newPath.contains('image3.png')) {
+      print(3);
+    }
+  },
+
+  /* A function when this is being reset */
+  onAssetResetCallback: (List&lt;String?&gt; paths) {
+    print('RESET!');
+  },
+
+  /* A function when this is being initialized */
+  onAssetInitializedCallback: () {
+    print('Initialized on ${DateTime.now()}');
+  },
+);
+</code></pre>
+<pre class="language-dart"><code class="language-dart">/* Prints -&gt; Initialized on 2024-07-23 15:52:10.052431 */
+
+asset.changePath('assets/images/image2.png'); // Prints 2
+
+asset.changePath('assets/images/image3.png'); // Prints 3
+
+asset.resetPath(); // Prints RESET!
+</code></pre>
+<h3 id="navigationdart"><strong>navigation.dart</strong></h3>
+<h3 id="servicesdart"><strong>services.dart</strong></h3>
+<h3 id="settingsdart"><strong>settings.dart</strong></h3>
+<h3 id="storagedart"><strong>storage.dart</strong></h3>
+<h3 id="userdart"><strong>user.dart</strong></h3>
+<h2 id="additional-information"><strong>Additional information</strong></h2>
 <p>NOTICE: This package is only usable, if it being utilized by official authorized developers, testers or
 other related individuals.</p>
 </section>

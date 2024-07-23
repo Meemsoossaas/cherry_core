@@ -7,31 +7,6 @@ part of 'core.dart';
 /// {@endtemplate}
 
 extension CherryCoreDateTimeExtensions on DateTime {
-  // Static Methods
-
-  /// {@template cherry_core_date_time_extensions_adult_date_time}
-  ///
-  /// Returns a [DateTime] which represents the latest date where an individual has turned to an adult.
-  /// The default value of [minimumAge] is `18`.
-  /// Affects will only occur to [year], [month] and [day] because these fields are the most important ones.
-  ///
-  /// {@endtemplate}
-  static DateTime adultDateTime({
-    int minimumAge = 18,
-  }) =>
-      _adultDateTime(minimumAge: minimumAge);
-
-  static DateTime _adultDateTime({
-    int minimumAge = 18,
-  }) {
-    final now = DateTime.now();
-    return DateTime(
-      now.year - minimumAge,
-      now.month,
-      now.day,
-    );
-  }
-
   // Getters & Setters
 
   /// {@template cherry_core_date_time_extensions_is_in_the_future}
@@ -100,28 +75,27 @@ extension CherryCoreDateTimeExtensions on DateTime {
 
   int get _inDays {
     final dateMap = CherryDateTimeInfoFetcher.daysPerMonth;
-    int result = inMonths;
-    if (isALeapYear) {
-      for (int i = CherryDateTimeInfoFetcher.yearZero; i <= year; i++) {
+    int daysResult = 0;
+    for (int i = CherryDateTimeInfoFetcher.yearZero; i <= year; i++) {
+      if (CherryDateTimeInfoFetcher.leapYearsSinceYearZero.contains(i)) {
         dateMap.forEach(
           (key, value) {
             if (key == DateTime.february) {
-              result *= value + 1;
+              daysResult += value + 1;
+            } else {
+              daysResult += value;
             }
-            result *= value;
           },
         );
-      }
-    } else {
-      for (int i = CherryDateTimeInfoFetcher.yearZero; i <= year; i++) {
+      } else {
         dateMap.forEach(
-          (key, value) {
-            result *= value;
+          (_, value) {
+            daysResult += value;
           },
         );
       }
     }
-    return result + day;
+    return daysResult + day;
   }
 
   /// {@template cherry_core_date_time_extensions_in_hours}
@@ -253,7 +227,7 @@ extension CherryCoreDateTimeExtensions on DateTime {
   ///
   /// print(now[8]); // ERROR -> "index: '8' out of range"
   /// print(now['nanosecond']); // ERROR -> "index: 'nanosecond' out of range"
-  /// print(now[null]); // ERROR -> "index is not type of 'int', 'String' or 'DateTimeInfo'"
+  /// print(now[3.5]); // ERROR -> "index is not type of 'int', 'String' or 'DateTimeInfo'"
   ///
   /// print(now[now.microsecond]); // SUCCESS (NO ERROR) -> DateTimeInfo is an enum and is therefore exhaustive
   /// ```
@@ -345,7 +319,7 @@ extension CherryCoreDateTimeExtensions on DateTime {
   ///
   /// {@endtemplate}
   bool isAMinor({int minimumAge = 18}) =>
-      this > adultDateTime(minimumAge: minimumAge);
+      this > CherryDateTimeInfoFetcher.adultDateTime(minimumAge: minimumAge);
 
   /// {@template cherry_core_date_time_extensions_is_an_adult}
   ///
@@ -353,7 +327,7 @@ extension CherryCoreDateTimeExtensions on DateTime {
   ///
   /// {@endtemplate}
   bool isAnAdult({int minimumAge = 18}) =>
-      this < adultDateTime(minimumAge: minimumAge);
+      this < CherryDateTimeInfoFetcher.adultDateTime(minimumAge: minimumAge);
 
   /// {@template cherry_core_date_time_extensions_copy_with}
   ///
